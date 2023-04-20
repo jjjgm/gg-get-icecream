@@ -29,13 +29,8 @@ document.getElementById('loginForm').addEventListener('submit', (event) => {
       if (!response.ok) {
         throw new Error(response.statusText);
       }
+      else {  window.location.href = '/dashboard';}
       return response.json();
-    })
-    .then((data) => {
-      // Store the user's session data in localStorage or a cookie
-      localStorage.setItem('user', JSON.stringify(data));
-      // Redirect the user to the dashboard page
-      window.location.href = '/dashboard';
     })
     .catch((error) => {
       alert(`Login failed: ${error.message}`);
