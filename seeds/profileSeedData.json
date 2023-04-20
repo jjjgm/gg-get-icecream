@@ -1,0 +1,22 @@
+[
+    {
+        "displayName": "Rose",
+        "hasPet": false,
+        "user_id": 1
+    },
+    {
+        "displayName": "Sophia",
+        "hasPet": true,
+        "user_id": 2
+    },
+    {
+        "displayName": "Blanche",
+        "hasPet": true,
+        "user_id": 3
+    },
+    {
+        "displayName": "Dorothy",
+        "hasPet": true,
+        "user_id": 4
+    }
+]
