@@ -21,6 +21,16 @@ const seedDatabase = async () => {
         });
     }
 
+    const pets = await Pet.bulkCreate(petSeedData, {
+        returning: true,
+    });
+
+    for (const profile of profileSeedData) {
+        const newPet = await Pet.create({
+            ...pets,
+            user_id: users[Math.floor(Math.random() * users.length)].id,
+        });
+    }
     process.exit(0);
 };
 
