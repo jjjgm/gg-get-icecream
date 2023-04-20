@@ -13,8 +13,11 @@ const petGenderInput = document.getElementById('petGender');
 const petDescriptionInput = document.getElementById('petDescription');
 const petProfilePictureInput = document.getElementById('petProfilePicture');
 
+
+var profile_picture = ""
+
 // Add an event listener to the signup form
-document.getElementById('signupForm').addEventListener('submit', (event) => {
+document.getElementById('profilebutton').addEventListener('click', (event) => {
   // Prevent the default form submission behavior
   event.preventDefault();
 
@@ -24,7 +27,6 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
   const confirmPassword = confirmPasswordInput.value;
   const firstName = firstNameInput.value;
   const lastName = lastNameInput.value;
-  const profilePicture = profilePictureInput.value;
   const location = locationInput.value;
   const petName = petNameInput.value;
   const petBreed = petBreedInput.value;
@@ -54,7 +56,7 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
       password,
       firstName,
       lastName,
-      profilePicture,
+      profile_picture,
       location,
       pets: [
         {
@@ -79,3 +81,17 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
       alert(`Signup failed: ${error.message}`);
     });
 });
+
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'dyyjy1hzi', 
+  uploadPreset: 'a7lspwhw'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info); 
+      profile_picture = result.info.secure_url;
+    }
+  }
+)
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
