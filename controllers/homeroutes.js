@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Project, User } = require('../models');
-const withAuth = require('../middlewares/withAuth');
+// const withAuth = require('../middlewares/withAuth');
 
 router.get('/', async (req, res) => {
   try {
@@ -32,7 +32,8 @@ router.get('/project/:id', async (req, res) => {
   }
 });
 
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/profile', async (req, res) => {
+  // withAuth above?
   try {
     const user = await User.findByPk(req.session.user_id, {
       include: {
