@@ -3,6 +3,7 @@
     <nav class="navbar justify-content-end">
         <ul class="nav my-2">
             <li class="nav-item mx-3">Search for a new friend</li>
+            <li class="nav-item mx-3">✉️</li>
             <li class="nav-item mx-3">Account</li>
             <li class="nav-item mx-3">Logout</li>
         </ul>
@@ -28,10 +29,154 @@
     <!-- user's profile/pet profile/friend's list -->
         <div id="profile-info" class="col-9 min-vh-100 p-4">
             {{!-- if my profile is checked --}}
-            
+            <div id="my-profile">
+                <h1>Hi, {{username}}</h1>
+                <h4>Thank you for being a friend.</h4>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-5">
+                            <img class="profile-pic" src={{path}} alt={{picture}}>
+                        </div>
+
+                        <div class="col-7">
+                            <h5>{{name}}</h5>
+                            <h5>age: {{age}}</h5>
+                            <h5>🌐 {{location}}</h5>
+                            <button class="mt-2">edit profile</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h6>Bio</h6>
+                    <p>
+                        {{humanbio}}
+                    </p>
+                </div>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6>Likes</h6>
+                            <ul>
+                                {{#each}}
+                                <li>{{information}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6>Dislikes</h6>
+                            <ul>
+                                {{#each}}
+                                <li>{{information}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h6>Other interests</h6>
+                    <ul>
+                        {{#each}}
+                            <li>{{information}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+
             {{!-- if dog profile is checked --}}
+            <div id="dog-profile">
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-5">
+                            <img class="profile-pic" src={{picture link}} alt={{some type of description}}>
+                        </div>
+
+                        <div class="col-7">
+                            <h5>{{petname}}</h5>
+                            <h5>age: {{petage}}</h5>
+                            <h5>🌐 {{petlocation}}</h5>
+                            <button class="mt-2">edit profile</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h6>Bio</h6>
+                    <p>
+                        {{petbio}}
+                    </p>
+                </div>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6>Likes</h6>
+                            <ul>
+                                {{#each}}
+                                <li>{{information}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6>Dislikes</h6>
+                            <ul>
+                                {{#each}}
+                                <li>{{information}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h6>Other interests</h6>
+                    <ul>
+                        {{#each}}
+                        <li>{{information}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
 
             {{!-- if my friends is checked --}}
+            <div id="friend-list">
+                <div>
+                <h1>My friends</h1>
+                <div>
+                    <table class="w-100">
+                        <tbody>
+                            {{#each}}
+                            <tr>
+                                <th scope="row" class="py-3">{{friendname}}</th>
+                                <td class="py-3">✉️</td>
+                                <td class="py-3">🗑️</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <h1>My furry friends</h1>
+                <div>
+                    <table class="w-100">
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="py-3">{{dogname}}</th>
+                                <td class="py-3">🐶</td>
+                                <td class="py-3">✉️</td>
+                                <td class="py-3">🗑️</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
 </div>
