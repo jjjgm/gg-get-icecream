@@ -1,14 +1,11 @@
-const logout = async () => {
-  const response = await fetch('/api/users/logout', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-  });
+// Get the logout button
+const logoutButton = document.querySelector('.logout-button');
 
-  if (response.ok) {
-    document.location.replace('/');
-  } else {
-    alert(response.statusText);
-  }
-};
-
-document.querySelector('#logout').addEventListener('click', logout);
+// When the logout button is clicked, send a request to the server to log out the user
+logoutButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  // Send a request to the server to log out the user
+  // ...
+  // Redirect the user to the login page
+  window.location.href = 'login.html';
+});

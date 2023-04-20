@@ -1,47 +1,64 @@
-const newFormHandler = async (event) => {
+// Get the user's information
+const userName = "John Doe";
+const userImage = "path/to/image.jpg";
+const userBio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus in libero mattis luctus.";
+
+// Update the profile page with the user's information
+const nameElement = document.querySelector('.profile-name');
+const imageElement = document.querySelector('.profile-image');
+const bioElement = document.querySelector('.profile-bio');
+
+nameElement.textContent = userName;
+imageElement.src = userImage;
+bioElement.textContent = userBio;
+
+// Get the edit button and form
+const editButton = document.querySelector('.edit-profile');
+const editForm = document.querySelector('.profile-form');
+
+// Show the edit form when the edit button is clicked
+editButton.addEventListener('click', (event) => {
   event.preventDefault();
+  editForm.style.display = 'block';
+});
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+// Handle form submission to update the user's information
+editForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(editForm);
+  // Send the form data to the server to update the user's information
+  // ...
+  // Update the profile page with the new information
+  // ...
+  editForm.style.display = 'none';
+});
 
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
-      method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+// Get the user's posts
+const userPosts = [
+  {
+    id: 1,
+    title: 'My first post',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    date: '2023-04-20',
+  },
+  {
+    id: 2,
+    title: 'My second post',
+    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
+    date: '2023-04-15',
+  },
+];
 
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to create project');
-    }
-  }
-};
+// Display the user's posts on the profile page
+const postsContainer = document.querySelector('.profile-posts');
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/projects/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to delete project');
-    }
-  }
-};
-
-document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
-
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+userPosts.forEach((post) => {
+  const postElement = document.createElement('div');
+  postElement.classList.add('post');
+  postElement.innerHTML = `
+    <h3>${post.title}</h3>
+    <p>${post.content}</p>
+    <span>${post.date}</span>
+  `;
+  postsContainer.appendChild(postElement);
+});
