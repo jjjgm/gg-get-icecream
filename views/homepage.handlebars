@@ -28,8 +28,66 @@
     <!-- user's profile/pet profile/friend's list -->
         <div id="profile-info" class="col-9 min-vh-100 p-4">
             {{!-- if my profile is checked --}}
-            
+            <div id="my-profile">
+                <h1>Hi, {{username}}</h1>
+                <h4>Thank you for being a friend.</h4>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-5">
+                            <img id="profile-pic" src="./placeholder/rose.jpeg" alt="rose">
+                        </div>
+
+                        <div class="col-7">
+                            <h5>{{name}}</h5>
+                            <h5>age: {{age}}</h5>
+                            <h5>🌐 {{location}}</h5>
+                            <button class="mt-2">edit profile</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h6>Bio</h6>
+                    <p>
+                        {{description}}
+                    </p>
+                </div>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6>Likes</h6>
+                            <ul>
+                                {{#each}}
+                                <li>{{information}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6>Dislikes</h6>
+                            <ul>
+                                {{#each}}
+                                <li>{{information}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h6>Other interests</h6>
+                    <ul>
+                        {{#each}}
+                            <li>{{information}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+
             {{!-- if dog profile is checked --}}
+            
 
             {{!-- if my friends is checked --}}
         </div>
