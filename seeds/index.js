@@ -21,16 +21,17 @@ const seedDatabase = async () => {
         });
     }
 
-    const pets = await Pet.bulkCreate(petSeedData, {
+    const pet = await Pet.bulkCreate(petSeedData, {
         returning: true,
     });
 
-    for (const profile of profileSeedData) {
-        const newPet = await Pet.create({
-            ...pets,
-            user_id: users[Math.floor(Math.random() * users.length)].id,
-        });
-    }
+    // for (const friend of petSeedData) {
+    //     const newFriend = await Friend.create({
+    //         ...profiles,
+    //         profile_id: friend[Math.floor(Math.random() * friend.length)].id,
+    //     });
+    // }
+
     process.exit(0);
 };
 

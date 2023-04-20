@@ -3,7 +3,7 @@
         "name": "Dog",
         "age": 6,
         "breed": "Mixed",
-        "user_id": 1
+        "user_id": 2
     },
     {
         "name": "lil thang",
@@ -15,6 +15,6 @@
         "name": "Bronx",
         "age": 6,
         "breed": "Chihuahua",
-        "user_id":2
+        "user_id": 4
     }
 ]
