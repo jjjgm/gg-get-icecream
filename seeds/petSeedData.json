@@ -1,7 +1,20 @@
 [
     {
-        "name": "Sweetie",
+        "name": "Dog",
         "age": 6,
-        "breed": "Mixed"
+        "breed": "Mixed",
+        "user_id": 2
+    },
+    {
+        "name": "lil thang",
+        "age": 2,
+        "breed": "Yorkie",
+        "user_id": 3
+    },
+    {
+        "name": "Bronx",
+        "age": 6,
+        "breed": "Chihuahua",
+        "user_id": 4
     }
 ]

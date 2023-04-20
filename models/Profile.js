@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { Model , DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 
 class Profile extends Model { }
@@ -22,18 +22,19 @@ Profile.init(
             }
         },
         hasPet: {
-            type:DataTypes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
         },
-        user_id: {
+        friend_id: {
             type: DataTypes.INTEGER,
+            unique: true,
             references: {
-                model: 'user',
-                key: 'id',
+                model: 'friend',
+                id: 'id',
             }
         },
     },
     {
-    sequelize,
+        sequelize,
         timeStamps: false,
         freezeTableName: true,
         underscored: true,
