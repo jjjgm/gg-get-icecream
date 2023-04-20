@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Profile, User } = require('../models');
 // const withAuth = require('../middlewares/withAuth');
 
 router.get('/', async (req, res) => {
   try {
     const projects = await Project.findAll({
       include: {
-        model: User,
+        model: User, Profile,
         attributes: ['username'],
       },
     });
@@ -21,7 +21,7 @@ router.get('/project/:id', async (req, res) => {
   try {
     const project = await Project.findByPk(req.params.id, {
       include: {
-        model: User,
+        model: User, Profile,
         attributes: ['username'],
       },
     });
