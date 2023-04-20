@@ -25,19 +25,13 @@
             </div>
         </div>
 
-    <!-- user's profile (same for pet except for headings) -->
-        <div class="col-9 min-vh-100 p-4">
-            {{ #if }} {{!-- if my profile is checked --}}
-                {{> myProfile }}
-            {{ /if }}
+    <!-- user's profile/pet profile/friend's list -->
+        <div id="profile-info" class="col-9 min-vh-100 p-4">
+            {{!-- if my profile is checked --}}
+            
+            {{!-- if dog profile is checked --}}
 
-            {{ #if }} {{!-- if dog profile is checked --}}
-                {{> dogProfile}}
-            {{ /if }}
-
-            {{ #if }} {{!-- if my friends is checked --}}
-                {{> myFriends}}
-            {{ /if }}
+            {{!-- if my friends is checked --}}
         </div>
     </div>
 </div>
