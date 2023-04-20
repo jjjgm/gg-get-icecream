@@ -143,7 +143,38 @@
 
             {{!-- if my friends is checked --}}
             <div id="friend-list">
-                
+                <div>
+                <h1>My friends</h1>
+                <div>
+                    <table class="w-100">
+                        <tbody>
+                            {{#each}}
+                            <tr>
+                                <th scope="row" class="py-3">{{friendname}}</th>
+                                <td class="py-3">✉️</td>
+                                <td class="py-3">🗑️</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <h1>My furry friends</h1>
+                <div>
+                    <table class="w-100">
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="py-3">{{dogname}}</th>
+                                <td class="py-3">🐶</td>
+                                <td class="py-3">✉️</td>
+                                <td class="py-3">🗑️</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             </div>
         </div>
     </div>
