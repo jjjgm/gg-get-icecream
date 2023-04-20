@@ -1,53 +1,43 @@
-const loginFormHandler = async (event) => {
+// Get the input fields from the login form
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+
+// Add an event listener to the login form
+document.getElementById('loginForm').addEventListener('submit', (event) => {
+  // Prevent the default form submission behavior
   event.preventDefault();
 
-  // Collect values from the login form
-  const email = document.querySelector('#email-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  // Get the user's input
+  const email = emailInput.value;
+  const password = passwordInput.value;
 
-  if (email && password) {
-    // Send a POST request to the API endpoint
-    const response = await fetch('/api/users/login', {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
-    } else {
-      alert(response.statusText);
-    }
+  // Validate the input
+  if (!email || !password) {
+    alert('Please enter both email and password.');
+    return;
   }
-};
 
-const signupFormHandler = async (event) => {
-  event.preventDefault();
-
-  const name = document.querySelector('#name-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
-
-  if (name && email && password) {
-    const response = await fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ name, email, password }),
-      headers: { 'Content-Type': 'application/json' },
+  // Send a request to the server to validate the user's credentials
+  fetch('/api/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // Store the user's session data in localStorage or a cookie
+      localStorage.setItem('user', JSON.stringify(data));
+      // Redirect the user to the dashboard page
+      window.location.href = '/dashboard';
+    })
+    .catch((error) => {
+      alert(`Login failed: ${error.message}`);
     });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert(response.statusText);
-    }
-  }
-};
-
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
-
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+});
