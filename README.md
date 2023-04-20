@@ -13,6 +13,8 @@
 MIT License
 
 ## Acknowledgements & Research
+<!-- [Research Link Description](link here) -->
+<!--[Sequelize v6 Documentation](https://sequelize.org/)  -->
 
 ## Contributions
 
@@ -23,3 +25,4 @@ MIT License
 
 ## Assets
 <!-- [!img-description](link here) -->
+<!--  -->

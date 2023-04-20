@@ -1,0 +1,26 @@
+[
+    {
+        "username": "Rose",
+        "age": 75,
+        "email": "sweetrose@email.com",
+        "password": "password"
+    },
+    {
+        "username": "Sophia",
+        "age": 75,
+        "email": "sophiasemail@email.com",
+        "password": "password"
+    },
+    {
+        "username": "Blanche",
+        "age": 75,
+        "email": "babeblanche@email.com",
+        "password": "password"
+    },
+    {
+        "username": "Dorothy",
+        "age": 75,
+        "email": "dbarthur@email.com",
+        "password": "password"
+    }
+]
