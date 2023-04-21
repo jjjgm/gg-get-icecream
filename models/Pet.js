@@ -23,6 +23,9 @@ Pet.init (
             type: DataTypes.STRING,
             allowNull: false
         },
+        gender:{
+            type: DataTypes.
+        }
         petImg: {
             type: DataTypes.STRING,
             validate: {
