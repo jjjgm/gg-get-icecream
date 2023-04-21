@@ -2,8 +2,8 @@
 <header>
     <nav class="navbar justify-content-end">
         <ul class="nav my-2">
-            <li class="nav-item mx-3">Search for a new friend</li>
-            <li class="nav-item mx-3">✉️</li>
+            <li class="nav-item mx-3"><span class="material-symbols-rounded">search</span></li>
+            <li class="nav-item mx-3"><span class="material-symbols-rounded">inbox</span></li>
             <li class="nav-item mx-3">Account</li>
             <li class="nav-item mx-3">Logout</li>
         </ul>
@@ -15,14 +15,14 @@
     <div class="row">
         <div id="sidebar" class="col-3 min-vh-100 pt-5">
             <div class="btn-group-vertical w-100">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio1">My profile</label>
+                <input type="radio" class="btn-check" name="account-action" id="user" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="user">My profile</label>
 
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio2">Dog profile</label>
+                <input type="radio" class="btn-check" name="account-action" id="dog" autocomplete="off">
+                <label class="btn btn-outline-primary" for="dog">Dog profile</label>
 
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio3">My friends</label>
+                <input type="radio" class="btn-check" name="account-action" id="friends" autocomplete="off">
+                <label class="btn btn-outline-primary" for="friends">My friends</label>
             </div>
         </div>
 
@@ -43,7 +43,85 @@
                             <h5>{{name}}</h5>
                             <h5>age: {{age}}</h5>
                             <h5>🌐 {{location}}</h5>
-                            <button class="mt-2">edit profile</button>
+                            <button class="mt-2 edit-btn" data-bs-toggle="modal" data-bs-target="#editUserModal">edit profile</button>
+
+                        {{!-- edit modal --}}
+                            <div id="editUserModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Edit profile</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                    
+                                        <div class="modal-body">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="edit-username" placeholder="Edit name here">
+                                                <label for="floatingInput">Name</label>
+                                            </div>
+
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="edit-userlocation" placeholder="Edit location here">
+                                                <label for="floatingInput">Location</label>
+                                            </div>
+
+                                            <div class="form-floating mb-3">
+                                                <textarea class="form-control" placeholder="Edit bio here" id="edit-userbio"></textarea>
+                                                <label for="floatingTextarea">Bio</label>
+                                            </div>
+
+                                            <hr>
+
+                                            <h6>Edit likes and dislikes</h6>
+
+                                            <table class="my-3 w-100">
+                                                {{#each}}
+                                                <tr class="my-likes">
+                                                    <th scope="row">like</th>
+                                                    <td>{{information}}</td>
+                                                    <td><span class="material-symbols-rounded delete-likes">delete</span></td>
+                                                </tr>
+                                                {{/each}}
+                                            </table>
+
+                                            <div class="input-group mb-3 w-100">
+                                                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pick</button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#" class="dropdown-item" value="true">Like</a></li>
+                                                    <li><a href="#" class="dropdown-item" value="false">Dislike</a></li>
+                                                </ul>
+                                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                                <button type="button" class="submit-like">Submit</button>
+                                            </div>
+
+                                            <hr>
+
+                                            <h6>Edit interests</h6>
+
+                                            <table class="my-3 w-100">
+                                                {{#each}}
+                                                <tr class="my-interests">
+                                                    <td>{{information}}</td>
+                                                    <td><span class="material-symbols-rounded delete-interest">delete</span></td>
+                                                </tr>
+                                                {{/each}}
+                                            </table>
+
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="Add new interest" aria-label="Add new interest" aria-describedby="submit-button">
+                                                <button type="button" class="submit-interest">Submit</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" data-bs-dismiss="modal">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -99,7 +177,84 @@
                             <h5>{{petname}}</h5>
                             <h5>age: {{petage}}</h5>
                             <h5>🌐 {{petlocation}}</h5>
-                            <button class="mt-2">edit profile</button>
+                            <button class="mt-2 edit-btn" data-bs-toggle="modal" data-bs-target="#editDogModal">edit profile</button>
+
+                        {{!-- edit modal --}}
+                            <div id="editdogModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Edit profile</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                    
+                                        <div class="modal-body">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="edit-dogname" placeholder="Edit name here">
+                                                <label for="floatingInput">Name</label>
+                                            </div>
+
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="edit-doglocation" placeholder="Edit location here">
+                                                <label for="floatingInput">Location</label>
+                                            </div>
+
+                                            <div class="form-floating mb-3">
+                                                <textarea class="form-control" placeholder="Edit bio here" id="edit-dogbio"></textarea>
+                                                <label for="floatingTextarea">Bio</label>
+                                            </div>
+
+                                            <hr>
+
+                                            <h6>Edit likes and dislikes</h6>
+
+                                            <table class="my-3 w-100">
+                                                {{#each}}
+                                                <tr class="my-likes">
+                                                    <th scope="row">like</th>
+                                                    <td>{{information}}</td>
+                                                    <td><span class="material-symbols-rounded delete-likes">delete</span></td>
+                                                </tr>
+                                                {{/each}}
+                                            </table>
+
+                                            <div class="input-group mb-3 w-100">
+                                                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pick</button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#" class="dropdown-item" value="true">Like</a></li>
+                                                    <li><a href="#" class="dropdown-item" value="false">Dislike</a></li>
+                                                </ul>
+                                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                                <button type="button" class="submit-like">Submit</button>
+                                            </div>
+
+                                            <hr>
+
+                                            <h6>Edit interests</h6>
+
+                                            <table class="my-3 w-100">
+                                                {{#each}}
+                                                <tr>
+                                                    <td>{{information}}</td>
+                                                    <td><span class="material-symbols-rounded">delete</span></td>
+                                                </tr>
+                                                {{/each}}
+                                            </table>
+
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="Add new interest" aria-label="Add new interest" aria-describedby="submit-button">
+                                                <button type="button" class="submit-interest">Submit</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" data-bs-dismiss="modal">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -142,7 +297,7 @@
                 </div>
             </div>
 
-            {{!-- if my friends is checked --}}
+        {{!-- if my friends is checked --}}
             <div id="friend-list">
                 <div>
                 <h1>My friends</h1>
@@ -150,10 +305,10 @@
                     <table class="w-100">
                         <tbody>
                             {{#each}}
-                            <tr>
+                            <tr class="human-friend">
                                 <th scope="row" class="py-3">{{friendname}}</th>
                                 <td class="py-3">✉️</td>
-                                <td class="py-3">🗑️</td>
+                                <button class="py-3 ghost-friend">👻</button>
                             </tr>
                             {{/each}}
                         </tbody>
@@ -166,11 +321,11 @@
                 <div>
                     <table class="w-100">
                         <tbody>
-                            <tr>
+                            <tr class="dog-friend">
                                 <th scope="row" class="py-3">{{dogname}}</th>
                                 <td class="py-3">🐶</td>
                                 <td class="py-3">✉️</td>
-                                <td class="py-3">🗑️</td>
+                                <button class="py-3 ghost-dog">👻</button>
                             </tr>
                         </tbody>
                     </table>
