@@ -9,6 +9,8 @@ const friendSeedData = require('./friendSeedData.json');
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 
+    
+
     const users = await User.bulkCreate(userSeedData, {
         individualHooks: true,
         returning: true,
@@ -20,10 +22,14 @@ const seedDatabase = async () => {
             user_id: users[Math.floor(Math.random() * users.length)].id,
         });
     }
-
     const pet = await Pet.bulkCreate(petSeedData, {
         returning: true,
     });
+
+    const friend = await Friend.bulkCreate(friendSeedData, {
+        returning: true,
+    });
+    
 
     // for (const friend of petSeedData) {
     //     const newFriend = await Friend.create({

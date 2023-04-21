@@ -22,11 +22,12 @@ Friend.init(
         },
         hasPet: {
             type: DataTypes.BOOLEAN,
-            allowNull: true,
+            allowNull: false,
         },
         profile_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            unique: true,
             references: {
                 model: 'profile',
                 key: 'id',

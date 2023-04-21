@@ -23,16 +23,16 @@ Profile.init(
         },
         hasPet: {
             type: DataTypes.BOOLEAN,
+            allowNull: false,
         },
         friend_id: {
             type: DataTypes.INTEGER,
-            unique: true,
             references: {
                 model: 'friend',
                 id: 'id',
-            }
-        },
+        }
     },
+},
     {
         sequelize,
         timeStamps: false,
