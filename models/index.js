@@ -1,7 +1,7 @@
-const User = require('./User')
-const Pet = require('./Pet')
-const Friend = require('./Friend')
-const Profile = require('./Profile')
+const User = require('./User');
+const Pet = require('./Pet');
+const Friend = require('./Friend');
+const Profile = require('./Profile');
 
 // KEY to link to USER
 Profile.belongsTo(User, {
@@ -9,10 +9,14 @@ Profile.belongsTo(User, {
     onDelete: 'CASCADE',
 });
 
+Profile.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+});
 
 Pet.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE',
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 
 Profile.hasOne(Pet,{
@@ -32,8 +36,4 @@ Profile.hasMany(Friend, {
 //     foreignKey: 'profile_id',
 // });
 
-
-
-
-
-module.exports = { User, Profile, Pet, Friend }
+module.exports = { User, Profile, Pet, Friend };
