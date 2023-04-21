@@ -77,10 +77,11 @@
                             <h5>Rose Nylund</h5>
                             <h5>age: 45</h5>
                             <h5><span class="material-symbols-rounded">location_city</span> St. Olaf, MN</h5>
-                            <button id="edit-btn" class="mt-2" data-bs-toggle="modal" data-bs-target="#editModal">edit profile</button>
+                            
+                            <button id="edit-btn" class="mt-2" data-bs-toggle="modal" data-bs-target="#edit{UserModal">edit profile</button>
                         
                             <!-- edit modal -->
-                            <div id="editModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div id="edit{UserModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -90,17 +91,17 @@
                                     
                                         <div class="modal-body">
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" id="edit-username" placeholder="Edit name here">
+                                                <input type="text" class="form-control" id="edit-{username" placeholder="Edit name here">
                                                 <label for="floatingInput">Name</label>
                                             </div>
 
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" id="edit-userlocation" placeholder="Edit location here">
+                                                <input type="text" class="form-control" id="edit-{userlocation" placeholder="Edit location here">
                                                 <label for="floatingInput">Location</label>
                                             </div>
 
                                             <div class="form-floating mb-3">
-                                                <textarea class="form-control" placeholder="Edit bio here" id="edit-userbio"></textarea>
+                                                <textarea class="form-control" placeholder="Edit bio here" id="edit-{userbio"></textarea>
                                                 <label for="floatingTextarea">Bio</label>
                                             </div>
 
@@ -123,6 +124,7 @@
                                                     <li><a href="#" class="dropdown-item">Dislike</a></li>
                                                 </ul>
                                                 <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                                <button type="button" id="submit-like">Submit</button>
                                             </div>
 
                                             <hr>
@@ -138,7 +140,7 @@
 
                                             <div class="input-group mb-3">
                                                 <input type="text" class="form-control" placeholder="Add new interest" aria-label="Add new interest" aria-describedby="submit-button">
-                                                <button type="button" id="submit-button">Submit</button>
+                                                <button type="button" class="submit-interest">Submit</button>
                                             </div>
                                         </div>
 
