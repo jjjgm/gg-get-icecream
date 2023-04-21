@@ -36,7 +36,7 @@ Pet.init (
         description: {
             type: DataTypes.STRING,
             allowNull: true,
-            unique: true,
+            // unique: true,
             index: true,
         },
         user_id: {

@@ -58,8 +58,8 @@ router.get('/profile', async (req, res) => {
     const user = await User.findByPk(req.session.user_id, {
       include: [
         {
-          model: Project,
-          attributes: ['id', 'title'],
+          model: User,
+          attributes: ['username'],
         },
         {
           model: Pet,

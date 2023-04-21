@@ -21,17 +21,22 @@ Profile.init(
                 key: 'username',
             }
         },
+        // location: {
+        //     type: DataTypes.STRING,
+        //     references: {
+        //         model: 'user',
+        //         key: 'location',
+        //     }
+        // },
         hasPet: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
         },
-        pet_description: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            unique: true,
+        pet_id: {
+            type: DataTypes.INTEGER,
             references: {
                 model: 'pet',
-                key: 'description',
+                key: 'id',
             },
         },
         profileImg: {

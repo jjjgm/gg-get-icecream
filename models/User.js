@@ -50,7 +50,6 @@ User.init (
             index: true,
                 validate:{
                     isAlpha: true,
-                    len: [2, 16]
                 }
         }
     },
