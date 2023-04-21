@@ -9,7 +9,7 @@
 - [License](#license)
 - [Acknowledgements & Research](#acknowledgements--research)
 - [Contributors](#contributors)
-- [Images & Screenshots](#images)
+- [Images & Screenshots](#images--screenshots)
 - [Links](#links)
 - [Testing](#testing)
 - [Assets](#assets)
