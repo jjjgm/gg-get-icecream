@@ -1,22 +1,30 @@
 [
     {
         "displayName": "Rose",
+        "location": "Florida",
         "hasPet": false,
+        "pet_id": 1,
         "profileImg": "https://images.squarespace-cdn.com/content/v1/5990c5a53e00bea41c0d0fc2/1510527588686-A24Z4WCM823DZOBK7LE2/Rose+Ice+Skating+5.jpg?format=750w"
     },
     {
         "displayName": "Sophia",
+        "location": "Florida",
         "hasPet": true,
+        "pet_id":2,
         "profileImg": "https://images.ctfassets.net/jxsch4jish6b/photo-48947/f11a2c4de0b26a8cfc23c432093846b6/48947-golden-girls-little-sophia.png?fm=jpg&fl=progressive&w=900&q=50"
     },
     {
         "displayName": "Blanche",
+        "location": "Florida",
         "hasPet": true,
+        "pet_id":2,
         "profileImg": "https://m.media-amazon.com/images/M/MV5BMjEzNDg5Nzc3MV5BMl5BanBnXkFtZTgwMTUwMTY1MjE@._V1_.jpg"
     },
     {
         "displayName": "Dorothy",
+        "location": "Florida",
         "hasPet": true,
+        "pet_id":2,
         "profileImg": "https://i.pinimg.com/564x/99/f3/4e/99f34e5cf2739aa28c871dff6fcb24b6.jpg"
     }
 ]

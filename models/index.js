@@ -20,7 +20,7 @@ Pet.belongsTo(User, {
 });
 
 Profile.hasOne(Pet,{
-    foreignKey: 'user_id',
+    foreignKey: 'pet_id',
 }
     )
 

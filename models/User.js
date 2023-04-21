@@ -26,7 +26,7 @@ User.init (
             type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
-                isAlphanumeric: true,
+                isNumeric: true,
                 min: 18
             }
         },
@@ -44,6 +44,14 @@ User.init (
                 len:[6]
             },
         },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            index: true,
+                validate:{
+                    isAlpha: true,
+                }
+        }
     },
     {
     hooks: {
