@@ -8,13 +8,36 @@ const myProfile = document.getElementById('my-profile');
 const dogProfile = document.getElementById('dog-profile');
 const friendList = document.getElementById('friend-list');
 
-//modal elements
+//modal html elements
+const editBtn = document.getElementsByClassName('edit-btn');
+//modal - likes/dislikes
+const submitLikeBtn = document.getElementsByClassName('submit-like');
+const submitInterestBtn = document.getElementsByClassName('submit-interest');
+const likeList = document.getElementsByClassName('my-likes');
+//modal - interests
+const deleteLikesBtn = document.getElementsByClassName('delete-likes');
+const interestList = document.getElementsByClassName('my-interests');
+const deleteInterestsBtn = document.getElementsByClassName('delete-interest');
 
-//delete likes and dislikes
+//friend list html elements
+const myFriend = document.getElementsByClassName('human-friend');
+const ghostFriendBtn = document.getElementsByClassName('ghost-friend');
+const myDogFriend = document.getElementsByClassName('dog-friend');
+const ghostDogFriendBtn = document.getElementsByClassName('ghost-dog');
+
+//submit new like
+
+//delete like/dislike
+
+//submit new interest
 
 //delete interests
 
-//edit profile - update user info
+//submit edits
+
+//delete dog human friend
+
+//delete dog friend
 
 //change display of dog profile, friend list when button is clicked
 if (userButton.checked) {
@@ -36,3 +59,6 @@ if (friendsButton.checked) {
 }
 
 //click events
+editBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+});

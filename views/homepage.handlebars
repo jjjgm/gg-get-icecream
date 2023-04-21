@@ -76,10 +76,10 @@
 
                                             <table class="my-3 w-100">
                                                 {{#each}}
-                                                <tr>
+                                                <tr class="my-likes">
                                                     <th scope="row">like</th>
                                                     <td>{{information}}</td>
-                                                    <td><span class="material-symbols-rounded">delete</span></td>
+                                                    <td><span class="material-symbols-rounded delete-likes">delete</span></td>
                                                 </tr>
                                                 {{/each}}
                                             </table>
@@ -87,11 +87,11 @@
                                             <div class="input-group mb-3 w-100">
                                                 <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pick</button>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="#" class="dropdown-item">Like</a></li>
-                                                    <li><a href="#" class="dropdown-item">Dislike</a></li>
+                                                    <li><a href="#" class="dropdown-item" value="true">Like</a></li>
+                                                    <li><a href="#" class="dropdown-item" value="false">Dislike</a></li>
                                                 </ul>
                                                 <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                                                <button type="button" id="submit-like">Submit</button>
+                                                <button type="button" class="submit-like">Submit</button>
                                             </div>
 
                                             <hr>
@@ -100,9 +100,9 @@
 
                                             <table class="my-3 w-100">
                                                 {{#each}}
-                                                <tr>
+                                                <tr class="my-interests">
                                                     <td>{{information}}</td>
-                                                    <td><span class="material-symbols-rounded">delete</span></td>
+                                                    <td><span class="material-symbols-rounded delete-interest">delete</span></td>
                                                 </tr>
                                                 {{/each}}
                                             </table>
@@ -210,10 +210,10 @@
 
                                             <table class="my-3 w-100">
                                                 {{#each}}
-                                                <tr>
+                                                <tr class="my-likes">
                                                     <th scope="row">like</th>
                                                     <td>{{information}}</td>
-                                                    <td><span class="material-symbols-rounded">delete</span></td>
+                                                    <td><span class="material-symbols-rounded delete-likes">delete</span></td>
                                                 </tr>
                                                 {{/each}}
                                             </table>
@@ -221,11 +221,11 @@
                                             <div class="input-group mb-3 w-100">
                                                 <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pick</button>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="#" class="dropdown-item">Like</a></li>
-                                                    <li><a href="#" class="dropdown-item">Dislike</a></li>
+                                                    <li><a href="#" class="dropdown-item" value="true">Like</a></li>
+                                                    <li><a href="#" class="dropdown-item" value="false">Dislike</a></li>
                                                 </ul>
                                                 <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                                                <button type="button" id="submit-like">Submit</button>
+                                                <button type="button" class="submit-like">Submit</button>
                                             </div>
 
                                             <hr>
@@ -305,10 +305,10 @@
                     <table class="w-100">
                         <tbody>
                             {{#each}}
-                            <tr>
+                            <tr class="human-friend">
                                 <th scope="row" class="py-3">{{friendname}}</th>
                                 <td class="py-3">✉️</td>
-                                <td class="py-3">🗑️</td>
+                                <button class="py-3 ghost-friend">👻</button>
                             </tr>
                             {{/each}}
                         </tbody>
@@ -321,11 +321,11 @@
                 <div>
                     <table class="w-100">
                         <tbody>
-                            <tr>
+                            <tr class="dog-friend">
                                 <th scope="row" class="py-3">{{dogname}}</th>
                                 <td class="py-3">🐶</td>
                                 <td class="py-3">✉️</td>
-                                <td class="py-3">🗑️</td>
+                                <button class="py-3 ghost-dog">👻</button>
                             </tr>
                         </tbody>
                     </table>
