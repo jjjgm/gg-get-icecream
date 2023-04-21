@@ -1,24 +1,20 @@
 # gg-get-icecream
 
 ## Table of Contents
+- [Installation](#installation)
 - [Description](#description)
 - [Features](#features)
 - [Target Audience](#target-audience)
-- [Installation](#installation)
 - [Usage](#usage)
-- [Contributors](#contributors)
-- [Testing](#testing)
-- [Assets](#assets)
-- [Acknowledgements & Research](#acknowledgements--research)
 - [License](#license)
+- [Acknowledgements & Research](#acknowledgements--research)
+- [Contributions](#contributions)
+- [Images/Screenshots](#imagesscreenshots)
+- [Links](#links)
+- [Testing(s)](#testings)
+- [Assets](#assets)
 
 ## Installation
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-- [Questions](#questions)
-
 
 ## Description
 This app is designed for social pet lovers who want to create a profile for themselves and their pets. The app allows users to add information such as their pets' names, breeds, ages, and photos. Users can connect with other pet owners in their area and discover new pet-friendly places to explore with their furry friends. They can browse through other users' profiles and filter by criteria such as pet type, breed, age, and location. If they find a profile that interests them, they can send a friend request and start chatting with the owner to learn more about their pets and hobbies, with the goal of building lasting friendships for both themselves and their pets. They can arrange playdates with other users and explore new places and activities with their pets.

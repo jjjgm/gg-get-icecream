@@ -9,4 +9,5 @@ router.use('/friends', friendRoutes);
 router.use('/users', userRoutes);
 router.use('/profiles', profileRoutes);
 
+
 module.exports = router;
