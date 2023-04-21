@@ -18,7 +18,7 @@ document.getElementById('loginForm').addEventListener('submit', (event) => {
   }
 
   // Send a request to the server to validate the user's credentials
-  fetch('/api/login', {
+  fetch('/api/users/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

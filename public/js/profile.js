@@ -3,14 +3,23 @@ const userName = "John Doe";
 const userImage = "path/to/image.jpg";
 const userBio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus in libero mattis luctus.";
 
-// Update the profile page with the user's information
-const nameElement = document.querySelector('.profile-name');
-const imageElement = document.querySelector('.profile-image');
-const bioElement = document.querySelector('.profile-bio');
+fetch('/api/users')
+  .then(response => response.json())
+  .then(data => {
+    userName = data.name;
+    userImage = data.image;
+    userBio = data.bio;
 
-nameElement.textContent = userName;
-imageElement.src = userImage;
-bioElement.textContent = userBio;
+    // Update the profile page with the user's information
+    const nameElement = document.querySelector('.profile-name');
+    const imageElement = document.querySelector('.profile-image');
+    const bioElement = document.querySelector('.profile-bio');
+
+    nameElement.textContent = userName;
+    imageElement.src = userImage;
+    bioElement.textContent = userBio;
+  })
+  .catch(error => console.error(error));
 
 // Get the edit button and form
 const editButton = document.querySelector('.edit-profile');
