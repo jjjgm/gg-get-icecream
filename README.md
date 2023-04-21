@@ -6,19 +6,14 @@
 - [Target Audience](#target-audience)
 - [Installation](#installation)
 - [Usage](#usage)
+- [License](#license)
+- [Acknowledgements & Research](#acknowledgements--research)
 - [Contributors](#contributors)
+- [Images & Screenshots](#images)
+- [Links](#links)
 - [Testing](#testing)
 - [Assets](#assets)
-- [Acknowledgements & Research](#acknowledgements--research)
-- [License](#license)
-
-## Installation
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
 - [Questions](#questions)
-
 
 ## Description
 This app is designed for social pet lovers who want to create a profile for themselves and their pets. The app allows users to add information such as their pets' names, breeds, ages, and photos. Users can connect with other pet owners in their area and discover new pet-friendly places to explore with their furry friends. They can browse through other users' profiles and filter by criteria such as pet type, breed, age, and location. If they find a profile that interests them, they can send a friend request and start chatting with the owner to learn more about their pets and hobbies, with the goal of building lasting friendships for both themselves and their pets. They can arrange playdates with other users and explore new places and activities with their pets.
@@ -33,6 +28,8 @@ Explore new places and activities with your pets and other users.
 
 ## Target Audience
 Social pet lovers who want to connect with other pet owners and discover new pet-friendly places to explore with their furry friends.
+
+## Installation
 
 ## Usage
 
@@ -66,3 +63,6 @@ Michael Rader
 ## Assets
 <!-- [!img-description](link here) -->
 <!--  -->
+
+## Questions
+If you have any questions, please feel free to reach out to michaelchristianrader@gmail.com
