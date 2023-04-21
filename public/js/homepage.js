@@ -8,8 +8,13 @@ const myProfile = document.getElementById('my-profile');
 const dogProfile = document.getElementById('dog-profile');
 const friendList = document.getElementById('friend-list');
 
+//modal elements
 
-//other variables
+//delete likes and dislikes
+
+//delete interests
+
+//edit profile - update user info
 
 //change display of dog profile, friend list when button is clicked
 if (userButton.checked) {
@@ -30,4 +35,4 @@ if (friendsButton.checked) {
     friendList.setAttribute('style', 'display: block');
 }
 
-//edit profile
+//click events

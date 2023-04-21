@@ -8,6 +8,9 @@
 
     <link rel="stylesheet" href="./css/reset.css">
 
+    <!-- google icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +38,8 @@
     <header>
         <nav class="navbar justify-content-end">
             <ul class="nav my-2">
-                <li class="nav-item mx-3">Search for a new friend</li>
+                <li class="nav-item mx-3"><span class="material-symbols-rounded">search</span></li>
+                <li class="nav-item mx-3"><span class="material-symbols-rounded">inbox</span></li>
                 <li class="nav-item mx-3">Account</li>
                 <li class="nav-item mx-3">Logout</li>
             </ul>
@@ -72,7 +76,7 @@
                         <div class="col-7">
                             <h5>Rose Nylund</h5>
                             <h5>age: 45</h5>
-                            <h5>🌐 St. Olaf, MN</h5>
+                            <h5><span class="material-symbols-rounded">location_city</span> St. Olaf, MN</h5>
                             <button id="edit-btn" class="mt-2" data-bs-toggle="modal" data-bs-target="#editModal">edit profile</button>
                         
                             <!-- edit modal -->
@@ -108,7 +112,7 @@
                                                 <tr>
                                                     <th scope="row">like</th>
                                                     <td>Going to the beach</td>
-                                                    <td>🗑️</td>
+                                                    <td><span class="material-symbols-rounded">delete</span></td>
                                                 </tr>
                                             </table>
 
@@ -128,7 +132,7 @@
                                             <table class="my-3 w-100">
                                                 <tr>
                                                     <td>Volunteering for charity</td>
-                                                    <td>🗑️</td>
+                                                    <td><span class="material-symbols-rounded">delete</span></td>
                                                 </tr>
                                             </table>
 
