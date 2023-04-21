@@ -23,23 +23,30 @@ Profile.init(
         },
         hasPet: {
             type: DataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        profileImg: {
+            type: DataTypes.STRING,
+            validate: {
+                isUrl: true,
+            }
         },
         friend_id: {
             type: DataTypes.INTEGER,
-            unique: true,
+            allowNull: true,
             references: {
                 model: 'friend',
                 id: 'id',
-            }
-        },
+        }
     },
+},
     {
         sequelize,
-        timeStamps: false,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'profile'
+        modelName: 'profile',
     }
-)
+);
 
 module.exports = Profile

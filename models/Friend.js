@@ -22,11 +22,12 @@ Friend.init(
         },
         hasPet: {
             type: DataTypes.BOOLEAN,
-            allowNull: true,
+            allowNull: false,
         },
         profile_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            unique: true,
             references: {
                 model: 'profile',
                 key: 'id',
@@ -35,11 +36,11 @@ Friend.init(
     },
     {
         sequelize,
-            timeStamps: false,
-            freezeTableName: true,
-            underscored: true,
-            modelName: 'friend'
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'friend',
         }
-)
+);
 
 module.exports = Friend

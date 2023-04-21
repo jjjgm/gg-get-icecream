@@ -3,8 +3,10 @@ const Pet = require('./Pet');
 const Friend = require('./Friend');
 const Profile = require('./Profile');
 
-User.hasMany(Friend, {
-  foreignKey: 'user_id',
+// KEY to link to USER
+Profile.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
 });
 
 Profile.belongsTo(User, {
@@ -17,17 +19,21 @@ Pet.belongsTo(User, {
   onDelete: 'CASCADE',
 });
 
-Profile.hasMany(Pet, {
-  foreignKey: 'profile_id'
+Profile.hasOne(Pet,{
+    foreignKey: 'user_id',
+}
+    )
+
+Friend.belongsTo(Profile,  {
+    foreignKey: 'profile_id',
 });
 
 Profile.hasMany(Friend, {
-  foreignKey: 'profile_id',
+    foreignKey: 'profile_id',
 });
 
-Friend.belongsTo(Profile, {
-  through: 'displayName', 
-  foreignKey: 'profile_id',
-});
+// User.hasMany(Friend, {
+//     foreignKey: 'profile_id',
+// });
 
 module.exports = { User, Profile, Pet, Friend };
