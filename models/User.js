@@ -26,7 +26,7 @@ User.init (
             type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
-                isAlphanumeric: true,
+                isNumeric: true,
                 min: 18
             }
         },

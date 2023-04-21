@@ -21,7 +21,7 @@ Pet.init (
         },
         breed: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
         },
         gender:{
             type: DataTypes.
