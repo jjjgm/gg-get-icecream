@@ -36,8 +36,13 @@ Pet.init (
         description: {
             type: DataTypes.STRING,
             allowNull: true,
-            // unique: true,
             index: true,
+        },
+        pet_likes: {
+            type:DataTypes.STRING,
+        },
+        pet_dislikes:{
+            type: DataTypes.STRING,
         },
         user_id: {
             type: DataTypes.INTEGER,

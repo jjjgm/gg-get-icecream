@@ -21,13 +21,14 @@ Profile.init(
                 key: 'username',
             }
         },
-        // location: {
-        //     type: DataTypes.STRING,
-        //     references: {
-        //         model: 'user',
-        //         key: 'location',
-        //     }
-        // },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            index: true,
+                validate:{
+                    isAlpha: true,
+                }
+        },
         hasPet: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
@@ -39,11 +40,20 @@ Profile.init(
                 key: 'id',
             },
         },
+        bio: {
+            type: DataTypes.STRING,
+        },
         profileImg: {
             type: DataTypes.STRING,
             validate: {
                 isUrl: true,
             }
+        },
+        user_likes: {
+            type: DataTypes.STRING
+        },
+        user_dislikes: {
+            type: DataTypes.STRING
         },
         friend_id: {
             type: DataTypes.INTEGER,
