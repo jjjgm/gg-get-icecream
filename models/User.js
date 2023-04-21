@@ -44,6 +44,15 @@ User.init (
                 len:[6]
             },
         },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            index: true,
+                validate:{
+                    isAlpha: true,
+                    len: [2, 16]
+                }
+        }
     },
     {
     hooks: {

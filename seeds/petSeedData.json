@@ -2,21 +2,27 @@
     {
         "name": "Dog",
         "age": 6,
+        "gender": "Female",
         "breed": "Mixed",
+        "description": "ITS A DOG",
         "petImg": "https://www.cesarsway.com/wp-content/uploads/2019/10/AdobeStock_190562703-768x535.jpeg",
         "user_id": 2
     },
     {
         "name": "Boop",
         "age": 2,
-        "breed": "Just a a furball",
+        "gender": "Female",
+        "breed": "Just a furball",
+        "description": "She's just so fluffy- a bit sassy!",
         "petImg": "https://www.rd.com/wp-content/uploads/2020/11/GettyImages-889552354-e1606774439626.jpg",
         "user_id": 3
     },
     {
         "name": "Bronx",
-        "age": 6,
+        "age": 1,
+        "gender": "Male",
         "breed": "Chihuahua",
+        "description": "A lot like their owner",
         "petImg": "https://cdn.wamiz.fr/cdn-cgi/image/format=auto,quality=80,width=1200,height=900,fit=cover/article/main-picture/5ec295af75e39460426037.jpg",
         "user_id": 4
     }

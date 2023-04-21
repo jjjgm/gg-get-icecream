@@ -25,6 +25,15 @@ Profile.init(
             type: DataTypes.BOOLEAN,
             allowNull: false,
         },
+        pet_description: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            references: {
+                model: 'pet',
+                key: 'description',
+            },
+        },
         profileImg: {
             type: DataTypes.STRING,
             validate: {
