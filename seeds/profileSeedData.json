@@ -1,22 +1,19 @@
 [
     {
         "displayName": "Rose",
-        "hasPet": false,
-        "user_id": 1
+        "hasPet": false
     },
     {
         "displayName": "Sophia",
-        "hasPet": true,
-        "user_id": 2
+        "hasPet": true
+
     },
     {
         "displayName": "Blanche",
-        "hasPet": true,
-        "user_id": 3
+        "hasPet": true
     },
     {
         "displayName": "Dorothy",
-        "hasPet": true,
-        "user_id": 4
+        "hasPet": true
     }
 ]
