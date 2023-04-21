@@ -15,14 +15,14 @@
     <div class="row">
         <div id="sidebar" class="col-3 min-vh-100 pt-5">
             <div class="btn-group-vertical w-100">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio1">My profile</label>
+                <input type="radio" class="btn-check" name="account-action" id="user" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="user">My profile</label>
 
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio2">Dog profile</label>
+                <input type="radio" class="btn-check" name="account-action" id="dog" autocomplete="off">
+                <label class="btn btn-outline-primary" for="dog">Dog profile</label>
 
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio3">My friends</label>
+                <input type="radio" class="btn-check" name="account-action" id="friends" autocomplete="off">
+                <label class="btn btn-outline-primary" for="friends">My friends</label>
             </div>
         </div>
 
@@ -99,7 +99,7 @@
                             <h5>{{petname}}</h5>
                             <h5>age: {{petage}}</h5>
                             <h5>🌐 {{petlocation}}</h5>
-                            <button class="mt-2">edit profile</button>
+                            <button id="edit-btn" class="mt-2" data-bs-toggle="modal" data-bs-target="#editModal">edit profile</button>
                         </div>
                     </div>
                 </div>

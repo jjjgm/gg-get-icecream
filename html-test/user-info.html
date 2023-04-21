@@ -73,7 +73,79 @@
                             <h5>Rose Nylund</h5>
                             <h5>age: 45</h5>
                             <h5>🌐 St. Olaf, MN</h5>
-                            <button class="mt-2">edit profile</button>
+                            <button id="edit-btn" class="mt-2" data-bs-toggle="modal" data-bs-target="#editModal">edit profile</button>
+                        
+                            <!-- edit modal -->
+                            <div id="editModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Edit profile</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="edit-username" placeholder="Edit name here">
+                                                <label for="floatingInput">Name</label>
+                                            </div>
+
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="edit-userlocation" placeholder="Edit location here">
+                                                <label for="floatingInput">Location</label>
+                                            </div>
+
+                                            <div class="form-floating mb-3">
+                                                <textarea class="form-control" placeholder="Edit bio here" id="edit-userbio"></textarea>
+                                                <label for="floatingTextarea">Bio</label>
+                                            </div>
+
+                                            <hr>
+
+                                            <h6>Edit likes and dislikes</h6>
+
+                                            <table class="my-3 w-100">
+                                                <tr>
+                                                    <th scope="row">like</th>
+                                                    <td>Going to the beach</td>
+                                                    <td>🗑️</td>
+                                                </tr>
+                                            </table>
+
+                                            <div class="input-group mb-3 w-100">
+                                                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pick</button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#" class="dropdown-item">Like</a></li>
+                                                    <li><a href="#" class="dropdown-item">Dislike</a></li>
+                                                </ul>
+                                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                            </div>
+
+                                            <hr>
+
+                                            <h6>Edit interests</h6>
+
+                                            <table class="my-3 w-100">
+                                                <tr>
+                                                    <td>Volunteering for charity</td>
+                                                    <td>🗑️</td>
+                                                </tr>
+                                            </table>
+
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="Add new interest" aria-label="Add new interest" aria-describedby="submit-button">
+                                                <button type="button" id="submit-button">Submit</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" data-bs-dismiss="modal">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
