@@ -25,8 +25,15 @@ Profile.init(
             type: DataTypes.BOOLEAN,
             allowNull: false,
         },
+        profileImg: {
+            type: DataTypes.STRING,
+            validate: {
+                isUrl: true,
+            }
+        },
         friend_id: {
             type: DataTypes.INTEGER,
+            allowNull: true,
             references: {
                 model: 'friend',
                 id: 'id',
@@ -35,11 +42,11 @@ Profile.init(
 },
     {
         sequelize,
-        timeStamps: false,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'profile'
+        modelName: 'profile',
     }
-)
+);
 
 module.exports = Profile

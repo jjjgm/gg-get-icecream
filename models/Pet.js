@@ -23,6 +23,12 @@ Pet.init (
             type: DataTypes.STRING,
             allowNull: false
         },
+        petImg: {
+            type: DataTypes.STRING,
+            validate: {
+                isUrl: true,
+            }
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

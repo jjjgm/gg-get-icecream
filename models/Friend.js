@@ -36,11 +36,11 @@ Friend.init(
     },
     {
         sequelize,
-            timeStamps: false,
-            freezeTableName: true,
-            underscored: true,
-            modelName: 'friend'
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'friend',
         }
-)
+);
 
 module.exports = Friend
