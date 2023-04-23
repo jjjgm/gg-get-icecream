@@ -134,7 +134,7 @@
                         </tr>
                     </table>
 
-                    <div class="input-group mb-3 w-100">
+                    <div class="input-group mb-4 w-100">
                         <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pick</button>
                         <ul class="dropdown-menu">
                             <li><a href="#" class="dropdown-item">Like</a></li>
@@ -142,68 +142,88 @@
                         </ul>
                         <input type="text" class="form-control" aria-label="Text input with dropdown button">
                         <button type="button" id="submit-like">Submit</button>
+                    </div>
+                </div>
+
+                <div id="has-pet">
+                    <h5 class="mb-3">Do you have a dog?</h5>
+
+                    <div class="d-flex justify-content-around">
+                        <div class="form-check">
+                            <input type="radio" value="true" id="yes-pet" name="has-pet" checked>
+                            <label for="">Yes</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" value="false" id="no-pet" name="has-pet">
+                            <label for="">No</label>
+                        </div>
                     </div>
                 </div>
 
                 <hr class="my-4">
 
-                <h4 class="mb-3">Fill out your dog's profile</h4>
-                
-                <div class="mb-3">
-                    <label for="dog-picture" class="d-block">Dog Picture</label>
-                    <input type="file" id="dog-picture" name="dog-picture" accept="image/*">
-                </div>
+                <div id="dog-form">
+                    <h4 class="mb-3">Fill out your dog's profile</h4>
+                    
+                    <div class="mb-3">
+                        <label for="dog-picture" class="d-block">Dog Picture</label>
+                        <input type="file" id="dog-picture" name="dog-picture" accept="image/*">
+                    </div>
 
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="dog-name" name="dog-name"  placeholder="Dog name" required>
-                    <label for="dog-name">Dog name</label>
-                </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="dog-name" name="dog-name"  placeholder="Dog name" required>
+                        <label for="dog-name">Dog name</label>
+                    </div>
 
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="dog-breed" name="dog-breed" placeholder="Dog breed" required>
-                    <label for="dog-breed">Dog breed</label>
-                </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="dog-breed" name="dog-breed" placeholder="Dog breed" required>
+                        <label for="dog-breed">Dog breed</label>
+                    </div>
 
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="dog-age" name="dog-age" placeholder="Dog age" required>
-                    <label for="dog-age">Dog age</label>
-                </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="dog-age" name="dog-age" placeholder="Dog age" required>
+                        <label for="dog-age">Dog age</label>
+                    </div>
 
-                <div class="form-floating mb-3">
-                    <select class="form-select" id="dog-gender" aria-label="Select dog gender" name="dog-gender" required>
-                        <option selected>-- Please select an option --</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="dog-gender" aria-label="Select dog gender" name="dog-gender" required>
+                            <option selected>-- Please select an option --</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
 
-                    <label for="dog-gender">Dog gender</label>
-                </div>
+                        <label for="dog-gender">Dog gender</label>
+                    </div>
 
-                <div class="form-floating mb-4">
-                    <textarea class="form-control" placeholder="Write a short bio for your dog here" id="dog-description" name="dog-description"></textarea>
-                    <label for="dog-description">Write a short bio for your dog here</label>
-                </div>
+                    <div class="form-floating mb-4">
+                        <textarea class="form-control" placeholder="Write a short bio for your dog here" id="dog-description" name="dog-description"></textarea>
+                        <label for="dog-description">Write a short bio for your dog here</label>
+                    </div>
 
-                <div id="dog-likedislike">
-                    <h5 class="mb-3">Enter your dog's likes and dislikes</h5>
-                    <table class="w-100 mb-3">
-                        <tr>
-                            <th scope="row">like</th>
-                            <td>Going to the beach</td>
-                            <td><span class="material-symbols-rounded">delete</span></td>
-                        </tr>
-                    </table>
+                    <div id="dog-likedislike">
+                        <h5 class="mb-3">Enter your dog's likes and dislikes</h5>
+                        <table class="w-100 mb-3">
+                            <tr>
+                                <th scope="row">like</th>
+                                <td>Going to the beach</td>
+                                <td><span class="material-symbols-rounded">delete</span></td>
+                            </tr>
+                        </table>
 
-                    <div class="input-group mb-3 w-100">
-                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pick</button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item">Like</a></li>
-                            <li><a href="#" class="dropdown-item">Dislike</a></li>
-                        </ul>
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                        <button type="button" id="submit-like">Submit</button>
+                        <div class="input-group mb-3 w-100">
+                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pick</button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="dropdown-item">Like</a></li>
+                                <li><a href="#" class="dropdown-item">Dislike</a></li>
+                            </ul>
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                            <button type="button" id="submit-like">Submit</button>
+                        </div>
                     </div>
                 </div>
+
+                
 
                 <hr class="my-4">
 
