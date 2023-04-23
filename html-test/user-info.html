@@ -24,22 +24,9 @@
 </head>
 
 <body>
-    <!-- landing page - if signed out -->
-        <!-- <section class="min-vh-100 d-flex justify-content-center align-items-center">
-        
-            <div>
-                <h1>Thank you for being a friend.</h1>
-                <button>Sign up to start</button>
-                <h6>Log in if you already have an account</h6>
-            </div>
-        </section> -->
-    
-    <!-- homepage - if signed in -->
     <header>
         <nav class="navbar justify-content-end">
             <ul class="nav my-2">
-                <li class="nav-item mx-3"><span class="material-symbols-rounded">search</span></li>
-                <li class="nav-item mx-3"><span class="material-symbols-rounded">inbox</span></li>
                 <li class="nav-item mx-3">Account</li>
                 <li class="nav-item mx-3">Logout</li>
             </ul>
@@ -62,7 +49,7 @@
                 </div>
             </div> -->
 
-            <div id="sidebar" class="col-3 min-vh-100 pt-5">
+            <!-- <div id="sidebar" class="col-3 min-vh-100 pt-5">
                 <div class="btn-group-vertical w-100">
                     <input type="radio" class="btn-check" name="account-action" id="user" autocomplete="off" checked>
                     <label class="btn border" for="user">My profile</label>
@@ -73,10 +60,10 @@
                     <input type="radio" class="btn-check" name="account-action" id="friends" autocomplete="off">
                     <label class="btn border" for="friends">My friends</label>
                 </div>
-            </div>
+            </div> -->
     
         <!-- user's profile (same for pet except for headings) -->
-            <div class="col-9 min-vh-100 p-4">
+            <!-- <div class="col-9 min-vh-100 p-4"> -->
                 <h1>Hi, {{user's name}}</h1>
                 <h4>Thank you for being a friend.</h4>
 
@@ -114,31 +101,10 @@
                                             </div>
 
                                             <div class="form-floating mb-3">
-                                                <textarea class="form-control" placeholder="Edit bio here" id="edit-{userbio"></textarea>
+                                                <textarea class="form-control" placeholder="Edit bio here" id="edit-userbio"></textarea>
                                                 <label for="floatingTextarea">Bio</label>
                                             </div>
 
-                                            <hr>
-
-                                            <h6>Edit likes and dislikes</h6>
-
-                                            <table class="my-3 w-100">
-                                                <tr>
-                                                    <th scope="row">like</th>
-                                                    <td>Going to the beach</td>
-                                                    <td><span class="material-symbols-rounded">delete</span></td>
-                                                </tr>
-                                            </table>
-
-                                            <div class="input-group mb-3 w-100">
-                                                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pick</button>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="#" class="dropdown-item">Like</a></li>
-                                                    <li><a href="#" class="dropdown-item">Dislike</a></li>
-                                                </ul>
-                                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                                                <button type="button" id="submit-like">Submit</button>
-                                            </div>
 
                                         </div>
 
@@ -160,33 +126,26 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </div>
-
                 <div class="container mt-4">
                     <div class="row">
-                        <div class="col-6">
-                            <h6>Likes</h6>
-                            <ul>
-                                <li>Lorem ipsum dolor sit amet</li>
-                                <li>Lorem ipsum dolor sit amet</li>
-                            </ul>
+                        <div class="col-5">
+                            <img id="profile-pic" src="./placeholder/dog-portrait.webp" alt="rose">
                         </div>
-                        <div class="col-6">
-                            <h6>Dislikes</h6>
-                            <ul>
-                                <li>Lorem ipsum dolor sit amet</li>
-                                <li>Lorem ipsum dolor sit amet</li>
-                            </ul>
+
+                        <div class="col-7">
+                            <h5>Cheesecake</h5>
+                            <h5>age: 7</h5>
+                            <h5>🌐 Miami, FL</h5>
+                            <button class="mt-2">edit profile</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-4">
-                    <h6>Other interests</h6>
-                    <ul>
-                        <li>Volunteering for charity</li>
-                        <li>Guggenspritzer</li>
-                        <li>Ugel and Flugel</li>
-                    </ul>
+                    <h6>Bio</h6>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
                 </div>
             </div>
         </div>
