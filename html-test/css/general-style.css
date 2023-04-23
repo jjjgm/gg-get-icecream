@@ -13,13 +13,13 @@ button:hover {
     background-color: black;
 }
 
-nav {
+/* nav {
     background-color: aqua;
 }
 
 #sidebar {
     background-color: beige;
-}
+} */
 
 #profile-pic {
     width: 20vw;
@@ -28,3 +28,6 @@ nav {
 #friend-pic {
     width: 30vw;
 }
+
+
+
