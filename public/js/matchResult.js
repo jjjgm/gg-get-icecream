@@ -24,14 +24,18 @@ function addNewFriend() {
 }
 
 //GET - randomly select five users to put in modal
-function getNewFriends() {
-    fetch('/api/users')
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        console.log(data);
-    })
-}
+// function getNewFriends() {
+//     fetch('/api/users')
+//     .then(function(response) {
+//         return response.json();
+//     })
+//     .then(function(data) {
+//         console.log(data);
+//     })
+// }
 
 // click events
+addFriendBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    addNewFriend();
+})
