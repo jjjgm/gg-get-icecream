@@ -118,27 +118,27 @@ deleteInterestsBtn.addEventListener('click', (event) => {
         });
 });
 
-// // Delete interests
-// const deleteInterestsBtn = document.getElementsByClassName('delete-interest');
-// deleteInterestsBtn.addEventListener('click', (event) => {
-// event.preventDefault();
+// Delete interests
+const deleteInterestsBtn = document.getElementsByClassName('delete-interest');
+deleteInterestsBtn.addEventListener('click', (event) => {
+event.preventDefault();
 
-// // Get id of interest to delete
-// const interestId = event.target.getAttribute('data-interest-id');
+// Get id of interest to delete
+const interestId = event.target.getAttribute('data-interest-id');
 
-// // Make a fetch request to delete the interest data
-// fetch(/interests/${interestId}, {
-// method: 'DELETE'
-// })
-// .then(response => {
-// // handle response from server
-// console.log(response);
-// })
-// .catch(error => {
-// // handle errors
-// console.error(error);
-// });
-// });
+// Make a fetch request to delete the interest data
+fetch(/interests/${interestId}, {
+method: 'DELETE'
+})
+.then(response => {
+// handle response from server
+console.log(response);
+})
+.catch(error => {
+// handle errors
+console.error(error);
+});
+});
 
 // Submit edits
 editBtn.addEventListener('click', (event) => {
