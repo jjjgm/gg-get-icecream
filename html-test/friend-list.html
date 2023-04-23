@@ -8,6 +8,9 @@
 
     <link rel="stylesheet" href="./css/reset.css">
 
+    <!-- google icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +38,6 @@
     <header>
         <nav class="navbar justify-content-end">
             <ul class="nav my-2">
-                <li class="nav-item mx-3">Search for a new friend</li>
                 <li class="nav-item mx-3">Account</li>
                 <li class="nav-item mx-3">Logout</li>
             </ul>
@@ -109,15 +111,19 @@
             </div> -->
 
             <div>
-                <h1>My friends</h1>
+                <div class="d-flex justify-content-between">
+                    <h1>My friends</h1>
+                    <button>Add new friend</button>
+                </div>
+                
                 <div>
                     <table class="w-100">
                         <tbody>
                             <tr>
                                 <th scope="row" class="py-3">Dorothy Zbornak</th>
-                                <td class="py-3">🌐 Brooklyn, NY</td>
-                                <td class="py-3">✉️</td>
-                                <td class="py-3">🗑️</td>
+                                <td class="py-3"><span class="material-symbols-rounded">location_city</span> Brooklyn, NY</td>
+                                <td class="py-3"><span class="material-symbols-rounded">mail</span></td>
+                                <td class="py-3"><span class="material-symbols-rounded">delete</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -125,22 +131,23 @@
             </div>
             
             <div class="mt-4">
-                <h1>My furry friends</h1>
+                <div class="d-flex justify-content-between">
+                    <h1>My furry friends</h1>
+                    <button>Add new friend</button>
+                </div>
                 <div>
                     <table class="w-100">
                         <tbody>
                             <tr>
                                 <th scope="row" class="py-3">Dreyfuss</th>
-                                <td class="py-3">🐶</td>
-                                <td class="py-3">🌐 Miami, FL</td>
-                                <td class="py-3">✉️</td>
-                                <td class="py-3">🗑️</td>
+                                <td class="py-3"><span class="material-symbols-rounded">location_city</span> Miami, FL</td>
+                                <td class="py-3"><span class="material-symbols-rounded">mail</span></td>
+                                <td class="py-3"><span class="material-symbols-rounded">delete</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            
         </div>
     </div>
 
