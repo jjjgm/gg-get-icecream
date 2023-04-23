@@ -49,20 +49,14 @@ Profile.init(
                 isUrl: true,
             }
         },
-        user_likes: {
-            type: DataTypes.STRING
-        },
-        user_dislikes: {
-            type: DataTypes.STRING
-        },
-        friend_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: 'friend',
-                id: 'id',
-        }
-    },
+    //     friend_id: {
+    //         type: DataTypes.INTEGER,
+    //         allowNull: true,
+    //         references: {
+    //             model: 'friend',
+    //             id: 'id',
+    //     }
+    // },
 },
     {
         sequelize,

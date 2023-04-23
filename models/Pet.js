@@ -38,12 +38,6 @@ Pet.init (
             allowNull: true,
             index: true,
         },
-        pet_likes: {
-            type:DataTypes.STRING,
-        },
-        pet_dislikes:{
-            type: DataTypes.STRING,
-        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
