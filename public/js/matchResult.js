@@ -23,6 +23,20 @@ function addNewFriend() {
     .catch(error => console.log(error))
 }
 
+// function addNewFriend() {
+//     fetch ('/api/users', {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             id,
+//         }),
+//         headers: {
+//             'Content-Type': 'application/json',
+//         }
+//     })
+//     .then(response => console.log(response))
+//     .catch(error => console.log(error))
+// }
+
 //GET - randomly select five users to put in modal
 // function getNewFriends() {
 //     fetch('/api/users')

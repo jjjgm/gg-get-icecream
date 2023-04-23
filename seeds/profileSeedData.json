@@ -4,9 +4,7 @@
         "location": "Florida",
         "hasPet": false,
         "pet_id": 1,
-        "bio": "Just a bio",
-        "user_likes": "Dogs, Sun",
-        "user_dislikes": "Loud Music, Winter",
+        "bio": "Just a bio user 1",
         "profileImg": "https://images.squarespace-cdn.com/content/v1/5990c5a53e00bea41c0d0fc2/1510527588686-A24Z4WCM823DZOBK7LE2/Rose+Ice+Skating+5.jpg?format=750w"
     },
     {
@@ -14,9 +12,7 @@
         "location": "Florida",
         "hasPet": true,
         "pet_id":2,
-        "bio": "Just a bio",
-        "user_likes": "Cheese, Bread, Dogs",
-        "user_dislikes": "Nothing",
+        "bio": "Just a bio user 2",
         "profileImg": "https://images.ctfassets.net/jxsch4jish6b/photo-48947/f11a2c4de0b26a8cfc23c432093846b6/48947-golden-girls-little-sophia.png?fm=jpg&fl=progressive&w=900&q=50"
     },
     {
@@ -24,9 +20,7 @@
         "location": "Florida",
         "hasPet": true,
         "pet_id":2,
-        "bio": "Just a bio",
-        "user_likes": "Summer, Dogs, Beach",
-        "user_dislikes": "Apples, Cold, Fur",
+        "bio": "Just a bio user 3",
         "profileImg": "https://m.media-amazon.com/images/M/MV5BMjEzNDg5Nzc3MV5BMl5BanBnXkFtZTgwMTUwMTY1MjE@._V1_.jpg"
     },
     {
@@ -34,9 +28,7 @@
         "location": "Florida",
         "hasPet": true,
         "pet_id":2,
-        "bio": "Just a bio",
-        "user_likes": "Sleep, Dogs, Walks",
-        "user_dislikes": "Mornings, Tea",
+        "bio": "Just a bio user 4",
         "profileImg": "https://i.pinimg.com/564x/99/f3/4e/99f34e5cf2739aa28c871dff6fcb24b6.jpg"
     }
 ]
