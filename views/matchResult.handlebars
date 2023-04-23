@@ -1,8 +1,8 @@
 <header>
     <nav class="navbar justify-content-end">
         <ul class="nav my-2">
-            <li class="nav-item mx-3"><span class="material-symbols-rounded">search</span></li>
-            <li class="nav-item mx-3"><span class="material-symbols-rounded">inbox</span></li>
+            {{!-- <li class="nav-item mx-3"><span class="material-symbols-rounded">search</span></li>
+            <li class="nav-item mx-3"><span class="material-symbols-rounded">inbox</span></li> --}}
             <li class="nav-item mx-3">Account</li>
             <li class="nav-item mx-3">Logout</li>
         </ul>
@@ -48,18 +48,30 @@
             </div>
         </div>
 
-        <div class="mt-4">
-            <h6>Other interests</h6>
-            <ul>
-                {{#each}}
-                <li>{{information}}</li>
-                {{/each}}
-            </ul>
-        </div>
-
         <div class="mt-4 d-flex justify-content-evenly">
             <button id="add-friend">Add friend</button>
-            <button id="find-new">Find new friend</button>
+            <button data-bs-toggle="modal" data-bs-target="#find-new">Find new friend</button>
+
+            <div id="find-new" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Find New Friend</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <table class="w-100">
+                                <tr>
+                                    <td>{{profile icon}}</td>
+                                    <td>{{name}}</td>
+                                    <td><span class="material-symbols-rounded">person_add</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

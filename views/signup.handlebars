@@ -1,64 +1,153 @@
-<section class="min-vh-100 d-flex justify-content-center align-items-center">
+<section class="d-flex justify-content-center">
     <!-- sign up page -->
-    <div>
-        <h1>Sign Up</h1>
-        <form>
-            <div>
-                <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="full-name" required>
-            </div>
-            <div>
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div>
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-            </div>
-            <div>
-                <label for="profile-picture">Profile Picture</label>
-                <input type="file" id="profile-picture" name="profile-picture" accept="image/*">
-            </div>
-            <div>
-                <label for="location">Location</label>
-                <input type="text" id="location" name="location" required>
-            </div>
-            <div>
-                <label for="dog-name">Dog Name</label>
-                <input type="text" id="dog-name" name="dog-name" required>
-            </div>
-            <div>
-                <label for="dog-breed">Dog Breed</label>
-                <input type="text" id="dog-breed" name="dog-breed" required>
-            </div>
-            <div>
-                <label for="dog-age">Dog Age</label>
-                <input type="text" id="dog-age" name="dog-age" required>
-            </div>
-            <div>
-                <label for="dog-gender">Dog Gender</label>
-                <select id="dog-gender" name="dog-gender" required>
-                    <option value="">--Please select an option--</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-            <div>
-                <label for="dog-description">Dog Description</label>
-                <textarea id="dog-description" name="dog-description" rows="3"></textarea>
-            </div>
-            <div>
-                <label for="dog-picture">Dog Picture</label>
-                <input type="file" id="dog-picture" name="dog-picture" accept="image/*">
-            </div>
-            <div class="d-flex justify-content-center align-items-center">
-                <button type="submit">Sign Up</button>
-            </div>
-        </form>
-    </div>
-</section>
-<script src= "../public/js/signup.js"></script>
+        <div>
+            <h1 class="mt-5">Welcome!</h1>
+            <h3 class="mb-4">Thank you for being a friend.</h3>
+
+            <form>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="full-name" name="full-name" placeholder="Full name" required>
+                    <label for="full-name">Full name</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required>
+                    <label for="email">Email address</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    <label for="password">Password</label>
+                </div>
+
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                    <label for="confirm-password">Confirm password</label>
+                </div>
+
+                <hr class="my-4">
+
+                <h4 class="mb-3">Fill out your profile</h4>
+
+                <div class="mb-3">
+                    <label for="profile-picture" class="d-block">Profile Picture</label>
+                    <input type="file" id="profile-picture" name="profile-picture" accept="image/*">
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="location" name="location" placeholder="Location" required>
+                    <label for="location">Location</label>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <textarea class="form-control" placeholder="Write a short bio here" id="user-bio" name="user-bio"></textarea>
+                    <label for="user-bio">Write a short bio here</label>
+                </div>
+
+                <div id="user-likedislike" class="mb-3">
+                    <h5 class="mb-3">Enter your likes and dislikes</h5>
+                    <table class="w-100 mb-3">
+                        <tr>
+                            <th scope="row">like</th>
+                            <td>Going to the beach</td>
+                            <td><span class="material-symbols-rounded">delete</span></td>
+                        </tr>
+                    </table>
+
+                    <div class="input-group mb-3 w-100">
+                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pick</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">Like</a></li>
+                            <li><a href="#" class="dropdown-item">Dislike</a></li>
+                        </ul>
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                        <button type="button" id="submit-like">Submit</button>
+                    </div>
+                </div>
+
+                <div id="has-pet">
+                    <h5 class="mb-3">Do you have a dog?</h5>
+
+                    <div class="d-flex justify-content-around">
+                        <div class="form-check">
+                            <input type="radio" value="true" id="yes-pet" name="has-pet" checked>
+                            <label for="">Yes</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" value="false" id="no-pet" name="has-pet">
+                            <label for="">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                    <div id="dog-form">
+                        <h4 class="mb-3">Fill out your dog's profile</h4>
+                        
+                        <div class="mb-3">
+                            <label for="dog-picture" class="d-block">Dog Picture</label>
+                            <input type="file" id="dog-picture" name="dog-picture" accept="image/*">
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="dog-name" name="dog-name"  placeholder="Dog name" required>
+                            <label for="dog-name">Dog name</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="dog-breed" name="dog-breed" placeholder="Dog breed" required>
+                            <label for="dog-breed">Dog breed</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="dog-age" name="dog-age" placeholder="Dog age" required>
+                            <label for="dog-age">Dog age</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <select class="form-select" id="dog-gender" aria-label="Select dog gender" name="dog-gender" required>
+                                <option selected>-- Please select an option --</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+
+                            <label for="dog-gender">Dog gender</label>
+                        </div>
+
+                        <div class="form-floating mb-4">
+                            <textarea class="form-control" placeholder="Write a short bio for your dog here" id="dog-description" name="dog-description"></textarea>
+                            <label for="dog-description">Write a short bio for your dog here</label>
+                        </div>
+
+                        <div id="dog-likedislike">
+                            <h5 class="mb-3">Enter your dog's likes and dislikes</h5>
+                            <table class="w-100 mb-3">
+                                <tr>
+                                    <th scope="row">like</th>
+                                    <td>Going to the beach</td>
+                                    <td><span class="material-symbols-rounded">delete</span></td>
+                                </tr>
+                            </table>
+
+                            <div class="input-group mb-3 w-100">
+                                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pick</button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" class="dropdown-item">Like</a></li>
+                                    <li><a href="#" class="dropdown-item">Dislike</a></li>
+                                </ul>
+                                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                <button type="button" id="submit-like">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                <hr class="my-4">
+
+                <div class="d-flex justify-content-center align-items-center mb-5">
+                    <button class="w-75" type="submit">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </section>
