@@ -4,7 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const http = require('http');
 const socketio = require('socket.io');
-const routes = require('./controllers');
+const routes = require('./controllers/api/apiRoutes.js');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -35,10 +35,7 @@ const hbs = exphbs.create({});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(routes);
+
 
 // Socket.io code
 io.on('connection', (socket) => {
@@ -63,6 +60,11 @@ io.on('connection', (socket) => {
     console.log('A user disconnected');
   });
 });
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   server.listen(PORT, () => console.log(`Now Listening at ${PORT}!`));

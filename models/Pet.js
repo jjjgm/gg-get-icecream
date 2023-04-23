@@ -19,6 +19,10 @@ Pet.init (
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        gender:{
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         breed: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -28,6 +32,17 @@ Pet.init (
             validate: {
                 isUrl: true,
             }
+        },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            index: true,
+        },
+        pet_likes: {
+            type:DataTypes.STRING,
+        },
+        pet_dislikes:{
+            type: DataTypes.STRING,
         },
         user_id: {
             type: DataTypes.INTEGER,

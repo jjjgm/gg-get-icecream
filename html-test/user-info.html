@@ -49,16 +49,29 @@
     <div class="container-fluid">
         
         <div class="row">
-            <div id="sidebar" class="col-3 min-vh-100 pt-5">
-                <div class="btn-group-vertical w-100">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <!-- <div id="sidebar" class="col-3 min-vh-100 pt-5">
+                <div class="btn-group-vertical w-100" >
+                    <input type="radio" class="btn-check" name="side-menu-options" id="sidebar-user" autocomplete="off" checked>
                     <label class="btn btn-outline-primary" for="btnradio1">My profile</label>
 
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <input type="radio" class="btn-check" name="side-menu-options" id="sidebar-dog" autocomplete="off">
                     <label class="btn btn-outline-primary" for="btnradio2">Dog profile</label>
 
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <input type="radio" class="btn-check" name="side-menu-options" id="sidebar-friends" autocomplete="off">
                     <label class="btn btn-outline-primary" for="btnradio3">My friends</label>
+                </div>
+            </div> -->
+
+            <div id="sidebar" class="col-3 min-vh-100 pt-5">
+                <div class="btn-group-vertical w-100">
+                    <input type="radio" class="btn-check" name="account-action" id="user" autocomplete="off" checked>
+                    <label class="btn border" for="user">My profile</label>
+    
+                    <input type="radio" class="btn-check" name="account-action" id="dog" autocomplete="off">
+                    <label class="btn border" for="dog">Dog profile</label>
+    
+                    <input type="radio" class="btn-check" name="account-action" id="friends" autocomplete="off">
+                    <label class="btn border" for="friends">My friends</label>
                 </div>
             </div>
     
@@ -78,10 +91,10 @@
                             <h5>age: 45</h5>
                             <h5><span class="material-symbols-rounded">location_city</span> St. Olaf, MN</h5>
                             
-                            <button id="edit-btn" class="mt-2" data-bs-toggle="modal" data-bs-target="#edit{UserModal">edit profile</button>
+                            <button id="edit-btn" class="mt-2" data-bs-toggle="modal" data-bs-target="#editUserModal">edit profile</button>
                         
                             <!-- edit modal -->
-                            <div id="edit{UserModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div id="editUserModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -91,12 +104,12 @@
                                     
                                         <div class="modal-body">
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" id="edit-{username" placeholder="Edit name here">
+                                                <input type="text" class="form-control" id="edit-username" placeholder="Edit name here">
                                                 <label for="floatingInput">Name</label>
                                             </div>
 
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" id="edit-{userlocation" placeholder="Edit location here">
+                                                <input type="text" class="form-control" id="edit-userlocation" placeholder="Edit location here">
                                                 <label for="floatingInput">Location</label>
                                             </div>
 
@@ -127,21 +140,6 @@
                                                 <button type="button" id="submit-like">Submit</button>
                                             </div>
 
-                                            <hr>
-
-                                            <h6>Edit interests</h6>
-
-                                            <table class="my-3 w-100">
-                                                <tr>
-                                                    <td>Volunteering for charity</td>
-                                                    <td><span class="material-symbols-rounded">delete</span></td>
-                                                </tr>
-                                            </table>
-
-                                            <div class="input-group mb-3">
-                                                <input type="text" class="form-control" placeholder="Add new interest" aria-label="Add new interest" aria-describedby="submit-button">
-                                                <button type="button" class="submit-interest">Submit</button>
-                                            </div>
                                         </div>
 
                                         <div class="modal-footer">
