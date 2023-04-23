@@ -6,7 +6,7 @@ class Profile extends Model { }
 
 Profile.init(
     {
-        id: {
+        profile_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
@@ -18,8 +18,20 @@ Profile.init(
             unique: true,
             references: {
                 model: 'user',
-                key: 'username',
+                key: 'name',
             }
+        },
+        age: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                isNumeric: true,
+                min: 18
+            }
+        },
+        gender:{
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         location: {
             type: DataTypes.STRING,
@@ -28,17 +40,6 @@ Profile.init(
                 validate:{
                     isAlpha: true,
                 }
-        },
-        hasPet: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-        },
-        pet_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'pet',
-                key: 'id',
-            },
         },
         bio: {
             type: DataTypes.STRING,

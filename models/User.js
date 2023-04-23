@@ -13,21 +13,13 @@ User.init (
             primaryKey: true,
             autoIncrement: true,
         },
-        username: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             index: true,
             validate: {
-                len: [4,12]
-            }
-        },
-        age: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                isNumeric: true,
-                min: 18
+                len: [4,14]
             }
         },
         email: {
