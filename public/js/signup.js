@@ -7,11 +7,10 @@ const lastNameInput = document.getElementById('lastName');
 const profilePictureInput = document.getElementById('profilePicture');
 const locationInput = document.getElementById('location');
 const petNameInput = document.getElementById('petName');
-const petBreedInput = document.getElementById('petBreed');
 const petAgeInput = document.getElementById('petAge');
 const petGenderInput = document.getElementById('petGender');
-const petDescriptionInput = document.getElementById('petDescription');
-const petProfilePictureInput = document.getElementById('petProfilePicture');
+
+
 
 // Add an event listener to the signup form
 document.getElementById('signupForm').addEventListener('submit', (event) => {

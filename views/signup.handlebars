@@ -4,8 +4,8 @@
         <h1>Sign Up</h1>
         <form>
             <div>
-                <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="full-name" required>
+                <label for="pet-name">Pet's Name</label>
+                <input type="text" id="pet-name" name="pet-name" required>
             </div>
             <div>
                 <label for="email">Email Address</label>
@@ -28,6 +28,22 @@
                 <input type="text" id="location" name="location" required>
             </div>
             <div>
+                <label for="dog-gender">Pet's Gender</label>
+                <select id="dog-gender" name="dog-gender" required>
+                    <option value="">--Please select an option--</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div>
+                <label for="dog-description">Pet Description</label>
+                <textarea id="dog-description" name="dog-description" rows="3"></textarea>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <button type="submit">Sign Up</button>
+            </div>
+
+            {{!-- <div>
                 <label for="dog-name">Dog Name</label>
                 <input type="text" id="dog-name" name="dog-name" required>
             </div>
@@ -38,27 +54,12 @@
             <div>
                 <label for="dog-age">Dog Age</label>
                 <input type="text" id="dog-age" name="dog-age" required>
-            </div>
-            <div>
-                <label for="dog-gender">Dog Gender</label>
-                <select id="dog-gender" name="dog-gender" required>
-                    <option value="">--Please select an option--</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-            <div>
-                <label for="dog-description">Dog Description</label>
-                <textarea id="dog-description" name="dog-description" rows="3"></textarea>
-            </div>
-            <div>
+            </div> --}}
+            {{!-- <div>
                 <label for="dog-picture">Dog Picture</label>
                 <input type="file" id="dog-picture" name="dog-picture" accept="image/*">
-            </div>
-            <div class="d-flex justify-content-center align-items-center">
-                <button type="submit">Sign Up</button>
-            </div>
+            </div> --}}
         </form>
     </div>
 </section>
-<script src= "../public/js/signup.js"></script>
+<script src="../public/js/signup.js"></script>

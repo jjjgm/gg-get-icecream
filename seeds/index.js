@@ -19,6 +19,9 @@ const seedDatabase = async () => {
         user_id: users[Math.floor(Math.random() * users.length)].id,
     });
 }
+const messages = await Message.bulkCreate(messageData, {
+    returning: true,
+});
 
     process.exit(0);
 };

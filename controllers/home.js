@@ -7,18 +7,20 @@ const db = require('../models');
 // router.get('/api/users', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
-        const homepage = await db.User.findAll();
-        res.render('users', { homepage });
+        const petProfiles = await db.Pet.findAll({});
+
+        const pets = petProfiles.map((pet) => pet.get({ plain: true }));
+
+        res.render('homepage', {
+            pets,
+            logged_in: req.session.logged_in
+        });
     } catch (err) {
-        console.log(err);
-        res.redirect('/users');
-        //     res.status(200).json(user);
-        // } catch (err) {
-        //     res.status(500).json(err);
-        // }
+        res.status(500).json(err);
+
     }
 });
-// const user = homepage.map((user) => user.get({ plain: true }));
+
 
 // // GET a single user by ID
 // router.get('/users:id', async (req, res) => {
@@ -50,6 +52,16 @@ router.get('/api/messages', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/login', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+      res.redirect('/message');
+      return;
+    }
+  
+    res.render('login');
+  });
 
 
 module.exports = router;
