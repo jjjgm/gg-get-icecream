@@ -1,6 +1,6 @@
 const User = require('./User');
 const Pet = require('./Pet');
-const Friend = require('./Friend');
+const Friend = require('./Message');
 const Profile = require('./Profile');
 
 // KEY to link to USER

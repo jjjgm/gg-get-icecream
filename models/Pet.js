@@ -19,6 +19,14 @@ Pet.init (
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            // index: true,
+            //     validate:{
+            //         isAlpha: true,
+            //     }
+            },
         gender:{
             type: DataTypes.STRING,
             allowNull: false,
@@ -33,17 +41,20 @@ Pet.init (
                 isUrl: true,
             }
         },
-        description: {
+        bio: {
             type: DataTypes.STRING,
             allowNull: true,
-            index: true,
         },
-        pet_likes: {
-            type:DataTypes.STRING,
-        },
-        pet_dislikes:{
+        user_id: {
             type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            references: {
+                model: 'user',
+                key: 'id',
+            }
         },
+        
         user_id: {
             type: DataTypes.INTEGER,
             references: {
