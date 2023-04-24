@@ -2,3 +2,39 @@
 * {
   font-family: Poppins, sans-serif;
 }
+
+* {
+  font-family: Poppins, sans-serif;
+}
+
+.btn-1 {
+  border: 1.5px solid black;
+  background-color: transparent;
+  padding: 7px 13px;
+}
+
+.btn-2 {
+  border: 1.5px solid black;
+  background-color: transparent;
+  font-size: .75rem;
+  padding: 0 15px;
+}
+
+.btn-1:hover, .btn-2:hover {
+  background-color: black;
+  color: white;
+}
+
+.form-control, .form-select {
+  border: 1.5px solid black;
+  border-radius: 0;
+}
+
+.profile-photo {
+  max-width: 18vh;
+}
+
+.delete-btn {
+  border: none;
+  background-color: transparent;
+}
