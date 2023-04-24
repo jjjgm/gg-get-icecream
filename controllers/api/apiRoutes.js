@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const db = require('../../models');
+// const express = require('express');
+// const router = express.Router();
+// const db = require('../../models');
 
 // // GET all users
 // router.get('/api/users', async (req, res) => {
@@ -80,43 +80,43 @@ const db = require('../../models');
 //     }
 // });
   
-// POST a new friend
-router.post('/api/friends', async (req, res) => {
-    try {
-      const newFriend = await db.Friend.create(req.body);
-      res.status(200).json(newFriend);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-});
+// // POST a new friend
+// router.post('/api/friends', async (req, res) => {
+//     try {
+//       const newFriend = await db.Friend.create(req.body);
+//       res.status(200).json(newFriend);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+// });
   
-// PUT update an existing friend
-router.put('/api/friends/:id', async (req, res) => {
-    try {
-      const updatedFriend = await db.Friend.update(req.body, {
-        where: {
-          id: req.params.id,
-        },
-      });
-      res.status(200).json(updatedFriend);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-});
+// // PUT update an existing friend
+// router.put('/api/friends/:id', async (req, res) => {
+//     try {
+//       const updatedFriend = await db.Friend.update(req.body, {
+//         where: {
+//           id: req.params.id,
+//         },
+//       });
+//       res.status(200).json(updatedFriend);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+// });
   
-  // DELETE a friend
-router.delete('/api/friends/:id', async (req, res) => {
-    try {
-      const deletedFriend = await db.Friend.destroy({
-        where: {
-          id: req.params.id,
-        },
-      });
-      res.status(200).json(deletedFriend);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-});
+//   // DELETE a friend
+// router.delete('/api/friends/:id', async (req, res) => {
+//     try {
+//       const deletedFriend = await db.Friend.destroy({
+//         where: {
+//           id: req.params.id,
+//         },
+//       });
+//       res.status(200).json(deletedFriend);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+// });
 
 // // GET all pets
 // router.get('/api/pets', async (req, res) => {
@@ -196,42 +196,42 @@ router.delete('/api/friends/:id', async (req, res) => {
 //     }
 // });
   
-// POST a new profile
-router.post('/api/profiles', async (req, res) => {
-    try {
-      const newProfile = await db.Profile.create(req.body);
-      res.status(200).json(newProfile);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-});
+// // POST a new profile
+// router.post('/api/profiles', async (req, res) => {
+//     try {
+//       const newProfile = await db.Profile.create(req.body);
+//       res.status(200).json(newProfile);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+// });
   
-// PUT update an existing profile
-router.put('/api/profiles/:id', async (req, res) => {
-    try {
-      const updatedProfile = await db.Profile.update(req.body, {
-        where: {
-          id: req.params.id,
-        },
-      });
-      res.status(200).json(updatedProfile);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-});
+// // PUT update an existing profile
+// router.put('/api/profiles/:id', async (req, res) => {
+//     try {
+//       const updatedProfile = await db.Profile.update(req.body, {
+//         where: {
+//           id: req.params.id,
+//         },
+//       });
+//       res.status(200).json(updatedProfile);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+// });
   
-// DELETE a Profile
-router.delete('/api/profiles/:id', async (req, res) => {
-    try {
-      const deletedProfile = await db.Profile.destroy({
-        where: {
-          id: req.params.id,
-        },
-      });
-      res.status(200).json(deletedProfile);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-});
+// // DELETE a Profile
+// router.delete('/api/profiles/:id', async (req, res) => {
+//     try {
+//       const deletedProfile = await db.Profile.destroy({
+//         where: {
+//           id: req.params.id,
+//         },
+//       });
+//       res.status(200).json(deletedProfile);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+// });
 
 module.exports = router;

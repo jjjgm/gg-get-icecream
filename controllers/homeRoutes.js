@@ -3,21 +3,21 @@ const router = express.Router();
 const db = require('../../models');
 
 
-// GET all friends
-router.get('/api/friends', async (req, res) => {
+// GET all users
+router.get('/api/users', async (req, res) => {
     try {
-        const friends = await db.Friend.findAll({});
+        const userData = await User.findAll({});
         res.status(200).json(friends);
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-// GET a single friend by ID
-router.get('/api/friends/:id', async (req, res) => {
+// GET a single user by ID
+router.get('/api/users/:id', async (req, res) => {
     try {
-        const friend = await db.Friend.findByPk(req.params.id);
-        res.status(200).json(friend);
+        const userData = await db.User.findByPk(req.params.id);
+        res.status(200).json(user);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -43,10 +43,10 @@ router.get('/api/pets/:id', async (req, res) => {
     }
 });
 
-// GET all Profiles
-router.get('/api/profiles', async (req, res) => {
+// GET all messages
+router.get('/api/messages', async (req, res) => {
     try {
-        const profiles = await db.Profile.findAll({});
+        const messages = await db.Message.findAll({});
         res.status(200).json(profiles);
     } catch (err) {
         res.status(500).json(err);
@@ -54,9 +54,9 @@ router.get('/api/profiles', async (req, res) => {
 });
 
 // GET a single profile by ID
-router.get('/api/profiles/:id', async (req, res) => {
+router.get('/api/messages/:id', async (req, res) => {
     try {
-        const profile = await db.Profile.findByPk(req.params.id);
+        const profile = await db.Message.findByPk(req.params.id);
         res.status(200).json(profile);
     } catch (err) {
         res.status(500).json(err);
