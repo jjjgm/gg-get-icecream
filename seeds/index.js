@@ -15,7 +15,7 @@ const seedDatabase = async () => {
         individualHooks: true,
         returning: true,
     });
-    const pets = await Pet.bulkCreate(petSeedData, {
+  /*   const pets = await Pet.bulkCreate(petSeedData, {
         returning: true,
     });
     for (const profile of profileSeedData) {
@@ -28,7 +28,7 @@ const seedDatabase = async () => {
     const friend = await Friend.bulkCreate(friendSeedData, {
         returning: true,
     });
-    
+     */
 
     // for (const friend of petSeedData) {
     //     const newFriend = await Friend.create({

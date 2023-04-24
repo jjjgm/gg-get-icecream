@@ -6,7 +6,7 @@ const db = require('../models');
 router.get('/', async (req, res) => {
   try {
     const dogs = await db.Dog.findAll();
-    res.render('dogs/index', { dogs });
+    res.render('index', { dogs });
   } catch (error) {
     console.log(error);
     res.redirect('/dogs');

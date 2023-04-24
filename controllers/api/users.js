@@ -6,7 +6,7 @@ const db = require('../models');
 router.get('/', async (req, res) => {
   try {
     const users = await db.User.findAll();
-    res.render('users/index', { users });
+    res.render('users', { users });
   } catch (error) {
     console.log(error);
     res.render('error');
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 // Route for displaying the form for creating a new user
 router.get('/new', (req, res) => {
-  res.render('users/new');
+  res.render('new');
 });
 
 // Route for creating a new user
@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
 router.get('/:id/edit', async (req, res) => {
   try {
     const user = await db.User.findByPk(req.params.id);
-    res.render('users/edit', { user });
+    res.render('edit', { user });
   } catch (error) {
     console.log(error);
     res.render('error');
