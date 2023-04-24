@@ -1,39 +1,23 @@
-const User = require('./User');
-const Pet = require('./Pet');
-const Friend = require('./Friend');
-const Profile = require('./Profile');
-
-// KEY to link to USER
-Profile.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE',
+const { Sequelize } = require('sequelize');
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
+  host: 'localhost',
+  dialect: 'mysql',
+  port: 3306
 });
 
-Profile.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
+const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+db.User = new (require('./users'))(sequelize, Sequelize);
+db.Message = new (require('./messages'))(sequelize, Sequelize);
+db.Dog = new (require('./dog'))(sequelize, Sequelize);
+
+Object.keys(db).forEach((modelName) => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
 });
 
-Pet.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
-});
-
-Profile.hasOne(Pet,{
-    foreignKey: 'pet_id',
-}
-    )
-
-Friend.belongsTo(Profile,  {
-    foreignKey: 'profile_id',
-});
-
-Profile.hasMany(Friend, {
-    foreignKey: 'profile_id',
-});
-
-// User.hasMany(Friend, {
-//     foreignKey: 'profile_id',
-// });
-
-module.exports = { User, Profile, Pet, Friend };
+module.exports = db;

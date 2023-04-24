@@ -4,8 +4,8 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const http = require('http');
 const socketio = require('socket.io');
-const routes = require('./controllers/api/apiRoutes.js');
-const sequelize = require('./config/connection');
+const routes = require('./controllers/api/apiRoutes');
+const { Sequelize } = require('sequelize');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -13,6 +13,11 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 const PORT = process.env.PORT || 3001;
+
+const sequelize = new Sequelize('mintchocolatechip_db', 'root', 'imthebest', {
+  host: 'localhost',
+  dialect: 'mysql',
+});
 
 const sess = {
   secret: 'mySecret',
@@ -24,9 +29,10 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize, // Pass the Sequelize instance here
+  }),
 };
+
 
 app.use(session(sess));
 
@@ -35,31 +41,6 @@ const hbs = exphbs.create({});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-
-
-// Socket.io code
-io.on('connection', (socket) => {
-  console.log('A user connected');
-
-  socket.on('joinRoom', ({ roomId }) => {
-    socket.join(roomId);
-    console.log(`User joined room ${roomId}`);
-  });
-
-  socket.on('leaveRoom', ({ roomId }) => {
-    socket.leave(roomId);
-    console.log(`User left room ${roomId}`);
-  });
-
-  socket.on('message', ({ roomId, message }) => {
-    console.log(`User sent message ${message} in room ${roomId}`);
-    io.to(roomId).emit('message', { message });
-  });
-
-  socket.on('disconnect', () => {
-    console.log('A user disconnected');
-  });
-});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
