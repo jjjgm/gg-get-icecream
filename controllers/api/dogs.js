@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../models');
+const Dog = require('../../models/users');
+const db = require('../../models')
 
 // Route for displaying all dogs
-router.get('/', async (req, res) => {
+router.get('/dogs', async (req, res) => {
   try {
     const dogs = await db.Dog.findAll();
     res.render('index', { dogs });
@@ -14,12 +15,12 @@ router.get('/', async (req, res) => {
 });
 
 // Route for displaying the form to create a new dog
-router.get('/new', (req, res) => {
+router.get('/dogs/new', (req, res) => {
   res.render('dogs/new');
 });
 
 // Route for creating a new dog
-router.post('/', async (req, res) => {
+router.post('/dogs', async (req, res) => {
   try {
     const newDog = await db.Dog.create({
       name: req.body.name,
@@ -35,7 +36,7 @@ router.post('/', async (req, res) => {
 });
 
 // Route for displaying a specific dog
-router.get('/:id', async (req, res) => {
+router.get('/dogs/:id', async (req, res) => {
   try {
     const dog = await db.Dog.findByPk(req.params.id, {
       include: db.User,
@@ -43,7 +44,7 @@ router.get('/:id', async (req, res) => {
     if (!dog) {
       return res.redirect('/dogs');
     }
-    res.render('dogs/show', { dog });
+    res.render('/dogs/show', { dog });
   } catch (error) {
     console.log(error);
     res.redirect('/dogs');
@@ -51,7 +52,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Route for displaying the form to edit a dog
-router.get('/:id/edit', async (req, res) => {
+router.get('/dogs/:id/edit', async (req, res) => {
   try {
     const dog = await db.Dog.findByPk(req.params.id);
     if (!dog || dog.userId !== req.session.user.id) {
@@ -65,7 +66,7 @@ router.get('/:id/edit', async (req, res) => {
 });
 
 // Route for updating a dog
-router.put('/:id', async (req, res) => {
+router.put('dogs/:id', async (req, res) => {
   try {
     const dog = await db.Dog.findByPk(req.params.id);
     if (!dog || dog.userId !== req.session.user.id) {
@@ -84,7 +85,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Route for deleting a dog
-router.delete('/:id', async (req, res) => {
+router.delete('/dogs/:id', async (req, res) => {
   try {
     const dog = await db.Dog.findByPk(req.params.id);
     if (!dog || dog.userId !== req.session.user.id) {

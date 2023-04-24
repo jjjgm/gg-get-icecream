@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../models');
+const User = require('../../models/users');
+const db = require('../../models');
 
 // Index route for all users
-router.get('/', async (req, res) => {
+router.get('/user', async (req, res) => {
   try {
-    const users = await db.User.findAll();
+    const users = await User.findAll();
     res.render('users', { users });
   } catch (error) {
     console.log(error);
@@ -19,9 +20,9 @@ router.get('/new', (req, res) => {
 });
 
 // Route for creating a new user
-router.post('/', async (req, res) => {
+router.post('/users', async (req, res) => {
   try {
-    await db.User.create({
+    await User.create({
       username: req.body.username,
       password: req.body.password,
     });
@@ -33,9 +34,9 @@ router.post('/', async (req, res) => {
 });
 
 // Route for displaying the form for editing an existing user
-router.get('/:id/edit', async (req, res) => {
+router.get('users/:id/edit', async (req, res) => {
   try {
-    const user = await db.User.findByPk(req.params.id);
+    const user = await User.findByPk(req.params.id);
     res.render('edit', { user });
   } catch (error) {
     console.log(error);
@@ -44,9 +45,9 @@ router.get('/:id/edit', async (req, res) => {
 });
 
 // Route for updating an existing user
-router.put('/:id', async (req, res) => {
+router.put('/users/:id', async (req, res) => {
   try {
-    const user = await db.User.findByPk(req.params.id);
+    const user = await User.findByPk(req.params.id);
     await user.update({
       username: req.body.username,
       password: req.body.password,
@@ -59,9 +60,9 @@ router.put('/:id', async (req, res) => {
 });
 
 // Route for deleting an existing user
-router.delete('/:id', async (req, res) => {
+router.delete('/users/:id', async (req, res) => {
   try {
-    const user = await db.User.findByPk(req.params.id);
+    const user = await User.findByPk(req.params.id);
     await user.destroy();
     res.redirect('/users');
   } catch (error) {
