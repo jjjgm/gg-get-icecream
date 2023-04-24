@@ -8,11 +8,15 @@
 	<section id="login-form">
 		<h1>Login</h1>
 		<form action="/auth/login" method="POST">
-			<label for="email">Email:</label>
-			<input type="email" name="email" required>
+			<div class="form-floating mb-3">
+                <input type="email" class="form-control" id="user" placeholder="name@example.com">
+                <label for="user">Email address</label>
+            </div>
 
-			<label for="password">Password:</label>
-			<input type="password" name="password" required>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+                <label for="password">Password</label>
+            </div>
 
 			<input type="submit" value="Login">
 		</form>
