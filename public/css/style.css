@@ -1,4 +1,57 @@
-/* general styles go here */
 * {
   font-family: Poppins, sans-serif;
+}
+
+body {
+  padding: 1%;
+}
+
+/* custom styles - general */
+.btn-1 {
+  border: 1.5px solid black;
+  background-color: transparent;
+  padding: 7px 13px;
+}
+
+.btn-2 {
+  border: 1.5px solid black;
+  background-color: transparent;
+  font-size: .75rem;
+  padding: 0 15px;
+}
+
+.btn-1:hover, .btn-2:hover {
+  background-color: black;
+  color: white;
+}
+
+.form-control, .form-select {
+  border: 1.5px solid black;
+  border-radius: 0;
+}
+
+.img-fluid {
+  max-height: 20vh;
+}
+
+.table-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.profile-icon {
+  width: auto;
+  height: 6vh;
+}
+
+#friend-table {
+  overflow: hidden;
+}
+
+#friend-table:hover {
+  overflow-y: auto;
+}
+
+tr:hover {
+  background-color: rgba(211, 211, 211, 0.599);
 }
