@@ -1,16 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../homepage.css">
+    </link>
+    <link rel="stylesheet" href="../jass.css">
+    </link>
+    <link rel="stylesheet" href="../style.css">
+    </link>
+</head>
 
 <header>
     <nav class="navbar justify-content-end">
         <ul class="nav my-2">
-            <li class="nav-item mx-3"><span class="material-symbols-rounded"><a href= "/pets/{{pets}}">search</a></span></li>
-            <li class="nav-item mx-3"><span class="material-symbols-rounded"<a href="/messages/">{{message.text}} on {{format.date}}</a></span></li>
-            <li class="nav-item mx-3">Account</li>
-            <li class="nav-item mx-3">Logout</li>
+            <li class="nav-item mx-3"><span class="material-symbols-rounded"><a href="api/{{pets}}">search</a></span>
+            </li>
+            <li class="nav-item mx-3"><span class="material-symbols-rounded" <a href="api/messages/">{{message.text}} on
+                    {{format.date}}</a></span></li>
+            <li class="nav-item mx-3"><a href="/messages">Account</a></li>
+            <li class="nav-item mx-3"><a href="/">Logout</a></li>
         </ul>
     </nav>
 </header>
 
 
-
-
+<div class="d-flex justify-content-center align-items-center">
+    <button type="sign-up">Sign Up</button>
+</div>
+{{#if logged_in}}
+<div class="mt-4 d-flex justify-content-evenly">
+    <button id="add-friend">Add friend</button>
+    <button id="find-new">Find new friend</button>
+</div>
+</div>
+{{/if}}
