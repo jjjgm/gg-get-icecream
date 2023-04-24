@@ -1,0 +1,79 @@
+<section class="d-flex justify-content-center">
+<!-- sign up page -->
+    <div>
+        <h1 class="mt-5">Welcome!</h1>
+        <h3 class="mb-4">Thank you for being a friend.</h3>
+        <form>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="full-name" name="full-name" placeholder="Full name" required>
+                <label for="full-name">Full name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required>
+                <label for="email">Email address</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                <label for="password">Password</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                <label for="confirm-password">Confirm password</label>
+            </div>
+
+            <hr class="my-4">
+
+            <h4 class="mb-3">Fill out your profile</h4>
+
+            <div class="mb-3">
+                <label for="dog-picture" class="d-block upload-lbl mb-2">Dog Picture</label>
+                <input type="file" id="dog-picture" name="dog-picture" accept="image/*">
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="dog-name" name="dog-name"  placeholder="Dog name" required>
+                <label for="dog-name">Dog name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="location" name="location" placeholder="Location" required>
+                <label for="location">Location</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="dog-breed" name="dog-breed" placeholder="Dog breed" required>
+                <label for="dog-breed">Dog breed</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="dog-age" name="dog-age" placeholder="Dog age" required>
+                <label for="dog-age">Dog age</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <select class="form-select" id="dog-gender" aria-label="Select dog gender" name="dog-gender" required>
+                    <option selected>-- Please select an option --</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="dog-gender">Dog gender</label>
+            </div>
+
+            <div class="form-floating mb-4">
+                <textarea class="form-control" placeholder="Write a short bio for your dog here" id="dog-description" name="dog-description" style="height: 100px"></textarea>
+                <label for="dog-description">Write a short bio for your dog here</label>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="d-flex justify-content-center align-items-center mb-5">
+                <!-- add btn-1 class -->
+                <button class="w-75 btn-1" type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</section>
