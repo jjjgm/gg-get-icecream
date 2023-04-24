@@ -1,14 +1,23 @@
 [
     {
-        "text": "this is another string for testing purposes"
+        "text": "this is another string for testing purposes",
+        "dogId": 1,
+        "userId": 1
     },
     {
-        "text": "this is the string for testing purposes"
+        "text": "this is the string for testing purposes",
+        "dogId": 2,
+        "userId": 2
     },
     {
-        "text": "this is a string for testing purposes"
+        "text": "this is a string for testing purposes",
+        "dogId": 3,
+        "userId": 3
+        
     },
     {
-        "text": "this is will be a string for testing purposes"
+        "text": "this is will be a string for testing purposes",
+        "dogId": 4,
+        "userId": 4
     }
 ]

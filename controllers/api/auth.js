@@ -22,27 +22,24 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Route for displaying the login form
-router.get('/login', (req, res) => {
-  res.render('auth/login');
-});
-
 // Route for logging in a user
 router.post('/login', async (req, res) => {
   try {
     const user = await db.User.findOne({ where: { username: req.body.username } });
     if (!user) {
-      return res.render('auth/login', { error: 'Username or password is incorrect.' });
+      return res.json({ error: 'Username or password is incorrect.' });
     }
     const passwordsMatch = await user.checkPassword(req.body.password);
     if (!passwordsMatch) {
-      return res.render('auth/login', { error: 'Username or password is incorrect.' });
+      return res.json({ error: 'Username or password is incorrect.' });
     }
-    req.session.user = user;
-    res.redirect('/dogs');
+    req.session.save(()=>{
+      req.session.user = user;
+      res.json(user);
+    })
   } catch (error) {
     console.log(error);
-    res.render('auth/login', { error: 'An error occurred. Please try again later.' });
+    res.json({ error: 'An error occurred. Please try again later.' });
   }
 });
 
