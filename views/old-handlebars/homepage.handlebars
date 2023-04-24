@@ -101,18 +101,20 @@
             <div id="friend-table" class="p-3">
                 <table class="w-100">
                     <tbody>
+                        {{#each}}
                         <tr class="friend-row">
                             <td class="p-3"><img src={{PLACEHOLDER image url}} class="profile-icon" alt="Icon image of {{PLACEHOLDER petname}}"></td>
                             <td scope="row" class="py-3">{{PLACEHOLDER petname}}</td>
                             <td class="py-3"><span class="material-symbols-rounded">location_city</span> {{PLACEHOLDER location}}</td>
                             <td class="py-3"><button class="table-btn"><span class="material-symbols-rounded">delete</span></button></td>
                         </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>
         </div>
 
     </div>
-
-
 {{/if}}
+
+<script src="../../public/js/homepage.js"></script>
