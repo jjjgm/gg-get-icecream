@@ -42,7 +42,7 @@ const passwordInput = document.getElementById('login-password');
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const signup = document.getElementById('sign-up');
+  const signup = document.getElementById('#sign-up');
   const username = document.querySelector('#username-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
@@ -63,3 +63,7 @@ const signupFormHandler = async (event) => {
     }
   }
 };
+
+document
+  .querySelector('.signup-form')
+  .addEventListener('submit', signupFormHandler);

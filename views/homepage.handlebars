@@ -17,10 +17,17 @@
         <ul class="nav my-2">
             <li class="nav-item mx-3"><span class="material-symbols-rounded"><a href="api/{{pets}}">search</a></span>
             </li>
-            <li class="nav-item mx-3"><span class="material-symbols-rounded" <a href="api/messages/">{{message.text}} on
-                    {{format.date}}</a></span></li>
+            <li class="nav-item mx-3"><a href="/login">Log In</a></li>
+            
+            {{!-- only make vis on log in auth --}}
+            {{#if logged_in}}
+            
             <li class="nav-item mx-3"><a href="/messages">Account</a></li>
-            <li class="nav-item mx-3"><a href="/">Logout</a></li>
+            <li class="nav-item mx-3"><a href="/logout">Logout</a></li>
+
+            <li class="nav-item mx-3"><span class="material-symbols-rounded" href="api/messages/">{{message.text}} on
+                    {{format.date}}</a></span></li>
+            {{/if}}
         </ul>
     </nav>
 </header>
