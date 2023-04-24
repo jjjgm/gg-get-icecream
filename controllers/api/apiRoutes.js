@@ -120,7 +120,7 @@ router.delete('/api/friends/:id', async (req, res) => {
 });
 
 // GET all pets
-router.get('/api/pets', async (req, res) => {
+router.get('/api/m', async (req, res) => {
     try {
       const pets = await db.Pet.findAll({});
       res.status(200).json(pets);

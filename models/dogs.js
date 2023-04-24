@@ -1,7 +1,7 @@
 // models/dogs.js
 
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/connection.js');
 
 const Dog = sequelize.define('Dog', {
   name: {
@@ -16,6 +16,11 @@ const Dog = sequelize.define('Dog', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  // sequelize,
+  //   timestamps: false,
+  //   freezeTableName: true,
+  //   underscored: true,
+  //   modelName: 'dog',
 });
 
 module.exports = Dog;
