@@ -1,15 +1,15 @@
 const sequelize = require('../config/connection');
-const { Users, Dog, Messages } = require('../models');
+const { User, Dog, Messages } = require('../models');
 
-const userSeedData = require('./mUsers.json');
-const dogSeedData = require('./mDog.json');
-const messagesSeedData = require('./mMessages.json');
+const userSeedData = require('./Users.json');
+const dogSeedData = require('./Dogs.json');
+const messagesSeedData = require('./Messages.json');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 
 
-    const users = await Users.bulkCreate(userSeedData, {
+    const users = await User.bulkCreate(userSeedData, {
         individualHooks: true,
         returning: true,
     });
@@ -21,13 +21,13 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    for (const friend of friendSeedData) {
-        const newProfile = await Messages.create({
-            ...friend,
+    // for (const friend of friendSeedData) {
+    //     const newProfile = await Messages.create({
+    //         ...friend,
             // profile_id: users[Math.floor(Math.random() * users.length)].id,
-            // pet_id: pets[Math.floor(Math.random() * pets.length)].id,
-        });
-    }
+    //         // pet_id: pets[Math.floor(Math.random() * pets.length)].id,
+    //     });
+    // }
 
 
 

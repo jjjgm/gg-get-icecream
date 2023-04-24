@@ -16,6 +16,11 @@ const Dog = sequelize.define('Dog', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'dog',
 });
 
 module.exports = Dog;
