@@ -2,9 +2,18 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../models');
 
-// Middleware for parsing JSON data
-router.use(express.json());
+const dogroutes = require('./dogs');
+const authroutes = require('./auth');
+const messages = require('./messages');
+const users = require('./users');
 
+router.use("/users", users);
+router.use("/auth", authroutes);
+router.use("/messages", messages);
+router.use("/dogs", dogroutes);
+// Middleware for parsing JSON data
+/* router.use(express.json()); */
+/* 
 // API route for getting all users
 router.get('/users', async (req, res) => {
   try {
@@ -76,5 +85,5 @@ router.delete('/users/:id', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
-
+ */
 module.exports = router;
