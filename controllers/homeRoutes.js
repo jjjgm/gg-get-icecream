@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
     const userData = await db.User.findByPk(req.session.user.id);
     const user = userData.get({plain:true})
     res.render('homepage', { user });
+    //res.status(200).json({ user })
   } catch (error) {
     console.log(error);
     res.json(error);
