@@ -1,38 +1,13 @@
-const sequelize = require('../config/connection');
-const { Model , DataTypes } = require('sequelize')
+// models/messages.js
 
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
 
-class Messages extends Model {}
+const Message = sequelize.define('Message', {
+  text: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
 
-Messages.init (
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        conversation: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            index: true,
-        },
-        profile_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            unique: true,
-            references: {
-                model: 'profile',
-                key: 'id',
-            },
-        },
-    },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'messages',
-    });
-
-    module.exports = Messages;
+module.exports = Message;

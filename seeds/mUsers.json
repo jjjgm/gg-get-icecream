@@ -1,22 +1,18 @@
 [
     {
         "username": "Rose",
-        "email": "sweetrose@email.com",
         "password": "password"
     },
     {
         "username": "Sophia",
-        "email": "sophiasemail@email.com",
         "password": "password"
     },
     {
         "username": "Blanche",
-        "email": "babeblanche@email.com",
         "password": "password"
     },
     {
         "username": "Dorothy",
-        "email": "dbarthur@email.com",
         "password": "password"
     }
 ]
