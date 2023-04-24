@@ -1,24 +1,21 @@
 const sequelize = require('../config/connection');
-const { Model , DataTypes } = require('sequelize');
+const { Model , DataTypes } = require('sequelize')
 
 
-class Friend extends Model { }
+class Messages extends Model {}
 
-Friend.init(
+Messages.init (
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            autoIncrement: true,
             primaryKey: true,
+            autoIncrement: true,
         },
-        displayName: {
+        conversation: {
             type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: 'user',
-                key: 'name',
-            },
+            index: true,
         },
         profile_id: {
             type: DataTypes.INTEGER,
@@ -35,8 +32,7 @@ Friend.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'friend',
-        }
-);
+        modelName: 'messages',
+    });
 
-module.exports = Friend;
+    module.exports = Messages;

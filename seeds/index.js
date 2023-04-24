@@ -1,34 +1,36 @@
 const sequelize = require('../config/connection');
-const { User, Profile, Pet, Friend } = require('../models');
+const { User, Profile, Messages, Friend } = require('../models');
 
 const userSeedData = require('./userSeedData.json');
 const profileSeedData = require('./profileSeedData.json');
-const petSeedData = require('./petSeedData.json');
 const friendSeedData = require('./friendSeedData.json');
+const messagesSeedData = require('./messageSeedData.json');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 
-    
 
     const users = await User.bulkCreate(userSeedData, {
         individualHooks: true,
         returning: true,
     });
-    const pets = await Pet.bulkCreate(petSeedData, {
+    const profile = await Profile.bulkCreate(profileSeedData, {
         returning: true,
     });
-    for (const profile of profileSeedData) {
-        const newProfile = await Profile.create({
-            ...profile,
-            user_id: users[Math.floor(Math.random() * users.length)].id,
+
+    const messages = await Messages.bulkCreate(messageSeedData, {
+        returning: true,
+    });
+
+    for (const friend of friendSeedData) {
+        const newProfile = await Friend.create({
+            ...friend,
+            profile_id: users[Math.floor(Math.random() * users.length)].id,
             // pet_id: pets[Math.floor(Math.random() * pets.length)].id,
         });
     }
-    const friend = await Friend.bulkCreate(friendSeedData, {
-        returning: true,
-    });
-    
+
+
 
     // for (const friend of petSeedData) {
     //     const newFriend = await Friend.create({
