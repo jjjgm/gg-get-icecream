@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
-const User = require('./users');
-
-class Message extends Model {}
+const sequelize = require('../config/connection.js');
+class Message extends Model{};
+/* const { DataTypes } = require('sequelize');
+const sequelize = require('../config/connection.js'); */
 
 Message.init(
   {
@@ -16,8 +16,5 @@ Message.init(
     modelName: 'Message'
   }
 );
-
-Message.belongsTo(User);
-User.hasMany(Message);
 
 module.exports = Message;

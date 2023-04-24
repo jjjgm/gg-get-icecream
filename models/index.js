@@ -1,22 +1,38 @@
+// const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection.js');
+
 const User = require('./users');
 const Message = require('./messages');
 const Dog = require('./dog');
 
-User.hasMany(Message, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+Dog.belongsToMany(User, {
+  through: {
+    model: Message,
+    unique: false,
+  foreignKey: 'user_id'
+  }
 });
 
-Message.belongsTo(User, {
-  foreignKey: 'user_id'
-});
-User.hasMany(Dog, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+User.belongsToMany(Dog, {
+  through: {
+    model: Message,
+    unique: false,
+    foreignKey: 'user_id'
+  }
 });
 
-Dog.belongsTo(User, {
-  foreignKey: 'user_id'
-});
+
+// Message.belongsToMany(User, {
+//   foreignKey: 'user_id'
+// });
+
+// User.belongsToMany(Dog, {
+//   through: {
+//     model: Message,
+//     unique: false,
+//     foreignKey: 'user_id'
+//   }
+// });
+
 
 module.exports = { User, Message, Dog };
