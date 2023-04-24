@@ -3,22 +3,19 @@
 [ 
     {
         "displayName": "Rose",
-        "hasPet": false,
         "profile_id": 1
     },
     {
         "displayName": "Sophia",
-        "hasPet": true,
+
         "profile_id": 2
     },
     {
         "displayName": "Blanche",
-        "hasPet": true,
         "profile_id": 3
     },
     {
         "displayName": "Dorothy",
-        "hasPet": true,
         "profile_id": 4
     }
 ]
