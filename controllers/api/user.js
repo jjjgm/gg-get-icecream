@@ -2,10 +2,13 @@ const express = require('express');
 const router = express.Router();
 const User = require('../../models/User.js');
 
+
+
+
 // GET all users
 router.get('/api/users', async (req, res) => {
     try {
-        const users = await User.findAll({});
+        const users = await User.findAll();
         res.status(200).json(users);
     } catch (err) {
         res.status(500).json(err);
@@ -49,12 +52,12 @@ router.put('/api/users/:id', async (req, res) => {
 // DELETE a User
 router.delete('/api/users/:id', async (req, res) => {
     try {
-        const deletedUser = await User.destroy({
+        const user = await User.destroy({
             where: {
                 id: req.params.id,
             },
         });
-        res.status(200).json(deletedUser);
+        res.status(200).json(user);
     } catch (err) {
         res.status(500).json(err);
     }

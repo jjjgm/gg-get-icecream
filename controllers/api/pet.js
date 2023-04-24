@@ -2,6 +2,26 @@ const express = require('express');
 const router = express.Router();
 const Pet = require('../../models/Pet');
 
+// GET all pets
+router.get('/api/pets', async (req, res) => {
+    try {
+        const pets = await Pet.findAll({});
+        res.status(200).json(pets);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// GET a single pet by ID
+router.get('/pets/:id', async (req, res) => {
+    try {
+        const pet = await Pet.findByPk(req.params.id);
+        res.status(200).json(pet);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 // POST a new pet
 router.post('/api/pets', async (req, res) => {
     try {
@@ -29,12 +49,12 @@ router.put('/api/pets/:id', async (req, res) => {
 // DELETE a Pet
 router.delete('/api/pets/:id', async (req, res) => {
     try {
-        const deletedPet = await Pet.destroy({
+        const pet = await Pet.destroy({
             where: {
                 id: req.params.id,
             },
         });
-        res.status(200).json(deletedPet);
+        res.status(200).json(pet);
     } catch (err) {
         res.status(500).json(err);
     }

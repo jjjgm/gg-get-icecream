@@ -1,5 +1,7 @@
 const sequelize = require('../config/connection');
-const { User, Pet, Message } = require('../models');
+const { User } = require('../models');
+const { Pet } = require('../models/Pet');
+const { Message } = require('../models/Message');
 
 const userSeedData = require('./userSeed.json');
 const messageSeedData = require('./messageSeed.json');
