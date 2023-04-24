@@ -1,10 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/connection.js');
 
 class Dog extends Model {}
 
 Dog.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -15,12 +21,23 @@ Dog.init(
     },
     age: {
       type: DataTypes.INTEGER,
-      allowNull: false
-    }
+      allowNull: false,
+    },
+    // user_id:{
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'user',
+    //     key: 'id'
+    //   }
+    // }
   },
   {
     sequelize,
-    modelName: 'Dog'
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'dog',
   }
 );
 

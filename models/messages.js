@@ -1,20 +1,25 @@
-// models/messages.js
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection.js');
+// const User = require('./users');
+// const Dog = require('./dog');
 
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
-const Message = sequelize.define('Message',
-{
-  text: {
-    type: DataTypes.STRING,
-    allowNull: false,
+Message.init(
+  {
+    text: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
+  },
+  {
+    sequelize,
+    modelName: 'Message'
   }
-});
-//   sequelize,
-//     timestamps: false,
-//     freezeTableName: true,
-//     underscored: true,
-//     modelName: 'message',
-// });
+);
+
+Message.belongsTo(User);
+User.hasMany(Message);
 
 module.exports = Message;

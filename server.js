@@ -1,23 +1,18 @@
 const path = require('path');
+// require ('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const http = require('http');
-const socketio = require('socket.io');
 const routes = require('./controllers/api/apiRoutes');
-const { Sequelize } = require('sequelize');
+const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
 
 const PORT = process.env.PORT || 3001;
 
-const sequelize = new Sequelize('mintchocolatechip_db', 'root', '12345678', {
-  host: 'localhost',
-  dialect: 'mysql',
-});
 
 const sess = {
   secret: 'mySecret',

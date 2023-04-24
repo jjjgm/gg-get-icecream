@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Doggie",
+        "breed": "Mixed- Unsure",
+        "age": 2
+    },
+    {
+        "name": "Dog One",
+        "breed": "Mixed",
+        "age": 2
+    },
+    {
+        "name": "Doge",
+        "breed": "golden",
+        "age": 1
+    },
+    {
+        "name": "Pup",
+        "breed": "shiba",
+        "age": 3
+    }
+]
