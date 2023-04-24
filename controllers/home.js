@@ -8,7 +8,7 @@ const db = require('../models');
 router.get('/', async (req, res) => {
     try {
         const homepage = await db.User.findAll();
-        res.render('users', { users });
+        res.render('users', { homepage });
     } catch (err) {
         console.log(err);
         res.redirect('/users');
@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
         // }
     }
 });
+// const user = homepage.map((user) => user.get({ plain: true }));
 
 // // GET a single user by ID
 // router.get('/users:id', async (req, res) => {
@@ -38,7 +39,6 @@ router.get('/api/pets', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 
 
 // GET all messages

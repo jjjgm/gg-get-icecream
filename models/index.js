@@ -17,6 +17,7 @@ Pet.belongsToMany(User, {
     through: {
         model: Message,
         unique: false,
+        foreignKey: 'user_id'
     },
     as: 'pet_friendship',
 });
@@ -25,8 +26,10 @@ User.belongsToMany(Pet, {
     through: {
         model: Message,
         unique: false,
+        foreignKey: 'user_id'
     },
     as: 'user_messages'
+    
 });
 
 module.exports = { User, Pet, Message };
