@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
+
 // const User = require('./users');
 // const Dog = require('./dog');
 
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/connection.js');
+class Message extends Model {}
 
 Message.init(
   {
@@ -13,13 +13,13 @@ Message.init(
       allowNull: false
     }
   },
-  {
-    sequelize,
-    modelName: 'Message'
-  }
+ {
+sequelize,
+timestamps: false,
+freezeTableName: true,
+underscored: true,
+modelName: 'user',
+}
 );
-
-Message.belongsTo(User);
-User.hasMany(Message);
 
 module.exports = Message;
