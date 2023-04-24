@@ -6,7 +6,7 @@ class Profile extends Model { }
 
 Profile.init(
     {
-        profile_id: {
+        id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
@@ -29,7 +29,7 @@ Profile.init(
                 min: 18
             }
         },
-        gender:{
+        gender: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -37,9 +37,9 @@ Profile.init(
             type: DataTypes.STRING,
             allowNull: false,
             index: true,
-                validate:{
-                    isAlpha: true,
-                }
+            validate: {
+                isAlpha: true,
+            }
         },
         bio: {
             type: DataTypes.STRING,
@@ -50,15 +50,14 @@ Profile.init(
                 isUrl: true,
             }
         },
-    //     friend_id: {
-    //         type: DataTypes.INTEGER,
-    //         allowNull: true,
-    //         references: {
-    //             model: 'friend',
-    //             id: 'id',
-    //     }
-    // },
-},
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
+    },
     {
         sequelize,
         timestamps: false,

@@ -20,10 +20,6 @@ Friend.init(
                 key: 'username',
             },
         },
-        hasPet: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-        },
         profile_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
