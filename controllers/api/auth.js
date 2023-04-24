@@ -18,7 +18,7 @@ router.post('/register', async (req, res) => {
     res.redirect('/dogs');
   } catch (error) {
     console.log(error);
-    res.redirect('/register');
+    res.render('auth/register', { error });
   }
 });
 
@@ -32,17 +32,17 @@ router.post('/login', async (req, res) => {
   try {
     const user = await db.User.findOne({ where: { username: req.body.username } });
     if (!user) {
-      return res.redirect('/login');
+      return res.render('auth/login', { error: 'Username or password is incorrect.' });
     }
     const passwordsMatch = await user.checkPassword(req.body.password);
     if (!passwordsMatch) {
-      return res.redirect('/login');
+      return res.render('auth/login', { error: 'Username or password is incorrect.' });
     }
     req.session.user = user;
     res.redirect('/dogs');
   } catch (error) {
     console.log(error);
-    res.redirect('/login');
+    res.render('auth/login', { error: 'An error occurred. Please try again later.' });
   }
 });
 

@@ -20,7 +20,12 @@ const sess = {
 app.use(session(sess));
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({});
+const hbs = exphbs.create({
+  defaultLayout: 'main',
+  extname: 'handlebars',
+  layoutsDir: path.join(__dirname, 'views/layouts'),
+  partialsDir: path.join(__dirname, 'views/partials')
+});
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -36,11 +41,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 const apiRoutes = require('./controllers/api/apiRoutes');
 const homeRoutes = require('./controllers/homeRoutes');
 const dashboardRoutes = require('./controllers/dashboardRoutes');
+const authRoutes = require('./controllers/api/authRoutes'); // Change here
 
 // Use routes
 app.use('/api', apiRoutes);
 app.use('/', homeRoutes);
 app.use('/dashboard', dashboardRoutes);
+app.use('/api/auth', authRoutes); // Change here
 
 // Sync database and start server
 sequelize.sync({ force: false }).then(() => {
