@@ -3,44 +3,23 @@ const sequelize = require('../config/connection.js');
 // const User = require('./users');
 // const Dog = require('./dog');
 
-class Message extends Model {}
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/connection.js');
 
 Message.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     text: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    // user_id:{
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: 'user',
-    //     key: 'id'
-    //   }
-    // },
-    // // dog_id: {
-    // //   type: DataTypes.INTEGER,
-    // //   allowNull: false,
-    // //   references: {
-    // //     model: 'dog',
-    // //     key: 'id',
-    // //   },
-    // },
+    }
   },
   {
     sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'messages',
+    modelName: 'Message'
   }
 );
+
+Message.belongsTo(User);
+User.hasMany(Message);
 
 module.exports = Message;
