@@ -32,7 +32,6 @@ const sess = {
   }),
 };
 
-
 app.use(session(sess));
 
 const hbs = exphbs.create({});
@@ -40,6 +39,24 @@ const hbs = exphbs.create({});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+/*const apiRoutes = require('./controllers/api/apiRoutes');
+const homeRoutes = require('./controllers/homeRoutes');
+const dashboardRoutes = require('./controllers/dashboardRoutes');
+const authRoutes = require('./controllers/api/authRoutes'); 
+const userRoutes = require('./controllers/api/users');
+const messageRoutes = require('./controllers/api/messages');
+
+app.use('/api', apiRoutes);
+app.use('/', homeRoutes);
+app.use('/dashboard', dashboardRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/messages', messageRoutes);
+*/
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -49,3 +66,4 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   server.listen(PORT, () => console.log(`Now Listening at ${PORT}!`));
 });
+
