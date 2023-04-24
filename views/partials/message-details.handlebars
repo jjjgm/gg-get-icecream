@@ -1,0 +1,9 @@
+<section class="container">
+  <h3 class="message-text">{{message.text}}</h3>
+  <h4>New Message: {{format_time message.date}}</h4>
+  <section class="flex-row justify-center">
+    {{#each pet.messages as |message|}}
+    {{> message-details}}
+    {{/each}}
+  </section>
+</section>

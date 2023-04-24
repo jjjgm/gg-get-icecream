@@ -7,7 +7,7 @@ logoutButton.addEventListener('click', async (event) => {
 
   try {
     // Send a request to the server to log out the user
-    const response = await fetch('/api/logout', {
+    const response = await fetch('/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -15,13 +15,13 @@ logoutButton.addEventListener('click', async (event) => {
       credentials: 'same-origin'
     });
 
+
     if (response.ok) {
-      // Redirect the user to the login page
-      window.location.href = 'login.html';
+      document.location.replace('/');
     } else {
-      // Handle the error
-      console.error('Error logging out:', response.statusText);
+      alert(response.statusText);
     }
+
   } catch (error) {
     console.error('Error logging out:', error);
   }

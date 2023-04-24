@@ -1,15 +1,13 @@
 // Get the input fields from the signup form
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
-const confirmPasswordInput = document.getElementById('confirmPassword');
-const firstNameInput = document.getElementById('firstName');
-const lastNameInput = document.getElementById('lastName');
-const profilePictureInput = document.getElementById('profilePicture');
-const locationInput = document.getElementById('location');
-const petNameInput = document.getElementById('petName');
-const petAgeInput = document.getElementById('petAge');
-const petGenderInput = document.getElementById('petGender');
-
+const confirmPass = document.getElementById('confirmPass');
+const nameInput = document.getElementById('name');
+const pictureInput = document.getElementById('picture');
+const locationInput = document.getElementById('location');;
+const ageInput = document.getElementById('age');
+const genderInput = document.getElementById('gender');
+const bioInput = document.getElementById('description');
 
 
 // Add an event listener to the signup form
@@ -20,21 +18,18 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
   // Get the user's input
   const email = emailInput.value;
   const password = passwordInput.value;
-  const confirmPassword = confirmPasswordInput.value;
-  const firstName = firstNameInput.value;
-  const lastName = lastNameInput.value;
-  const profilePicture = profilePictureInput.value;
+  const confirmPassword = confirmPassInput.value;
+  const name = nameInput.value;
+  const profilePicture = pictureInput.value;
   const location = locationInput.value;
-  const petName = petNameInput.value;
-  const petBreed = petBreedInput.value;
-  const petAge = petAgeInput.value;
-  const petGender = petGenderInput.value;
-  const petDescription = petDescriptionInput.value;
-  const petProfilePicture = petProfilePictureInput.value;
+  const age = ageInput.value;
+  const gender = genderInput.value;
+  const bio = bioInput.value;
+
 
   // Validate the input
-  if (!email || !password || !confirmPassword || !firstName || !lastName || !location || !petName || !petBreed || !petAge || !petGender) {
-    alert('Please enter all required fields.');
+  if (!email || !password || !confirmPassword || !name || !profilePicture || !location || !age || !gender || !bio) {
+    alert('Please input all required fields.');
     return;
   }
   if (password !== confirmPassword) {
@@ -51,18 +46,14 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
     body: JSON.stringify({
       email,
       password,
-      firstName,
-      lastName,
-      profilePicture,
       location,
       pets: [
         {
-          name: petName,
-          breed: petBreed,
-          age: petAge,
-          gender: petGender,
-          description: petDescription,
-          profilePicture: petProfilePicture,
+          name,
+          age,
+          gender,
+          bio,
+          profilePicture,
         },
       ],
     }),
@@ -71,8 +62,13 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
       if (!response.ok) {
         throw new Error(response.statusText);
       }
-      else {window.location.href = '/dashboard';}
-      return response.json();
+      // else {window.location.href = '/dashboard';}
+      // return response.json();
+      if (response.ok) {
+        document.location.replace('/messages');
+      } else {
+        alert(response.statusText);
+      }
     })
     .catch((error) => {
       alert(`Signup failed: ${error.message}`);

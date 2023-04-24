@@ -1,7 +1,7 @@
 
 // Get the input fields from the login form
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
+const emailInput = document.getElementById('login-email');
+const passwordInput = document.getElementById('login-password');
 
 // Add an event listener to the login form
 document.getElementById('loginForm').addEventListener('submit', (event) => {

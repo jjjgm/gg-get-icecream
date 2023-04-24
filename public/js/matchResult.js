@@ -10,7 +10,7 @@ function randomArray(arr) {
 
 //POST - add new friend
 function addNewFriend() {
-    fetch ('/api/users', {
+    fetch ('/api/pets', {
         method: 'POST',
         body: JSON.stringify({
             id,
