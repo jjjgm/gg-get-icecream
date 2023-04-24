@@ -46,16 +46,6 @@ Pet.init (
             allowNull: true,
         },
         user_id: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            references: {
-                model: 'user',
-                key: 'id',
-            }
-        },
-        
-        user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',

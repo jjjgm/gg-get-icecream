@@ -1,5 +1,6 @@
 const sequelize = require('../config/connection');
 const { Model , DataTypes } = require('sequelize');
+const User = require('./User');
 
 
 class Message extends Model { }
@@ -15,6 +16,22 @@ Message.init(
         text: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references:{
+                model: User,
+                key: id
+            }
+        },
+        pet_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references:{
+                model: Pet,
+                key: id
+            }
         }
         },
     {

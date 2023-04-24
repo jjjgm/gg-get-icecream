@@ -13,23 +13,6 @@ User.init (
             primaryKey: true,
             autoIncrement: true,
         },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            index: true,
-            validate: {
-                len: [4,12]
-            }
-        },
-        age: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                isNumeric: true,
-                min: 18
-            }
-        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -44,6 +27,15 @@ User.init (
                 len:[6]
             },
         },
+        // username: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        //     unique: true,
+        //     index: true,
+        //     validate: {
+        //         len: [4,12]
+        //     }
+        // },
     },
     {
     hooks: {

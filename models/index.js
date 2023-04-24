@@ -1,39 +1,52 @@
 const User = require('./User');
 const Pet = require('./Pet');
-const Friend = require('./Message');
-const Profile = require('./Profile');
+const Message = require('./Message');
 
 // KEY to link to USER
-Profile.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE',
+// Profile.belongsTo(User, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE',
+// });
+
+// Profile.belongsTo(User, {
+//   foreignKey: 'user_id',
+//   onDelete: 'CASCADE',
+// });
+
+Pet.belongsToMany(User, {
+    through: {
+        model: Message,
+        unique: false,
+    },
+    as: 'pet_friendship',
 });
 
-Profile.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
+User.belongsToMany(Pet, {
+    through: {
+        model: Message,
+        unique: false,
+    },
+    as: 'user_messages'
 });
 
-Pet.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
-});
+// User.hasOne(Pet, {
+//     foreignKey: 'pet_id',
+// });
 
-Profile.hasOne(Pet,{
-    foreignKey: 'pet_id',
-}
-    )
+// Profile.hasMany(Friend, {
+//     foreignKey: 'profile_id',
+// });
 
-Friend.belongsTo(Profile,  {
-    foreignKey: 'profile_id',
-});
+// Friend.belongsTo(Profile,  {
+//     foreignKey: 'profile_id',
+// });
 
-Profile.hasMany(Friend, {
-    foreignKey: 'profile_id',
-});
+// Profile.hasMany(Friend, {
+//     foreignKey: 'profile_id',
+// });
 
 // User.hasMany(Friend, {
 //     foreignKey: 'profile_id',
 // });
 
-module.exports = { User, Profile, Pet, Friend };
+module.exports = { User, Pet, Message };
