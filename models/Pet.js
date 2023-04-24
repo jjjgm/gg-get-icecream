@@ -27,23 +27,20 @@ Pet.init (
             //         isAlpha: true,
             //     }
             },
+            
         gender:{
             type: DataTypes.STRING,
             allowNull: false,
         },
-        breed: {
+        bio: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         petImg: {
             type: DataTypes.STRING,
             validate: {
                 isUrl: true,
             }
-        },
-        bio: {
-            type: DataTypes.STRING,
-            allowNull: true,
         },
         user_id: {
             type: DataTypes.INTEGER,
