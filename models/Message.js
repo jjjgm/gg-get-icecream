@@ -21,16 +21,16 @@ Message.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references:{
-                model: User,
-                key: id
+                model: 'User',
+                key: 'id'
             }
         },
         pet_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references:{
-                model: Pet,
-                key: id
+                model: 'Pet',
+                key: 'id'
             }
         }
         },

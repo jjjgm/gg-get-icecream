@@ -1,3 +1,4 @@
+
 // Get the input fields from the login form
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
