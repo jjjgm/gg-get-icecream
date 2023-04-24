@@ -4,7 +4,7 @@ const sequelize = require('../config/connection.js');
 // const User = require('./users');
 // const Dog = require('./dog');
 
-class Message extends Model {}
+class Message extends Model { }
 
 Message.init(
   {
@@ -13,13 +13,20 @@ Message.init(
       allowNull: false
     }
   },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'dog',
+  }
  {
-sequelize,
-timestamps: false,
-freezeTableName: true,
-underscored: true,
-modelName: 'user',
-}
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user',
+  }
 );
 
 module.exports = Message;

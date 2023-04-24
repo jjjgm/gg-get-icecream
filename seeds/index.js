@@ -19,17 +19,17 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    // for (const dog of dogData) {
+    const messages = await Message.bulkCreate(messageData, {
+        returning: true,
+    });
+
+
+        // for (const dog of dogData) {
     //     const newDog = await Dog.create({
     //         ...dog,
     //         user_id: users[Math.floor(Math.random() * users.length)].id,
     //     });
     // };
-
-    const messages = await Message.bulkCreate(messageData, {
-        returning: true,
-    });
-
 
 
     process.exit(0);
