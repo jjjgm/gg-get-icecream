@@ -7,6 +7,10 @@ body {
 }
 
 /* custom styles - general */
+.nav-link {
+  color: black;
+}
+
 .btn-1 {
   border: 1.5px solid black;
   background-color: transparent;
