@@ -2,74 +2,71 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
-// GET user profile
-router.get('/profile', async (req, res) => {
+// Index route for all users
+router.get('/', async (req, res) => {
   try {
-    const user = await db.user.findByPk(req.session.user.id);
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-
-    return res.json(user);
+    const users = await db.User.findAll();
+    res.render('users/index', { users });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Internal server error' });
+    console.log(error);
+    res.render('error');
   }
 });
 
-// POST register new user
-router.post('/register', async (req, res) => {
+// Route for displaying the form for creating a new user
+router.get('/new', (req, res) => {
+  res.render('users/new');
+});
+
+// Route for creating a new user
+router.post('/', async (req, res) => {
   try {
-    const user = await db.user.create({
+    await db.User.create({
       username: req.body.username,
       password: req.body.password,
     });
-
-    req.session.user = {
-      id: user.id,
-      username: user.username,
-    };
-
-    return res.json(user);
+    res.redirect('/users');
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Internal server error' });
+    console.log(error);
+    res.render('error');
   }
 });
 
-// POST login user
-router.post('/login', async (req, res) => {
+// Route for displaying the form for editing an existing user
+router.get('/:id/edit', async (req, res) => {
   try {
-    const user = await db.user.findOne({ where: { username: req.body.username } });
-    if (!user) {
-      return res.status(401).json({ message: 'Invalid username or password' });
-    }
-
-    const isPasswordValid = await user.validatePassword(req.body.password);
-    if (!isPasswordValid) {
-      return res.status(401).json({ message: 'Invalid username or password' });
-    }
-
-    req.session.user = {
-      id: user.id,
-      username: user.username,
-    };
-
-    return res.json(user);
+    const user = await db.User.findByPk(req.params.id);
+    res.render('users/edit', { user });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Internal server error' });
+    console.log(error);
+    res.render('error');
   }
 });
 
-// POST logout user
-router.post('/logout', async (req, res) => {
+// Route for updating an existing user
+router.put('/:id', async (req, res) => {
   try {
-    req.session.destroy();
-    return res.json({ message: 'Logged out successfully' });
+    const user = await db.User.findByPk(req.params.id);
+    await user.update({
+      username: req.body.username,
+      password: req.body.password,
+    });
+    res.redirect('/users');
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Internal server error' });
+    console.log(error);
+    res.render('error');
+  }
+});
+
+// Route for deleting an existing user
+router.delete('/:id', async (req, res) => {
+  try {
+    const user = await db.User.findByPk(req.params.id);
+    await user.destroy();
+    res.redirect('/users');
+  } catch (error) {
+    console.log(error);
+    res.render('error');
   }
 });
 
