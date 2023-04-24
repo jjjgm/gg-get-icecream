@@ -29,7 +29,7 @@ document.getElementById('loginForm').addEventListener('submit', (event) => {
       if (!response.ok) {
         throw new Error(response.statusText);
       }
-      else {  window.location.href = '/dashboard';}
+      else {  window.location.href = '/';}
       return response.json();
     })
     .catch((error) => {
