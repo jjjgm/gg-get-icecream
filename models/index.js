@@ -29,6 +29,8 @@ User.belongsToMany(Pet, {
     as: 'user_messages'
 });
 
+module.exports = { User, Pet, Message };
+
 // User.hasOne(Pet, {
 //     foreignKey: 'pet_id',
 // });
@@ -49,4 +51,4 @@ User.belongsToMany(Pet, {
 //     foreignKey: 'profile_id',
 // });
 
-module.exports = { User, Pet, Message };
+

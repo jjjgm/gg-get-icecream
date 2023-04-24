@@ -1,35 +1,28 @@
 [
     {
-        "name": "Dog",
-        "age": 6,
-        "gender": "Female",
-        "breed": "Mixed",
-        "description": "ITS A DOG",
-        "pet_likes": "Squeaky Toys, Sleep",
-        "pet_dislikes": "Baths",
-        "petImg": "https://www.cesarsway.com/wp-content/uploads/2019/10/AdobeStock_190562703-768x535.jpeg",
-        "user_id": 2
+        "name": "Rose",
+        "location": "Florida",
+        "bio": "Just a bio",
+        "petImg": "https://images.squarespace-cdn.com/content/v1/5990c5a53e00bea41c0d0fc2/1510527588686-A24Z4WCM823DZOBK7LE2/Rose+Ice+Skating+5.jpg?format=750w"
     },
     {
-        "name": "Boop",
-        "age": 2,
-        "gender": "Female",
-        "breed": "Just a furball",
-        "description": "She's just so fluffy- a bit sassy!",
-        "pet_likes": "Sleep, Chewing on baseboard",
-        "pet_dislikes": "Cats, Horns",
-        "petImg": "https://www.rd.com/wp-content/uploads/2020/11/GettyImages-889552354-e1606774439626.jpg",
-        "user_id": 3
+        "name": "Sophia",
+        "location": "Florida",
+        "pet_id":2,
+        "bio": "Just a bio",
+        "petImg": "https://images.ctfassets.net/jxsch4jish6b/photo-48947/f11a2c4de0b26a8cfc23c432093846b6/48947-golden-girls-little-sophia.png?fm=jpg&fl=progressive&w=900&q=50"
     },
     {
-        "name": "Bronx",
-        "age": 1,
-        "gender": "Male",
-        "breed": "Chihuahua",
-        "description": "A lot like their owner",
-        "pet_likes": "Running",
-        "pet_dislikes": "Baths, Cats",
-        "petImg": "https://cdn.wamiz.fr/cdn-cgi/image/format=auto,quality=80,width=1200,height=900,fit=cover/article/main-picture/5ec295af75e39460426037.jpg",
-        "user_id": 4
+        "name": "Blanche",
+        "location": "Florida",
+        "bio": "Just a bio",
+        "petImg": "https://m.media-amazon.com/images/M/MV5BMjEzNDg5Nzc3MV5BMl5BanBnXkFtZTgwMTUwMTY1MjE@._V1_.jpg"
+    },
+    {
+        "name": "Dorothy",
+        "location": "Florida",
+        "bio": "Just a bio",
+
+        "petImg": "https://i.pinimg.com/564x/99/f3/4e/99f34e5cf2739aa28c871dff6fcb24b6.jpg"
     }
 ]
