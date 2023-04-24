@@ -2,43 +2,45 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
-// GET all messages for a specific dog
-router.get('/dogs/:id/messages', async (req, res) => {
+// Route for displaying all messages
+router.get('/', async (req, res) => {
   try {
-    const dog = await db.dog.findByPk(req.params.id);
-    if (!dog) {
-      return res.status(404).json({ message: 'Dog not found' });
-    }
-
-    const messages = await db.message.findAll({
-      where: { dogId: dog.id },
-      include: { model: db.user, as: 'user' },
-    });
-    return res.json(messages);
+    const messages = await db.Message.findAll();
+    res.render('messages/index', { messages });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Internal server error' });
+    console.log(error);
+    res.redirect('/messages');
   }
 });
 
-// POST a new message for a specific dog
-router.post('/dogs/:id/messages', async (req, res) => {
+// Route for displaying the new message form
+router.get('/new', (req, res) => {
+  res.render('messages/new');
+});
+
+// Route for creating a new message
+router.post('/', async (req, res) => {
   try {
-    const dog = await db.dog.findByPk(req.params.id);
-    if (!dog) {
-      return res.status(404).json({ message: 'Dog not found' });
-    }
-
-    const message = await db.message.create({
+    const newMessage = await db.Message.create({
       text: req.body.text,
-      dogId: dog.id,
-      userId: req.session.user.id,
+      dogId: req.body.dogId,
+      userId: req.session.user.id
     });
-
-    return res.json(message);
+    res.redirect(`/messages/${newMessage.id}`);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Internal server error' });
+    console.log(error);
+    res.redirect('/messages');
+  }
+});
+
+// Route for displaying a single message
+router.get('/:id', async (req, res) => {
+  try {
+    const message = await db.Message.findByPk(req.params.id);
+    res.render('messages/show', { message });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/messages');
   }
 });
 

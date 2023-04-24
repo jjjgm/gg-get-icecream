@@ -1,40 +1,55 @@
-// controllers/auth.js
-
 const express = require('express');
-const bcrypt = require('bcrypt');
-const { User } = require('../models');
-
 const router = express.Router();
+const db = require('../models');
 
-// Handle user login
-router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  // Find user by email
-  const user = await User.findOne({ where: { email } });
-
-  // If user doesn't exist, return error
-  if (!user) {
-    return res.status(404).json({ error: 'User not found' });
-  }
-
-  // Check if password is correct
-  const passwordMatches = await bcrypt.compare(password, user.password);
-
-  if (!passwordMatches) {
-    return res.status(401).json({ error: 'Incorrect password' });
-  }
-
-  // Set user ID in session
-  req.session.userId = user.id;
-
-  res.json({ message: 'Logged in successfully' });
+// Route for displaying the registration form
+router.get('/register', (req, res) => {
+  res.render('auth/register');
 });
 
-// Handle user logout
-router.post('/logout', (req, res) => {
+// Route for registering a new user
+router.post('/register', async (req, res) => {
+  try {
+    const newUser = await db.User.create({
+      username: req.body.username,
+      password: req.body.password,
+    });
+    req.session.user = newUser;
+    res.redirect('/dogs');
+  } catch (error) {
+    console.log(error);
+    res.redirect('/register');
+  }
+});
+
+// Route for displaying the login form
+router.get('/login', (req, res) => {
+  res.render('auth/login');
+});
+
+// Route for logging in a user
+router.post('/login', async (req, res) => {
+  try {
+    const user = await db.User.findOne({ where: { username: req.body.username } });
+    if (!user) {
+      return res.redirect('/login');
+    }
+    const passwordsMatch = await user.checkPassword(req.body.password);
+    if (!passwordsMatch) {
+      return res.redirect('/login');
+    }
+    req.session.user = user;
+    res.redirect('/dogs');
+  } catch (error) {
+    console.log(error);
+    res.redirect('/login');
+  }
+});
+
+// Route for logging out a user
+router.get('/logout', (req, res) => {
   req.session.destroy();
-  res.json({ message: 'Logged out successfully' });
+  res.redirect('/login');
 });
 
 module.exports = router;
