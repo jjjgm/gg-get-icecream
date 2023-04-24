@@ -1,0 +1,57 @@
+<section class="p-3">
+    <h1>Meet your new friend</h1>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-6 col-md-5 col-lg-4 d-flex justify-content-center">
+                <img class="img-fluid" src={{PLACEHOLDER image url}} alt="Image of {{PLACEHOLDER username}}">
+            </div>
+            <div class="col-6 col-md-7 col-lg-8">
+                <h3>{{PLACEHOLDER petname}}</h3>
+                <h5>age: {{PLACEHOLDER pet age}} || {{PLACEHOLDER pet gender}}</h5>
+                <h5>{{PLACEHOLDER pet breed}}</h5>
+                <h5><span class="material-symbols-rounded">location_on</span> {{PLACEHOLDER location}}</h5>
+
+                <div class="mt-4 d-flex justify-content-evenly">
+                    <button class="btn-1"><span class="material-symbols-rounded">add</span></button>
+                    <button data-bs-toggle="modal" data-bs-target="#find-new" class="btn-1">Find new friend</button>
+
+                    <div id="find-new" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Find New Friend</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+    
+                                <div class="modal-body">
+                                    <table id="user-list" class="w-100">
+                                        <tbody>
+                                            {{#each}}
+                                            <tr>
+                                                <td class="p-3"><img src={{PLACEHOLDER image url}} class="profile-icon" alt="Icon image of {{PLACEHOLDER petname}}"></td>
+                                                <td>{{PLACEHOLDER petname}}</td>
+                                                <td><button class="table-btn"><span class="material-symbols-rounded">person_add</span></button></td>
+                                            </tr>
+                                            {{/each}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h6>Bio</h6>
+            <p>
+                {{PLACEHOLDER description/bio}}
+            </p>
+    </div>
+</section>
+
+<script src="../../public/js/matchResult.js"></script>

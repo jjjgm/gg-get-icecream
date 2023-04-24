@@ -14,7 +14,7 @@ const io = socketio(server);
 
 const PORT = process.env.PORT || 3001;
 
-const sequelize = new Sequelize('mintchocolatechip_db', 'root', 'imthebest', {
+const sequelize = new Sequelize('mintchocolatechip_db', 'root', '12345678', {
   host: 'localhost',
   dialect: 'mysql',
 });
