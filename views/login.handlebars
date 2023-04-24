@@ -2,9 +2,9 @@
 
 {{!-- {{> main}} --}}
 
-<h1>Login<h1>
+{{!-- <h1>Login<h1> --}}
 
-	<section id="login-form">
+	{{!-- <section id="login-form">
 		<h1>Login</h1>
 		<form id="loginForm">
 			<label for="username">username:</label>
@@ -16,5 +16,27 @@
 			<input type="submit" value="Login">
 		</form>
 		<p>Don't have an account? <a href="/auth/signup">Sign up</a></p>
-	</section>
+	</section> --}}
+
+	<section id="login-form" class="min-vh-100 d-flex justify-content-center align-items-center">
+    <div>
+        <h1 class="mb-4">Thank you for being a friend.</h1>
+        <form id="loginForm" class="mb-5">
+            <div class="form-floating mb-3">
+                <input type="username" name="username" class="form-control" id="username" placeholder="Username" required>
+                <label for="username">Username</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                <label for="password">Password</label>
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center mt-4">
+                <input class="btn-1" type="submit" value="Login">
+            </div>
+        </form>
+        <h6 class="text-center">Don't have an account? <a href="/auth/signup">Sign up</a></h6>
+    </div>
+</section>
 <script src="./js/login.js"></script>

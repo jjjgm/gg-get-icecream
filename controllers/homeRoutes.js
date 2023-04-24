@@ -6,8 +6,10 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
     try {
       const userData = await db.User.findByPk(req.session.user.id);
-      const user = userData.get({plain:true})
-      res.render('homepage', { user });
+      const user = userData.get({plain:true});
+      console.log(user)
+      // res.render('homepage', { user });
+      res.json({ user })
     } catch (error) {
       console.log(error);
       res.json(error);
@@ -23,6 +25,10 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.get('/signup', (req, res) => {
+  res.render('signup');
+})
 
 // Route for displaying all dogs
 router.get('/dogs', async (req, res) => {
