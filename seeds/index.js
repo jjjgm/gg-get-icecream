@@ -24,13 +24,6 @@ const seedDatabase = async () => {
     });
 
 
-        // for (const dog of dogData) {
-    //     const newDog = await Dog.create({
-    //         ...dog,
-    //         user_id: users[Math.floor(Math.random() * users.length)].id,
-    //     });
-    // };
-
 
     process.exit(0);
 };

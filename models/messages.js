@@ -24,7 +24,7 @@ Message.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'message',
+    modelName: 'messages',
   }
 );
 
