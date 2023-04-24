@@ -15,7 +15,10 @@ Message.init(
   },
   {
     sequelize,
-    modelName: 'Message'
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'dog',
   }
 );
 
