@@ -4,17 +4,15 @@ const withAuth = require('../utils/auth');
 
 // Index route for all users
 router.get('/', async (req, res) => {
-    try {
-      const userData = await db.User.findByPk(req.session.user.id);
-      const user = userData.get({plain:true});
-      console.log(user)
-      // res.render('homepage', { user });
-      res.json({ user })
-    } catch (error) {
-      console.log(error);
-      res.json(error);
-    }
-  });
+  try {
+    const userData = await db.User.findByPk(req.session.user.id);
+    const user = userData.get({plain:true})
+    res.render('homepage', { user });
+  } catch (error) {
+    console.log(error);
+    res.json(error);
+  }
+});
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
