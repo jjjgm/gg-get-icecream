@@ -69,7 +69,7 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
             alert(`Signup failed: ${error.message}`);
         });
     
-    var myWidget = cloudinary.createUploadWidget({
+   /*  var myWidget = cloudinary.createUploadWidget({
         cloudName: 'dyyjy1hzi',
         uploadPreset: 'a7lspwhw'}, (error, result) => {
             if (!error && result && result.event === "success") {
@@ -79,4 +79,4 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
         })
     
     document.getElementById("upload_widget").addEventListener("click", function(){    myWidget.open();  }, false);
-});
+}); */
