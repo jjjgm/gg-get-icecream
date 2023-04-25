@@ -23,62 +23,65 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
     const age = ageInput.value;
     const breed = breedInput.value;
     const bio = bioInput.value;
+    const image = document.querySelector('#dog-picture').value
 
-
+    console.log(image)
     // Validate the input
-    if (!username || !password || !name || !age || !breed || !bio) {
-        alert('Please input all required fields.');
-        return;
-    }
+    // if (!username || !password || !name || !age || !breed || !bio) {
+    //     alert('Please input all required fields.');
+    //     return;
+    // }
     // if (password !== confirmPassword) {
     //     alert('Passwords do not match.');
     //     return;
     // }
 
     // Send a request to the server to create a new user account
-    fetch('/api/auth', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            username,
-            password,
-            // dogs: [
-            //     {
-                    name,
-                    age,
-                    breed,
-                    url,
-                    bio
-                // },
-            // ],
-        }),
-    })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(response.statusText);
-            }
-            else {window.location.href = '/';}
-            return response.json();
-            // if (response.ok) {
-            //     document.location.replace('/messages');
-            // } else {
-            //     alert(response.statusText);
-            // }
-        })
-        .catch((error) => {
-            alert(`Signup failed: ${error.message}`);
-        });
+    // fetch('/api/auth', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({
+    //         username,
+    //         password,
+    //         // dogs: [
+    //         //     {
+    //                 name,
+    //                 age,
+    //                 breed,
+    //                 url,
+    //                 bio
+    //             // },
+    //         // ],
+    //     }),
+    // })
+    //     .then((response) => {
+    //         if (!response.ok) {
+    //             throw new Error(response.statusText);
+    //         }
+    //         else {window.location.href = '/';}
+    //         return response.json();
+    //         // if (response.ok) {
+    //         //     document.location.replace('/messages');
+    //         // } else {
+    //         //     alert(response.statusText);
+    //         // }
+    //     })
+    //     .catch((error) => {
+    //         alert(`Signup failed: ${error.message}`);
+    //     });
     
-    var myWidget = cloudinary.createUploadWidget({
-        cloudName: 'dyyjy1hzi',
-        uploadPreset: 'a7lspwhw'}, (error, result) => {
-            if (!error && result && result.event === "success") {
-                console.log('Done! Here is the image info: ', result.info);
-                url = result.info.secure_url;
-            }
-        })
+    // var myWidget = cloudinary.createUploadWidget({
+    //     cloudName: 'dyyjy1hzi',
+    //     uploadPreset: 'a7lspwhw'}, (error, result) => {
+    //         if (!error && result && result.event === "success") {
+    //             console.log('Done! Here is the image info: ', result);
+    //             url = result.info.secure_url;
+    //         }
+    //     })
     
-    document.getElementById("upload_widget").addEventListener("click", function(){ myWidget.open(); }, false);
+    // document.getElementById("upload_widget").addEventListener("click", function(){ console.log("hi"); myWidget.open();}, false);
 });
+
+// document.querySelector('#dog-picture').addEventListener('click', function(){ console.log("hi");});
