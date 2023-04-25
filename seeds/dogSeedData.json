@@ -1,30 +1,30 @@
 [
     {
-        "name": "Doggie",
-        "breed": "Mixed- Unsure",
-        "age": 2,
-        "bio": "Good dog",
+        "name": "Sophia Petrillo",
+        "breed": "Chihuahua",
+        "age": 83,
+        "bio": "Feisty, sharp-witted, and fiercely loyal to her loved ones. Sophia is a small dog with a big personality. She's never afraid to speak her mind, and she'll always stand up for what she believes in. Despite her age, she's still full of energy and spunk, and she loves to play and have fun. When she's not busy cracking jokes or playing cards with her friends, she enjoys snuggling up on the couch with her humans and enjoying a slice of cheesecake.",
         "user_id": 1
     },
     {
-        "name": "Dog One",
-        "breed": "Mixed",
+        "name": "Rose Nylund",
+        "breed": "Golden Retriever",
         "age": 2,
-        "bio": "The one true dog",
+        "bio": "Sweet, gentle, and optimistic, Rose is a dog who loves to bring joy and happiness to those around her. She's always eager to make new friends and help out in any way she can. Her kind heart and sunny disposition make her a favorite among everyone she meets. She loves to bake treats for her humans and share stories about her adventures. She can be a bit naive at times, but her trusting nature is part of her charm.",
         "user_id": 2
     },
     {
-        "name": "Doge",
-        "breed": "golden",
+        "name": "Dorothy Zbornak",
+        "breed": "German Shepherd",
         "age": 1,
-        "bio": "He's golden",
+        "bio": "Intelligent, independent, and no-nonsense, Dorothy is a dog who values her privacy and her time alone. She's highly intelligent and enjoys solving puzzles and problems, but she can also be quite sarcastic and sassy when she feels that others are not living up to her standards. She's fiercely loyal to her loved ones and will do whatever it takes to protect them. Despite her tough exterior, she has a soft spot for those in need and will go out of her way to help others.",
         "user_id": 3
     },
     {
-        "name": "Pup",
-        "breed": "shiba",
-        "age": 3,
-        "bio": "puppy",
+        "name": "Blanche Devereaux",
+        "breed": "Bichon Frise",
+        "age": 45,
+        "bio": "Flirtatious, fashionable, and outgoing, Blanche is a dog who loves to be the center of attention. She's always dressed to impress and ready to socialize with anyone who crosses her path. She can be a bit high maintenance at times, but her charm and charisma make up for it. She loves to flirt and has a way of making everyone feel special. She can be stubborn and doesn't like to be told what to do, but her loyalty and affection make her a beloved member of her family.",
         "user_id": 4
     }
 ]
