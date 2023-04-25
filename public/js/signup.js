@@ -70,15 +70,15 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
         .catch((error) => {
             alert(`Signup failed: ${error.message}`);
         });
-    
-    var myWidget = cloudinary.createUploadWidget({
-        cloudName: 'dyyjy1hzi',
-        uploadPreset: 'a7lspwhw'}, (error, result) => {
-            if (!error && result && result.event === "success") {
-                console.log('Done! Here is the image info: ', result.info);
-                url = result.info.secure_url;
-            }
-        })
-    
-    document.getElementById("upload_widget").addEventListener("click", function(){ myWidget.open(); }, false);
 });
+
+var myWidget = cloudinary.createUploadWidget({
+    cloudName: 'dyyjy1hzi',
+    uploadPreset: 'a7lspwhw'}, (error, result) => {
+        if (!error && result && result.event === "success") {
+            console.log('Done! Here is the image info: ', result.info);
+            url = result.info.secure_url;
+        }
+    })
+
+document.getElementById("upload_widget").addEventListener("click", function(){ myWidget.open(); }, false);
