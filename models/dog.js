@@ -23,6 +23,10 @@ Dog.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    bio: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     user_id:{
       type: DataTypes.INTEGER,
       allowNull: false,

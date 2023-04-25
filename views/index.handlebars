@@ -1,21 +1,19 @@
 <section class="p-3 mt-5">
-  <h1>All Dogs</h1>
-  {{#each dogs}}
-  <div id="friend-table" class="p-3">
-      <table class="w-100">
-         <tbody>
-    <tr class="friend-row">
-        <td class="p-3 alltable-profile">
-            {{!-- <img src={{PLACEHOLDER image url}} class="profile-icon" alt="Icon image of {{PLACEHOLDER petname}}"> --}}
-        </td>
-        <td class="py-3 alltable-name"><a href="/dogs/{{this.id}}">{{this.name}}</a></td>
-        <td class="py-3 alltable-breed">{{this.breed}}</td>
-        <td class="py-3 alltable-age">age: {{this.age}}</td>
-        <td class="py-3 alltable-gender">{{this.gender}}</td>
-    </tr>
-</tbody>
-
-      </table>
-  </div>
-  {{/each}}
+    <h1>All Dogs</h1>
+    {{#each dogs}}
+    <div id="friend-table" class="p-3">
+        <table class="w-100">
+            <tbody>
+                <tr class="friend-row">
+                    <td class="p-3 alltable-profile">
+                            {{!-- <img src={{PLACEHOLDER image url}} class="profile-icon" alt="Icon image of {{PLACEHOLDER petname}}"> --}}
+                    </td>
+                    <td class="py-3 alltable-name"><a href="/dogs/{{this.id}}">{{this.name}}</a></td>
+                    <td class="py-3 alltable-breed">{{this.breed}}</td>
+                    <td class="py-3 alltable-age">age: {{this.age}}</td>
+                </tr>
+        </tbody>
+        </table>
+    </div>
+    {{/each}}
 </section>

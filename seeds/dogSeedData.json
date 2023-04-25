@@ -3,24 +3,28 @@
         "name": "Doggie",
         "breed": "Mixed- Unsure",
         "age": 2,
+        "bio": "Good dog",
         "user_id": 1
     },
     {
         "name": "Dog One",
         "breed": "Mixed",
         "age": 2,
+        "bio": "The one true dog",
         "user_id": 2
     },
     {
         "name": "Doge",
         "breed": "golden",
         "age": 1,
+        "bio": "He's golden",
         "user_id": 3
     },
     {
         "name": "Pup",
         "breed": "shiba",
         "age": 3,
+        "bio": "puppy",
         "user_id": 4
     }
 ]

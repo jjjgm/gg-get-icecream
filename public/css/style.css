@@ -43,15 +43,15 @@ nav {
 }
 
 .alltable-profile {
-  width: 15%;
+  width: 12.5%;
 }
 
 .alltable-name {
-  width: 25%;
+  width: 37.5%;
 }
 
-.alltable-breed, .alltable-age, .alltable-gender {
-  width: 20%;
+.alltable-breed, .alltable-age {
+  width: 25%;
 }
 
 .profile-icon {

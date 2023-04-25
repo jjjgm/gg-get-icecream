@@ -7,7 +7,7 @@ const ageInput = document.getElementById('dog-age');
 const breedInput = document.getElementById('dog-breed');
 // const genderInput = document.getElementById('gender');
 // const pictureInput = document.getElementById('picture');
-// const bioInput = document.getElementById('description');
+const bioInput = document.getElementById('dog-description');
 let url;
 
 // Add an event listener to the signup form
@@ -22,10 +22,11 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
     const name = nameInput.value;
     const age = ageInput.value;
     const breed = breedInput.value;
+    const bio = bioInput.value;
 
 
     // Validate the input
-    if (!username || !password || !name || !age || !breed) {
+    if (!username || !password || !name || !age || !breed || !bio) {
         alert('Please input all required fields.');
         return;
     }
@@ -48,7 +49,8 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
                     name,
                     age,
                     breed,
-                    url
+                    url,
+                    bio
                 // },
             // ],
         }),
@@ -78,5 +80,5 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
             }
         })
     
-    document.getElementById("upload_widget").addEventListener("click", function(){    myWidget.open();  }, false);
+    document.getElementById("upload_widget").addEventListener("click", function(){ myWidget.open(); }, false);
 });
