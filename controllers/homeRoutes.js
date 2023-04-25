@@ -78,4 +78,15 @@ router.get('/new', (req, res) => {
   res.render('messages/new');
 });
 
+router.get('/users', async (req, res) => {
+  try {
+    const userData = await db.User.findAll();
+    const users = userData.map(user => user.get({ plain: true }));
+    res.render('homepage', { users });
+  } catch (error) {
+    console.log(error);
+    res.json(error);
+  }
+});
+
 module.exports = router;
