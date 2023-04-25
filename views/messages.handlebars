@@ -1,4 +1,9 @@
+
+
 <h1>Messages</h1>
+<div id="message-feature">
+
+
 <ul>
   {{#each messages}}
   <li>
@@ -10,3 +15,23 @@
   </li>
   {{/each}}
 </ul>
+
+
+
+<h1>New Message</h1>
+<form method="POST" action="/messages">
+  <label for="to">To:</label>
+  <select name="to" id="message-form">
+    {{#each users as |user|}}
+    <option value="{{this.id}}">{{this.username}}</option>
+    {{/each}}
+  </select>
+  <br>
+  <label for="message-display">Message:</label>
+  <textarea name="message-new" id="message-input" rows="5"></textarea>
+  <br>
+  <button type="submit">Send Message</button>
+</form>
+<script src="/socket.io/socket.io.js"></script>
+</div>
+

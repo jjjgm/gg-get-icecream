@@ -14,12 +14,28 @@ Messages.init({
   text: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  dogId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'dog',
+      id: 'id'
+    }
+  },
+  userId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'user',
+      id: 'id'
+    }
   }
   
 },
 {
   sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'messages',
