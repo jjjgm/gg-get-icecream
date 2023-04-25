@@ -27,6 +27,9 @@ Dog.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    url: {
+      type: DataTypes.STRING,
+    },
     user_id:{
       type: DataTypes.INTEGER,
       allowNull: false,
