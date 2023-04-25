@@ -82,10 +82,10 @@ router.get('/new', (req, res) => {
 router.get('/messages/:id', async (req, res) => {
   try {
     const messageData = await db.Messages.findByPk(req.params.id);
-    
+
     const message = messageData.get({ plain: true });
 
-    res.render( 'usermessage', { message });
+    res.render('usermessage', { message });
   } catch (error) {
     console.log(error);
     res.json(error);

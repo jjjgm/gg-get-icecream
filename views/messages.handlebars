@@ -19,13 +19,14 @@
 
 
 <h1>New Message</h1>
+<div>
 <form method="POST" action="/messages">
   <label for="to">To:</label>
   <select name="to" id="message-form">
-    {{#each users as |user|}}
-    <option value="{{this.id}}">{{this.username}}</option>
-    {{/each}}
+    {{#each users}}
+    <option value={{this.id}}>{{this.username}}</option>
   </select>
+   {{/each}}
   <br>
   <label for="message-display">Message:</label>
   <textarea name="message-new" id="message-input" rows="5"></textarea>

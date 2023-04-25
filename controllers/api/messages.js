@@ -4,13 +4,12 @@ const db = require('../../models');
 
 
 //POST MESSAGE
-router.post('/messages/', async (req, res) => {
+router.post('/messages', async (req, res) => {
   try {
     const newMessage = await db.Messages.create ({
-      name: req.body.name,
       text: req.body.message
     });
-    res.render('usermessage', `messages/${newMessage.id}`);
+    res.render('usermessage');
   } catch (error) {
     console.log(error);
     res.json(error);
