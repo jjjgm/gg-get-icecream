@@ -38,9 +38,16 @@ body {
   max-height: 20vh;
 }
 
-.table-btn {
-  border: none;
-  background-color: transparent;
+.alltable-profile {
+  width: 15%;
+}
+
+.alltable-name {
+  width: 25%;
+}
+
+.alltable-breed, .alltable-age, .alltable-gender {
+  width: 20%;
 }
 
 .profile-icon {
