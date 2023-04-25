@@ -43,13 +43,18 @@ router.get('/dogs', async (req, res) => {
     }
   });
 
-// router.get('/dogs/:id' async (req, res) => {
-//   try {} catch (error) {
-//     console.log(error);
-//     res.json(error)
-//   }
-// })
-  
+  router.get('/dogs/:id', async (req, res) => {
+    try {
+      const dogData = await db.Dog.findOne({ where: { id: req.params.id } });
+      if (!dogData) {
+        return res.status(404).send('Dog not found');
+      }
+      res.render('profile', { dog: dogData.get({ plain: true }) });
+    } catch (error) {
+      console.log(error);
+      res.json(error);
+    }
+  });
 
 router.get('/new', (req, res) => {
     res.render('dogs/new');
@@ -71,23 +76,5 @@ router.get('/new', (req, res) => {
 router.get('/new', (req, res) => {
   res.render('messages/new');
 });
-// Route for displaying a specific dog
-  // router.get('/:id', async (req, res) => {
-  //   try {
-  //     const dog = await db.Dog.findByPk(req.params.id, {
-  //       include: db.User,
-  //     });
-  //     if (!dog) {
-  //       res.json("no dog with that ID");
-  //       return;
-  //     }
-  //     res.render('index', { dog });
-  //   } catch (error) {
-  //     console.log(error);
-  //     res.json(error);
-  //   }
-  // });
-
-
 
 module.exports = router;
