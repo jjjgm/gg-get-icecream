@@ -1,3 +1,5 @@
+<!-- THIS IS THE SOCKET IO CHAT IMP. -->
+
 <!DOCTYPE html>
 <html>
 
@@ -5,11 +7,14 @@
     <title>Socket.IO Chat Example</title>
     <script src="/socket.io/socket.io.js"></script>
     <script>
+        var socket = io();
+    </script>
+    <script>
         const socket = io();
 
-        const form = document.getElementById('form');
-        const input = document.getElementById('input');
-        const messages = document.getElementById('messages');
+        const form = document.getElementById('message-form');
+        const input = document.getElementById('message-input');
+        const messages = document.getElementById('message-display');
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -21,9 +26,14 @@
 
         socket.on('chat message', function (msg) {
             const item = document.createElement('li');
-            item.textContent = msg;
-            messages.appendChild(item);
-            window.scrollTo(0, document.body.scrollHeight);
+            try {
+                item.textContent = msg;
+                messages.appendChild(item);
+                window.scrollTo(0, document.body.scrollHeight);
+            } catch (error) {
+                console.log(error);
+                res.redirect('/dogs');
+            }
         });
     </script>
 </head>
@@ -33,6 +43,9 @@
     <form id="form">
         <input id="input" autocomplete="off" /><button>Send</button>
     </form>
+
+
+
 </body>
 
 </html>

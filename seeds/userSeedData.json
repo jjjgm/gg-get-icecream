@@ -1,18 +1,18 @@
 [
     {
-        "username": "Rose",
-        "password": "password"
-    },
-    {
         "username": "Sophia",
         "password": "password"
     },
     {
-        "username": "Blanche",
+        "username": "Rose",
         "password": "password"
     },
     {
         "username": "Dorothy",
+        "password": "password"
+    },
+    {
+        "username": "Blanche",
         "password": "password"
     }
 ]

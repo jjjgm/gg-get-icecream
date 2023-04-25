@@ -16,10 +16,17 @@
                 <h3>{{dog.name}}</h3>
                 <h5>age: {{dog.age}}</h5>
                 <h5>{{dog.breed}}</h5>
-                {{/each}}
-                
+                <img src="{{dog.url}}">
             </div>
         </div>
+    </div>
+
+    <div class="mt-5">
+        <h6>Bio</h6>
+            <p>
+                {{dog.bio}}
+            </p>
+            {{/each}}
     </div>
 
 </section>

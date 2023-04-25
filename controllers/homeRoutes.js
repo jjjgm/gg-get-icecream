@@ -50,7 +50,11 @@ router.get('/dogs', async (req, res) => {
       const dog = dogData.get({ plain: true });
   
       res.render('friendprofile', { dog });
+
       // res.json({ dog})
+
+      
+
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
