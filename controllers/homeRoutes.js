@@ -55,6 +55,22 @@ router.get('/new', (req, res) => {
     res.render('dogs/new');
   });
   
+
+  router.get('/messages', async (req, res) => {
+    try {
+      const messageData = await db.Messages.findAll();
+      const messages = messageData.map(message => message.get({ plain: true }));
+      res.render('messages', { messages });
+    } catch (error) {
+      console.log(error);
+      res.redirect('/messages');
+    }
+  });
+
+  // Route for displaying the new message form
+router.get('/new', (req, res) => {
+  res.render('messages/new');
+});
 // Route for displaying a specific dog
   // router.get('/:id', async (req, res) => {
   //   try {
