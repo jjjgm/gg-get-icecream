@@ -23,14 +23,16 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
     const age = ageInput.value;
     const breed = breedInput.value;
     const bio = bioInput.value;
-    const image = document.querySelector('#dog-picture').value
+    const image = document.querySelector('#dog-picture').files
 
-    console.log(image)
+    let img = URL.createObjectURL(image[0])
+
+    console.log(img)
     // Validate the input
-    // if (!username || !password || !name || !age || !breed || !bio) {
-    //     alert('Please input all required fields.');
-    //     return;
-    // }
+    if (!username || !password || !name || !age || !breed || !bio) {
+        alert('Please input all required fields.');
+        return;
+    }
     // if (password !== confirmPassword) {
     //     alert('Passwords do not match.');
     //     return;
