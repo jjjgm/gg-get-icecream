@@ -14,7 +14,8 @@ Messages.init({
   text: {
     type: DataTypes.STRING,
     allowNull: false,
-  }
+  },
+  
 },
 {
   sequelize,
