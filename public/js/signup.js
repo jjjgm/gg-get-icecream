@@ -57,7 +57,7 @@ document.getElementById('signupForm').addEventListener('submit', (event) => {
             if (!response.ok) {
                 throw new Error(response.statusText);
             }
-            else {window.location.href = '/login';}
+            else {window.location.href = '/';}
             return response.json();
             // if (response.ok) {
             //     document.location.replace('/messages');

@@ -34,7 +34,8 @@ router.get('/signup', (req, res) => {
 // Route for displaying all dogs
 router.get('/dogs', async (req, res) => {
     try {
-      const dogs = await db.Dog.findAll();
+      const dogData = await db.Dog.findAll();
+      const dogs = dogData.map(dog => dog.get({ plain: true }));
       res.render('index', { dogs });
     } catch (error) {
       console.log(error);
