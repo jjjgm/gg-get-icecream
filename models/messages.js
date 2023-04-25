@@ -1,20 +1,20 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection.js');
-class Message extends Model{};
-/* const { DataTypes } = require('sequelize');
-const sequelize = require('../config/connection.js'); */
+// models/messages.js
 
-Message.init(
-  {
-    text: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
-  },
-  {
-    sequelize,
-    modelName: 'Message'
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/connection.js');
+
+const Message = sequelize.define('Message',
+{
+  text: {
+    type: DataTypes.STRING,
+    allowNull: false,
   }
-);
+});
+//   sequelize,
+//     timestamps: false,
+//     freezeTableName: true,
+//     underscored: true,
+//     modelName: 'message',
+// });
 
 module.exports = Message;

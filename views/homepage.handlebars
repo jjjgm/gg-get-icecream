@@ -5,92 +5,21 @@
     <h3>Thank you for being a friend.</h3>
     
 
-    {{!-- <div class="container mt-4">
+    <div class="container mt-4">
         <div class="row">
             <div class="col-6 col-md-5 col-lg-4 d-flex justify-content-center">
-                <img class="img-fluid" src={{PLACEHOLDER image url}} alt="Image of {{PLACEHOLDER username}}">
+                {{!-- <img class="img-fluid" src={{PLACEHOLDER image url}} alt="Image of {{PLACEHOLDER username}}"> --}}
             </div>
 
             <div class="col-6 col-md-7 col-lg-8">
-                <h3>{{PLACEHOLDER petname}}</h3>
-                <h5>age: {{PLACEHOLDER pet age}} || {{PLACEHOLDER pet gender}}</h5>
-                <h5>{{PLACEHOLDER pet breed}}</h5>
-                <h5><span class="material-symbols-rounded">location_on</span> {{PLACEHOLDER location}}</h5>
+                {{#each user.dogs as |dog|}}
+                <h3>{{dog.name}}</h3>
+                <h5>age: {{dog.age}}</h5>
+                <h5>{{dog.breed}}</h5>
+                {{/each}}
                 
-                
-                <!-- add btn-1 -->
-                <button id="edit-btn" class="mt-2 btn-1" data-bs-toggle="modal" data-bs-target="#editUserModal">edit profile</button>
-                    
-                <!-- edit modal -->
-                {{!-- <div id="editUserModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Edit profile</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                        
-                            <div class="modal-body">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="edit-username" placeholder="Edit name here">
-                                    <label for="floatingInput">Name</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="edit-userlocation" placeholder="Edit location here">
-                                    <label for="floatingInput">Location</label>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <textarea class="form-control" placeholder="Edit bio here" id="edit-userbio" style="height: 100px"></textarea>
-                                    <label for="floatingTextarea">Bio</label>
-                                </div>
-
-
-                            </div>
-
-                            <div class="modal-footer">
-                                <!-- add btn-1 -->
-                                <button type="button" class="btn-1" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn-1" data-bs-dismiss="modal">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-
             </div>
         </div>
     </div>
-
-    {{!-- <div class="mt-5">
-        <h6>Bio</h6>
-        <p>
-            {{PLACEHOLDER description/bio}}
-        </p>
-    </div> --}}
-
-    {{!-- <hr class="mt-5 mb-4">
-
-    <div>
-        <div class="d-flex justify-content-between">
-            <h2>My friends</h2>
-            <button class="btn-2">Add new friend</button>
-        </div>
-        
-        <div id="friend-table" class="p-3">
-            <table class="w-100">
-                <tbody>
-                    {{#each}}
-                    <tr class="friend-row">
-                        <td class="p-3"><img src={{PLACEHOLDER image url}} class="profile-icon" alt="Icon image of {{PLACEHOLDER petname}}"></td>
-                        <td scope="row" class="py-3">{{PLACEHOLDER petname}}</td>
-                        <td class="py-3"><span class="material-symbols-rounded">location_city</span> {{PLACEHOLDER location}}</td>
-                        <td class="py-3"><button class="table-btn"><span class="material-symbols-rounded">delete</span></button></td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-        </div>
-    </div> --}}
 
 </section>

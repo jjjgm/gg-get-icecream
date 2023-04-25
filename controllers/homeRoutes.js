@@ -3,12 +3,14 @@ const db = require('../models')
 const withAuth = require('../utils/auth');
 
 // Index route for all users
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
-    const userData = await db.User.findByPk(req.session.user.id);
+    const userData = await db.User.findByPk(req.session.user.id, {
+      include: [{ model: db.Dog }]
+    });
     const user = userData.get({plain:true})
     res.render('homepage', { user });
-    //res.status(200).json({ user })
+    // res.status(200).json({ user })
   } catch (error) {
     console.log(error);
     res.json(error);
@@ -32,7 +34,8 @@ router.get('/signup', (req, res) => {
 // Route for displaying all dogs
 router.get('/dogs', async (req, res) => {
     try {
-      const dogs = await db.Dog.findAll();
+      const dogData = await db.Dog.findAll();
+      const dogs = dogData.map(dog => dog.get({ plain: true }));
       res.render('index', { dogs });
     } catch (error) {
       console.log(error);
@@ -46,20 +49,21 @@ router.get('/new', (req, res) => {
   });
   
 // Route for displaying a specific dog
-  router.get('/:id', async (req, res) => {
-    try {
-      const dog = await db.Dog.findByPk(req.params.id, {
-        include: db.User,
-      });
-      if (!dog) {
-        res.json("no dog with that ID");
-      }
-      res.render('dogs/show', { dog });
-    } catch (error) {
-      console.log(error);
-      res.json(error);
-    }
-  });
+  // router.get('/:id', async (req, res) => {
+  //   try {
+  //     const dog = await db.Dog.findByPk(req.params.id, {
+  //       include: db.User,
+  //     });
+  //     if (!dog) {
+  //       res.json("no dog with that ID");
+  //       return;
+  //     }
+  //     res.render('index', { dog });
+  //   } catch (error) {
+  //     console.log(error);
+  //     res.json(error);
+  //   }
+  // });
 
 
 
