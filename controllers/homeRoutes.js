@@ -74,17 +74,18 @@ router.get('/new', (req, res) => {
     }
   });
 
-  // Route for displaying the new message form
-router.get('/new', (req, res) => {
-  res.render('messages/new');
-});
+//   // Route for displaying the new message form
+// router.get('/new', (req, res) => {
+//   res.render('messages/new');
+// });
 
 router.get('/messages/:id', async (req, res) => {
   try {
     const messageData = await db.Messages.findByPk(req.params.id);
+    
     const message = messageData.get({ plain: true });
 
-    res.render( 'messages', { message });
+    res.render( 'usermessage', { message });
   } catch (error) {
     console.log(error);
     res.json(error);

@@ -1,14 +1,17 @@
-<h1>New Message</h1>
-<form method="POST" action="/messages">
-  <label for="to">To:</label>
-  <select name="to" id="message-form">
-    {{#each users}}
-    <option value="{{this.id}}" id="useridhere">{{this.name}}</option>
-    {{/each}}
-  </select>
-  <br>
-  <label for="message-display">Message:</label>
-  <textarea name="message-new" id="message-input" rows="5"></textarea>
-  <br>
-  <button type="submit">Send Message</button>
-</form>
+
+<h1>Messages</h1>
+<div id="message">
+{{#each message as |messages|}}
+<div class="mt-5">
+            <p>
+              <ul>
+                <li>Message: {{this.text}}
+                  </li>
+                </ul>
+            </p>
+          
+    </div>
+    </div>
+  {{/each}}
+
+

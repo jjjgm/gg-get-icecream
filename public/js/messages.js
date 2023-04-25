@@ -1,5 +1,6 @@
 const nameInput = document.getElementById('useridhere');
 const textInput = document.getElementById('message-input');
+let url;
 
 document.getElementById('message-input').addEventListener('submit', (event) => {
     // Prevent the default form submission behavior
@@ -7,6 +8,7 @@ document.getElementById('message-input').addEventListener('submit', (event) => {
 
     const name = nameInput.value;
     const text = textInput.value;
+
 
 fetch('/messages', {
     method: 'POST',
@@ -22,7 +24,7 @@ fetch('/messages', {
         if (!response.ok) {
             throw new Error(response.statusText);
         }
-        else {window.location.href = '/homepage';}
+        else {window.location.href = '/messages';}
         return response.json(); 
         // if (response.ok) {
         //     document.location.replace('/messages');
