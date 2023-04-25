@@ -45,14 +45,15 @@ router.get('/dogs', async (req, res) => {
 
   router.get('/dogs/:id', async (req, res) => {
     try {
-      const dogData = await db.Dog.findOne({ where: { id: req.params.id } });
-      if (!dogData) {
-        return res.status(404).send('Dog not found');
-      }
-      res.render('friendprofile', { dog: dogData.get({ plain: true }) });
-    } catch (error) {
-      console.log(error);
-      res.json(error);
+      const dogData = await db.Dog.findByPk(req.params.id);
+  
+      const dog = dogData.get({ plain: true });
+  
+      // res.render('friendprofile', { dog });
+      res.json({ dog})
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
     }
   });
 
