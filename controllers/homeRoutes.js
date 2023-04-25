@@ -78,13 +78,12 @@ router.get('/new', (req, res) => {
   res.render('messages/new');
 });
 
-router.get('/messages/', async (req, res) => {
+router.get('/messages/:id', async (req, res) => {
   try {
-    const newMessage = await db.Messages.create ({
-      name: req.body.name,
-      text: req.body.message
-    });
-    res.render(`messages/${newMessage.id}`);
+    const messageData = await db.Messages.findByPk(req.params.id);
+    const message = messageData.get({ plain: true });
+
+    res.render( 'messages', { message });
   } catch (error) {
     console.log(error);
     res.json(error);
