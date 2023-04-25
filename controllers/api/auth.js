@@ -19,6 +19,7 @@ router.post('/', async (req, res) => {
       name: req.body.name,
       breed: req.body.breed,
       age: req.body.age,
+      bio: req.body.bio,
       user_id: newUser.id
     })
     req.session.save(()=>{
