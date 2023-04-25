@@ -5,20 +5,13 @@ const User = require('./users');
 const Message = require('./messages');
 const Dog = require('./dog');
 
-Dog.belongsToMany(User, {
-  through: {
-    model: Message,
-    unique: false,
+Dog.belongsTo(User, {
   foreignKey: 'user_id'
-  }
 });
 
-User.belongsToMany(Dog, {
-  through: {
-    model: Message,
-    unique: false,
+User.hasMany(Dog, {
     foreignKey: 'user_id'
-  }
+
 });
 
 // // Define a Driver as having one License to create a foreign key in the `license` table

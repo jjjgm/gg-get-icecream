@@ -2,21 +2,25 @@
     {
         "name": "Doggie",
         "breed": "Mixed- Unsure",
-        "age": 2
+        "age": 2,
+        "user_id": 1
     },
     {
         "name": "Dog One",
         "breed": "Mixed",
-        "age": 2
+        "age": 2,
+        "user_id": 2
     },
     {
         "name": "Doge",
         "breed": "golden",
-        "age": 1
+        "age": 1,
+        "user_id": 3
     },
     {
         "name": "Pup",
         "breed": "shiba",
-        "age": 3
+        "age": 3,
+        "user_id": 4
     }
 ]

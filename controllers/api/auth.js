@@ -8,14 +8,24 @@ router.get('/register', (req, res) => {
 });
 
 // Route for registering a new user
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
+    console.log(req.body);
     const newUser = await db.User.create({
       username: req.body.username,
       password: req.body.password,
     });
-    req.session.user = newUser;
-    res.redirect('/dogs');
+    const newPet = await db.Dog.create({
+      name: req.body.name,
+      breed: req.body.breed,
+      age: req.body.age,
+      user_id: newUser.id
+    })
+    req.session.save(()=>{
+      req.session.user = newUser;
+      req.session.logged_in = true;
+      res.json(newUser);
+    })
   } catch (error) {
     console.log(error);
     res.render('auth/register', { error });
@@ -25,6 +35,7 @@ router.post('/register', async (req, res) => {
 // Route for logging in a user
 router.post('/login', async (req, res) => {
   try {
+    console.log(req.body)
     const user = await db.User.findOne({ where: { username: req.body.username } });
     if (!user) {
       return res.json({ error: 'Username or password is incorrect.' });
@@ -35,6 +46,7 @@ router.post('/login', async (req, res) => {
     }
     req.session.save(()=>{
       req.session.user = user;
+      req.session.logged_in = true;
       res.json(user);
     })
   } catch (error) {
@@ -44,7 +56,7 @@ router.post('/login', async (req, res) => {
 });
 
 // Route for logging out a user
-router.get('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
   req.session.destroy();
   res.redirect('/login');
 });
