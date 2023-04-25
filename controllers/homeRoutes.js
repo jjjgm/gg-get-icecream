@@ -49,7 +49,7 @@ router.get('/dogs', async (req, res) => {
       if (!dogData) {
         return res.status(404).send('Dog not found');
       }
-      res.render('profile', { dog: dogData.get({ plain: true }) });
+      res.render('friendprofile', { dog: dogData.get({ plain: true }) });
     } catch (error) {
       console.log(error);
       res.json(error);
