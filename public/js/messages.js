@@ -1,4 +1,4 @@
-const nameInput = document.getElementById('useridhere');
+const nameInput = document.getElementById('message-form');
 const textInput = document.getElementById('message-input');
 let url;
 
@@ -6,19 +6,17 @@ document.getElementById('message-input').addEventListener('submit', (event) => {
     // Prevent the default form submission behavior
     event.preventDefault();
 
-    const name = nameInput.value;
     const text = textInput.value;
 
 
-fetch('/messages', {
+fetch('/api/messages', {
     method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
     body: JSON.stringify({
-        name,
         text,
     }),
+    headers: {
+        'Content-Type': 'application/json',
+    }
 })
     .then((response) => {
         if (!response.ok) {

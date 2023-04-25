@@ -1,22 +1,22 @@
 [
     {
-        "text": "this is another string for testing purposes",
+        "text": "Good morning friends",
         "dogId": 1,
         "userId": 1
     },
     {
-        "text": "this is the string for testing purposes",
+        "text": "Can you believe the pets there?",
         "dogId": 2,
         "userId": 2
     },
     {
-        "text": "this is a string for testing purposes",
+        "text": "Wow! This is great. Lets go for a hike, woof!",
         "dogId": 3,
         "userId": 3
         
     },
     {
-        "text": "this is will be a string for testing purposes",
+        "text": "Yo!",
         "dogId": 4,
         "userId": 4
     }

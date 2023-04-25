@@ -7,9 +7,9 @@
 <ul>
   {{#each messages}}
   <li>
-    <strong>From:</strong> {{this.from}}
+    <strong>From:</strong> {{this.dogId}}
     <br>
-    <strong>To:</strong> {{this.to}}
+    <strong>To:</strong> {{this.dogId}}
     <br>
     <strong>Message:</strong> {{this.text}}
   </li>
@@ -20,11 +20,11 @@
 
 <h1>New Message</h1>
 <div>
-<form method="POST" action="/messages">
+<form method="POST" action="/messages" id="message-form">
   <label for="to">To:</label>
-  <select name="to" id="message-form">
+  <select name="to" >
     {{#each users}}
-    <option value={{this.id}}>{{this.username}}</option>
+    <option value='{{this.id}}'>{{this.username}}</option>
   </select>
    {{/each}}
   <br>
