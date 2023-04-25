@@ -2,7 +2,7 @@
 const sequelize = require('../config/connection.js');
 
 const User = require('./users');
-const Message = require('./messages');
+const Messages = require('./messages');
 const Dog = require('./dog');
 
 Dog.belongsTo(User, {
@@ -40,4 +40,4 @@ User.hasMany(Dog, {
 // });
 
 
-module.exports = { User, Message, Dog };
+module.exports = { User, Messages, Dog };

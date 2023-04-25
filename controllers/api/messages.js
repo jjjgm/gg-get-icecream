@@ -3,30 +3,28 @@ const router = express.Router();
 const db = require('../../models');
 
 // Route for displaying all messages
-router.get('/', async (req, res) => {
-  try {
-    const messages = await db.Message.findAll();
-    res.render('messages/index', { messages });
-  } catch (error) {
-    console.log(error);
-    res.redirect('/messages');
-  }
-});
+// Route for displaying all dogs
+// router.get('/messages', async (req, res) => {
+//   try {
+//     const message = await db.Messages.findAll();
+//     res.render('index', { message });
+//   } catch (error) {
+//     console.log(error);
+//     res.redirect('/messages');
+//   }
+// });
 
-// Route for displaying the new message form
-router.get('/new', (req, res) => {
-  res.render('messages/new');
-});
+
 
 // Route for creating a new message
-router.post('/', async (req, res) => {
+router.post('/messages', async (req, res) => {
   try {
-    const newMessage = await db.Message.create({
+    const newMessages = await db.Messages.create({
       text: req.body.text,
       dogId: req.body.dogId,
       userId: req.session.user.id
     });
-    res.redirect(`/messages/${newMessage.id}`);
+    res.redirect(`/messages/${newMessages.id}`);
   } catch (error) {
     console.log(error);
     res.redirect('/messages');
@@ -34,9 +32,9 @@ router.post('/', async (req, res) => {
 });
 
 // Route for displaying a single message
-router.get('/:id', async (req, res) => {
+router.get('messages/:id', async (req, res) => {
   try {
-    const message = await db.Message.findByPk(req.params.id);
+    const message = await db.Messages.findByPk(req.params.id);
     res.render('messages/show', { message });
   } catch (error) {
     console.log(error);
