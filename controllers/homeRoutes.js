@@ -23,7 +23,6 @@ router.get('/login', (req, res) => {
     res.redirect('/profile');
     return;
   }
-
   res.render('login');
 });
 
@@ -52,8 +51,6 @@ router.get('/dogs', async (req, res) => {
       res.render('friendprofile', { dog });
 
       // res.json({ dog})
-
-      
 
     } catch (err) {
       console.log(err);

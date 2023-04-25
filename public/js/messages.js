@@ -22,7 +22,7 @@ fetch('/messages', {
         if (!response.ok) {
             throw new Error(response.statusText);
         }
-        else {window.location.href = '/usermessages';}
+        else {window.location.href = '/homepage';}
         return response.json(); 
         // if (response.ok) {
         //     document.location.replace('/messages');
