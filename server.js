@@ -1,16 +1,32 @@
 const path = require('path');
-// require ('dotenv').config();
 const sequelize = require('./config/connection');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const http = require('http');
+const socketio = require('socket.io');
+
 
 const app = express();
-
 const PORT = process.env.PORT || 3001;
 
+const server = http.createServer(app);
+const io = socketio(server);
+
+io.on('connection', (socket) => {
+  console.log('a user connected');
+
+  socket.on('chat message', (msg) => {
+    console.log('message: ' + msg);
+    io.emit('chat message', msg);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
 
 const sess = {
   secret: 'mySecret',
@@ -40,6 +56,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Now Listening at ${PORT}!`));
+  server.listen(PORT, () => console.log(`Now Listening at ${PORT}!`));
 });
-
