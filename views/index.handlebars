@@ -1,9 +1,20 @@
-<h1>Dogs</h1>
-{{#each dogs}}
-<div class="dog">
-  <h2>{{this.name}}</h2>
-  <p>Breed: {{this.breed}}</p>
-  <p>Age: {{this.age}}</p>
-  <p>Gender: {{this.gender}}</p>
-</div>
-{{/each}}
+<section class="p-3 mt-5">
+  <h1>All Dogs</h1>
+  {{#each dogs}}
+  <div id="friend-table" class="p-3">
+      <table class="w-100">
+          <tbody>
+              <tr class="friend-row">
+                  <td class="p-3 alltable-profile">
+                    {{!-- <img src={{PLACEHOLDER image url}} class="profile-icon" alt="Icon image of {{PLACEHOLDER petname}}"> --}}
+                  </td>
+                  <td class="py-3 alltable-name">{{this.name}}</td>
+                  <td class="py-3 alltable-breed">{{this.breed}}</td>
+                  <td class="py-3 alltable-age">age: {{this.age}}</td>
+                  <td class="py-3 alltable-gender">{{this.gender}}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  {{/each}}
+</section>
