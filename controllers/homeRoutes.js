@@ -78,6 +78,19 @@ router.get('/new', (req, res) => {
   res.render('messages/new');
 });
 
+router.get('/messages/', async (req, res) => {
+  try {
+    const newMessage = await db.Messages.create ({
+      name: req.body.name,
+      text: req.body.message
+    });
+    res.render(`messages/${newMessage.id}`);
+  } catch (error) {
+    console.log(error);
+    res.json(error);
+  }
+});
+
 router.get('/users', async (req, res) => {
   try {
     const userData = await db.User.findAll();

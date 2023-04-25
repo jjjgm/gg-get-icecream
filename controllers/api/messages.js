@@ -5,20 +5,18 @@ const db = require('../../models');
 
 
 
-// Route for creating a new message
-router.post('/newmessage', async (req, res) => {
+router.post('/messages/:id', async (req, res) => {
   try {
-    const newMessage = await db.Messages.create({
-      text: req.body.text,
-      userId: req.session.user.id,
+    const newMessage = await db.Messages.create ({
+      name: req.body.name,
+      text: req.body.message
     });
-    res.redirect(`/newmessage/${newMessage.id}`);
-    } catch (error) {
+    res.render(`messages/${newMessage.id}`);
+  } catch (error) {
     console.log(error);
-    res.redirect('/newmessasge');
-    }
-    });
-    
+    res.json(error);
+  }
+});
 
 
 
