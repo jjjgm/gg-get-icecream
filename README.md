@@ -63,5 +63,4 @@ Michael Rader
 ## Links
 https://github.com/jjjgm/gg-get-icecream.git
 
-
 https://lit-ocean-94336.herokuapp.com/login
