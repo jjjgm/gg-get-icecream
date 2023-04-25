@@ -17,13 +17,18 @@
                 socket.emit('chat message', input.value);
                 input.value = '';
             }
+            console.log(areweworking);
         });
 
         socket.on('chat message', function (msg) {
             const item = document.createElement('li');
+            try{
             item.textContent = msg;
             messages.appendChild(item);
             window.scrollTo(0, document.body.scrollHeight);
+            } catch(error){
+                console.log(error);
+            }
         });
     </script>
 </head>
@@ -35,4 +40,7 @@
     </form>
 </body>
 
+
+<script src="./public/js/messages.js"></script>
 </html>
+
