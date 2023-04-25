@@ -4,6 +4,7 @@
         "breed": "Chihuahua",
         "age": 83,
         "bio": "Sophia is a small dog with a big personality. She's never afraid to speak her mind, and she'll always stand up for what she believes in. Despite her age, she's still full of energy and spunk, and she loves to play and have fun.",
+        "url": "https://www.dogster.com/wp-content/uploads/2018/09/black-and-tan-chiahuahua-600x400.jpg.optimal.jpg",
         "user_id": 1
     },
     {
@@ -11,6 +12,7 @@
         "breed": "Golden Retriever",
         "age": 55,
         "bio": "Sweet, gentle, and optimistic, Rose is a dog who loves to bring joy and happiness to those around her. Her kind heart and sunny disposition make her a favorite among everyone she meets.",
+        "url": "https://www.lombardvet.com/sites/default/files/styles/large/public/golden-retriever-dog-breed-info_0.jpg?itok=sYARdO3q",
         "user_id": 2
     },
     {
@@ -18,6 +20,7 @@
         "breed": "German Shepherd",
         "age": 53,
         "bio": "Intelligent, independent, and no-nonsense, Dorothy is a dog who values her privacy and her time alone. Despite her tough exterior, she has a soft spot for those in need and will go out of her way to help others.",
+        "url": "https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg",
         "user_id": 3
     },
     {
@@ -25,6 +28,7 @@
         "breed": "Bichon Frise",
         "age": 45,
         "bio": "Flirtatious, fashionable, and outgoing, Blanche is a dog who loves to be the center of attention. She can be a bit high maintenance at times, but her charm and charisma make up for it. She loves to flirt and has a way of making everyone feel special.",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Bichon_Fris%C3%A9_-_studdogbichon.jpg/440px-Bichon_Fris%C3%A9_-_studdogbichon.jpg",
         "user_id": 4
     }
 ]

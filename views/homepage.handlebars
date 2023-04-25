@@ -4,19 +4,18 @@
     <h1>Hi, {{user.username}}</h1>
     <h3>Thank you for being a friend.</h3>
     
-
+{{#each user.dogs as |dog|}}
     <div class="container mt-4">
         <div class="row">
             <div class="col-6 col-md-5 col-lg-4 d-flex justify-content-center">
-                {{!-- <img class="img-fluid" src={{PLACEHOLDER image url}} alt="Image of {{PLACEHOLDER username}}"> --}}
+                <img class="img-fluid" src={{dog.url}} alt="Image of {{dog.username}}">
             </div>
 
             <div class="col-6 col-md-7 col-lg-8">
-                {{#each user.dogs as |dog|}}
+                
                 <h3>{{dog.name}}</h3>
                 <h5>age: {{dog.age}}</h5>
                 <h5>{{dog.breed}}</h5>
-                <img src="{{dog.url}}">
             </div>
         </div>
     </div>
