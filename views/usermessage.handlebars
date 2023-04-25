@@ -1,17 +1,13 @@
+<h1>Your Message</h1>
+<div id="messagedisplay">
 
-<h1>Messages</h1>
-<div id="message">
-{{#each message as |messages|}}
-<div class="mt-5">
-            <p>
-              <ul>
-                <li>Message: {{this.text}}
-                  </li>
-                </ul>
-            </p>
-          
-    </div>
-    </div>
-  {{/each}}
+  
+    <ul>{{#each messages}}
+      <li>{{this.text}}
+      </li>
+      {{/each}}
+    </ul>
 
+
+  </div>
 
