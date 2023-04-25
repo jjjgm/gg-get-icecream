@@ -14,13 +14,15 @@
                 <label for="password">Password</label>
             </div>
 
-            <hr class="my-4">
+            {{!-- <hr class="my-4"> --}}
+            
 
             <h4 class="mb-3">Fill out your profile</h4>
 
             <div class="mb-3">
                 <label for="dog-picture" class="d-block upload-lbl mb-2">Dog Picture</label>
-                <input type="file" id="dog-picture" name="dog-picture" accept="image/*">
+                {{!-- <input type="file" id="dog-picture" name="dog-picture" accept="image/*"> --}}
+                <button id="upload_widget" class="cloudinary-button">Upload files</button>
             </div>
 
             <div class="form-floating mb-3">
@@ -51,7 +53,6 @@
             </div>
         </form>
 
-        <button id="upload_widget" class="cloudinary-button">Upload files</button>
     </div>
 </section>
 
