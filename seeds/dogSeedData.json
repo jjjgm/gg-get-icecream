@@ -1,30 +1,30 @@
 [
     {
-        "name": "Doggie",
-        "breed": "Mixed- Unsure",
-        "age": 2,
-        "bio": "Good dog",
+        "name": "Sophia Petrillo",
+        "breed": "Chihuahua",
+        "age": 83,
+        "bio": "Sophia is a small dog with a big personality. She's never afraid to speak her mind, and she'll always stand up for what she believes in. Despite her age, she's still full of energy and spunk, and she loves to play and have fun.",
         "user_id": 1
     },
     {
-        "name": "Dog One",
-        "breed": "Mixed",
-        "age": 2,
-        "bio": "The one true dog",
+        "name": "Rose Nylund",
+        "breed": "Golden Retriever",
+        "age": 55,
+        "bio": "Sweet, gentle, and optimistic, Rose is a dog who loves to bring joy and happiness to those around her. Her kind heart and sunny disposition make her a favorite among everyone she meets.",
         "user_id": 2
     },
     {
-        "name": "Doge",
-        "breed": "golden",
-        "age": 1,
-        "bio": "He's golden",
+        "name": "Dorothy Zbornak",
+        "breed": "German Shepherd",
+        "age": 53,
+        "bio": "Intelligent, independent, and no-nonsense, Dorothy is a dog who values her privacy and her time alone. Despite her tough exterior, she has a soft spot for those in need and will go out of her way to help others.",
         "user_id": 3
     },
     {
-        "name": "Pup",
-        "breed": "shiba",
-        "age": 3,
-        "bio": "puppy",
+        "name": "Blanche Devereaux",
+        "breed": "Bichon Frise",
+        "age": 45,
+        "bio": "Flirtatious, fashionable, and outgoing, Blanche is a dog who loves to be the center of attention. She can be a bit high maintenance at times, but her charm and charisma make up for it. She loves to flirt and has a way of making everyone feel special.",
         "user_id": 4
     }
 ]
