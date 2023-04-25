@@ -6,6 +6,10 @@ body {
   padding: 1%;
 }
 
+nav {
+  background-color: white;
+}
+
 /* custom styles - general */
 .nav-link {
   color: black;
