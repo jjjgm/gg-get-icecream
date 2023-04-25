@@ -42,6 +42,13 @@ router.get('/dogs', async (req, res) => {
       res.json(error);
     }
   });
+
+// router.get('/dogs/:id' async (req, res) => {
+//   try {} catch (error) {
+//     console.log(error);
+//     res.json(error)
+//   }
+// })
   
 
 router.get('/new', (req, res) => {
